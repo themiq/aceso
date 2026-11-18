@@ -1,0 +1,203 @@
+/* Aceso resource library.
+   Format: [name, url, description, category, tags]
+   tags: "pick" = cozy favourite, "free", "app", "web", "paid", "call", "text", "chat", "community", "open-source"
+   Many entries come from FMHY (fmhy.net/misc#mental-health) — thank you, FMHY. */
+
+window.ACESO_CATEGORIES = {
+  crisis:    { label: "Crisis & hotlines",       emoji: "🆘", color: "var(--terracotta)" },
+  calm:      { label: "Meditation & breathing",  emoji: "🫧", color: "var(--sky)" },
+  mood:      { label: "Mood & journaling",       emoji: "📓", color: "var(--honey)" },
+  selfhelp:  { label: "Self-help & coping skills", emoji: "🧰", color: "var(--sage)" },
+  therapy:   { label: "Finding therapy",         emoji: "🛋️", color: "var(--plum)" },
+  sleep:     { label: "Sleep",                   emoji: "🌙", color: "var(--plum-2)" },
+  body:      { label: "Body, food & movement",   emoji: "🥕", color: "var(--sage-2)" },
+  cozy:      { label: "Calm corners & ambience", emoji: "🕯️", color: "var(--honey-2)" },
+  community: { label: "Peer support & community", emoji: "🫶", color: "var(--blush)" },
+  identity:  { label: "LGBTQ+ & neurodivergence", emoji: "🌈", color: "var(--sky-2)" },
+  recovery:  { label: "Substances, habits & screens", emoji: "🌱", color: "var(--sage)" },
+  grief:     { label: "Grief & loss",            emoji: "🕊️", color: "var(--sky)" },
+  practical: { label: "Money, safety & life help", emoji: "🏠", color: "var(--honey)" },
+  learn:     { label: "Learn more",              emoji: "📚", color: "var(--terracotta-2)" }
+};
+
+window.ACESO_RESOURCES = [
+  // ---------- crisis ----------
+  ["988 Suicide & Crisis Lifeline", "https://988lifeline.org/", "US: call or text 988, or chat online. Free, confidential, 24/7. Press 1 for the Veterans line.", "crisis", ["pick", "call", "text", "chat"]],
+  ["Crisis Text Line", "https://www.crisistextline.org/", "Text HOME to 741741 (US) to reach a trained crisis counsellor any time. Also available in Canada, UK and Ireland.", "crisis", ["text", "free"]],
+  ["Samaritans", "https://www.samaritans.org/", "UK & Ireland: call 116 123 any time, for free. You don't have to be suicidal to call.", "crisis", ["pick", "call"]],
+  ["Shout 85258", "https://giveusashout.org/", "UK: text SHOUT to 85258 for free, 24/7 text support.", "crisis", ["text"]],
+  ["988 Canada", "https://988.ca/", "Canada: call or text 988, 24/7, in English and French.", "crisis", ["call", "text"]],
+  ["Lifeline Australia", "https://www.lifeline.org.au/", "Australia: call 13 11 14, text 0477 13 11 14, or chat online, 24/7.", "crisis", ["call", "text", "chat"]],
+  ["1737 Need to Talk?", "https://1737.org.nz/", "Aotearoa New Zealand: free call or text 1737 any time to talk to a trained counsellor.", "crisis", ["call", "text"]],
+  ["Tele-MANAS", "https://telemanas.mohfw.gov.in/", "India: free 24/7 government mental health helpline — call 14416 or 1-800-891-4416.", "crisis", ["call"]],
+  ["Find A Helpline", "https://findahelpline.com/", "Free, verified helplines for 130+ countries. Filter by topic: anxiety, abuse, LGBTQ+, eating and more.", "crisis", ["pick", "web"]],
+  ["IASP Crisis Centres", "https://www.iasp.info/crisis-centres-helplines/", "International Association for Suicide Prevention's worldwide directory of crisis centres.", "crisis", ["web"]],
+  ["The Trevor Project", "https://www.thetrevorproject.org/get-help/", "Support for LGBTQ+ young people via phone, text and chat.", "crisis", ["call", "text", "chat"]],
+  ["Trans Lifeline", "https://translifeline.org/", "Peer support hotline run by and for trans people. US (877) 565-8860, Canada (877) 330-6366.", "crisis", ["call"]],
+  ["Veterans Crisis Line", "https://www.veteranscrisisline.net/", "For veterans, service members and the people who love them. Dial 988 then press 1.", "crisis", ["call", "text", "chat"]],
+  ["Kids Help Phone", "https://kidshelpphone.ca/", "Canada: young people can call 1-800-668-6868 or text CONNECT to 686868.", "crisis", ["call", "text"]],
+  ["Childline", "https://www.childline.org.uk/", "UK: under-19s can call 0800 1111 or chat online for free.", "crisis", ["call", "chat"]],
+  ["National Domestic Violence Hotline", "https://www.thehotline.org/", "US: call 1-800-799-7233 or text START to 88788. Confidential support and safety planning.", "crisis", ["call", "text", "chat"]],
+  ["RAINN", "https://www.rainn.org/", "US: National Sexual Assault Hotline — 800-656-4673, or chat online.", "crisis", ["call", "chat"]],
+  ["Stay Alive", "https://www.stayalive.app/", "Free suicide-prevention app with a safety plan, reasons-to-live box and crisis contacts.", "crisis", ["app", "free"]],
+
+  // ---------- calm ----------
+  ["Medito", "https://meditofoundation.org/medito-app/", "Completely free, non-profit meditation app. No ads, no paywall, ever. (FMHY ⭐)", "calm", ["pick", "app", "free", "open-source"]],
+  ["Plum Village", "https://plumvillage.app/", "Free mindfulness app from Thich Nhat Hanh's community — gentle guided meditations and talks.", "calm", ["app", "free"]],
+  ["Breath Ball", "https://breathball.com/", "A soft animated ball to breathe along with. (FMHY ⭐)", "calm", ["web", "free"]],
+  ["Breathly", "https://breathly.app/", "Minimal guided breathing app (box breathing, 4-7-8 and more) for Android & iOS.", "calm", ["app", "free", "open-source"]],
+  ["Insight Timer", "https://insighttimer.com/", "Huge free library of guided meditations, sleep stories and music.", "calm", ["app", "free"]],
+  ["Healthy Minds Program", "https://hminnovations.org/meditation-app", "Free, science-based meditation training app from a non-profit.", "calm", ["app", "free"]],
+  ["UCLA Mindful", "https://www.uclahealth.org/programs/marc/free-guided-meditations", "Free guided meditations from UCLA's Mindful Awareness Research Center, in several languages.", "calm", ["web", "free"]],
+  ["Mindfulness Coach", "https://mobile.va.gov/app/mindfulness-coach", "Free mindfulness & stress-reduction app made by the US VA, no account needed.", "calm", ["app", "free"]],
+  ["Free Mindfulness Project", "https://www.freemindfulness.org/download", "Downloadable guided mindfulness exercises, free to use.", "calm", ["free", "web"]],
+  ["Waking Up (free scholarship)", "https://app.wakingup.com/scholarship", "Sam Harris' meditation app — they'll give you a free account if you can't afford it.", "calm", ["app"]],
+  ["What is meditation good for?", "https://informationisbeautiful.net/visualizations/what-is-meditation-mindfulness-good-for/", "Information is Beautiful's infographic of what the research says.", "calm", ["web"]],
+  ["Do Nothing for 2 Minutes", "https://www.donothingfor2minutes.com/", "Just listen to the waves. Don't touch anything. That's it.", "calm", ["pick", "web", "free"]],
+  ["Pause Point", "https://greasyfork.org/scripts/578391", "Userscript that adds a breathing pause before you enter sites you choose.", "calm", ["free", "open-source"]],
+
+  // ---------- mood ----------
+  ["How We Feel", "https://howwefeel.org/", "Free mood journal built with Yale scientists — name your feelings and spot patterns.", "mood", ["pick", "app", "free"]],
+  ["Daylio", "https://daylio.net/", "Micro-diary: tap a mood and a few activities, see what lifts you up.", "mood", ["app"]],
+  ["Finch", "https://finchcare.com/", "A self-care pet that grows as you do small things for yourself. Very cozy.", "mood", ["app"]],
+  ["Nomie", "https://v5.nomie.app/", "Track anything — moods, habits, symptoms — privately on your device.", "mood", ["web", "free", "open-source"]],
+  ["Koduko", "https://github.com/Mazahir26/koduko", "Simple open-source habit and routine tracker.", "mood", ["app", "free", "open-source"]],
+  ["Bearable", "https://bearable.app/", "Mood & symptom tracker that finds links between sleep, meds, food and how you feel.", "mood", ["app"]],
+  ["deskspace", "https://npckc.itch.io/deskspace", "A tiny, gentle self-care desktop companion. (FMHY)", "mood", ["pick", "free"]],
+
+  // ---------- self-help ----------
+  ["/mental health/ tips", "https://rentry.co/mentalhealthy", "Community-written page of practical mental health tips. (FMHY ⭐)", "selfhelp", ["pick", "web", "free"]],
+  ["You feel like shit", "https://youfeellikeshit.com/", "Interactive self-care flowchart for when everything feels bad. Answer simple questions, get gentle next steps.", "selfhelp", ["pick", "web", "free"]],
+  ["Coping Skills Masterlist", "https://docs.google.com/document/d/1KI1kzj6Bjx_O3ggYXfgEuTtOsLiCW0V-JeWpTyX5OOU/", "A giant list of coping skills to pick from.", "selfhelp", ["free"]],
+  ["Awesome Mental Health", "https://dreamingechoes.github.io/awesome-mental-health", "Curated list of mental health resources (with a tech-worker lean). (FMHY 🌐)", "selfhelp", ["web", "free"]],
+  ["Mental Illness Mouse", "https://mentalillnessmouse.wordpress.com/helpfulresources/", "A kind, hand-collected list of helpful resources.", "selfhelp", ["web", "free"]],
+  ["Centre for Clinical Interventions", "https://www.cci.health.wa.gov.au/Resources/Looking-After-Yourself", "Free, excellent CBT workbooks on anxiety, depression, sleep, perfectionism, self-esteem and more.", "selfhelp", ["pick", "free"]],
+  ["Get Self Help", "https://www.getselfhelp.co.uk/", "Free CBT worksheets, explanations and self-help guides.", "selfhelp", ["free", "web"]],
+  ["DBT Self Help", "https://dbtselfhelp.com/", "Learn Dialectical Behaviour Therapy skills (distress tolerance, emotion regulation) on your own.", "selfhelp", ["free", "web"]],
+  ["Psychology Tools — free worksheets", "https://www.psychologytools.com/download-therapy-worksheets/", "Professionally designed therapy worksheets; many are free to download.", "selfhelp", ["free"]],
+  ["MoodGYM", "https://moodgym.com.au/", "Interactive online CBT program for depression and anxiety, from the Australian National University.", "selfhelp", ["web"]],
+  ["This Way Up", "https://thiswayup.org.au/", "Online CBT courses designed by clinicians — some free.", "selfhelp", ["web"]],
+  ["Every Mind Matters", "https://www.nhs.uk/every-mind-matters/", "NHS: make a free personalised Mind Plan in a few minutes.", "selfhelp", ["pick", "web", "free"]],
+  ["Calm Harm", "https://calmharm.co.uk/", "Free app that helps you ride out the urge to self-harm, by stem4.", "selfhelp", ["app", "free"]],
+  ["Movember Conversations", "https://conversations.movember.com/en/conversations/", "Practise having a supportive mental health conversation with someone you care about.", "selfhelp", ["web", "free"]],
+  ["Mental Health America screening", "https://screening.mhanational.org/screening-tools/", "Free, anonymous screening tools for depression, anxiety, PTSD and more — a starting point for a doctor's chat.", "selfhelp", ["web", "free"]],
+  ["NHS mental health self-assessment", "https://www.nhs.uk/mental-health/", "NHS mental health hub with conditions, symptoms and self-assessment tools.", "selfhelp", ["web", "free"]],
+
+  // ---------- therapy ----------
+  ["Psychology Today directory", "https://www.psychologytoday.com/us/therapists", "Filter therapists by location, insurance, cost, specialty and identity.", "therapy", ["pick", "web"]],
+  ["Open Path Collective", "https://openpathcollective.org/", "US non-profit: affordable therapy sessions with sliding-scale pricing.", "therapy", ["web"]],
+  ["NHS Talking Therapies", "https://www.nhs.uk/mental-health/talking-therapies-medicine-treatments/talking-therapies-and-counselling/nhs-talking-therapies/", "England: refer yourself for free therapy — no GP needed.", "therapy", ["pick", "free"]],
+  ["FindTreatment.gov", "https://findtreatment.gov/", "US government finder for mental health and substance use treatment.", "therapy", ["web", "free"]],
+  ["NAMI HelpLine", "https://www.nami.org/support-education/nami-helpline/", "US: free info, resource referrals and support. Call 1-800-950-6264 or text \"helpline\" to 62640.", "therapy", ["call", "text"]],
+  ["Inclusive Therapists", "https://www.inclusivetherapists.com/", "Find culturally responsive, identity-affirming therapists.", "therapy", ["web"]],
+  ["Therapy for Black Girls", "https://therapyforblackgirls.com/", "Directory and podcast centring Black women's mental health.", "therapy", ["web"]],
+  ["Medicare Mental Health", "https://www.medicarementalhealth.gov.au/", "Australia: free government service to help you find the right mental health support.", "therapy", ["free", "call"]],
+  ["Mind — talking therapies guide", "https://www.mind.org.uk/information-support/drugs-and-treatments/talking-therapy-and-counselling/", "What different therapies are, and how to find one.", "therapy", ["web", "free"]],
+
+  // ---------- sleep ----------
+  ["Sleeping Guide", "https://rentry.co/sleepguide", "Practical sleep hygiene guide. (FMHY ⭐)", "sleep", ["pick", "free"]],
+  ["Insomnia Guide", "https://clarasguide.valeena.workers.dev/Guides/insomnia-guide/", "A thorough, friendly guide to beating insomnia. (FMHY ⭐)", "sleep", ["free"]],
+  ["CBT-i Coach", "https://mobile.va.gov/app/cbt-i-coach", "Free app based on CBT for insomnia — the gold-standard treatment. Made by the US VA.", "sleep", ["pick", "app", "free"]],
+  ["Sleep Foundation", "https://www.sleepfoundation.org/", "Clear, research-based articles about sleep and sleep problems.", "sleep", ["web", "free"]],
+  ["CCI — Sleep workbook", "https://www.cci.health.wa.gov.au/Resources/Looking-After-Yourself/Sleep", "Free step-by-step module for improving sleep.", "sleep", ["free"]],
+
+  // ---------- body ----------
+  ["The Fitness Wiki", "https://thefitness.wiki/", "No-nonsense, beginner-friendly fitness info. (FMHY ⭐)", "body", ["free", "web"]],
+  ["DAREBEE", "https://darebee.com/", "Thousands of free illustrated workouts, many need no equipment. (FMHY ⭐)", "body", ["pick", "free"]],
+  ["r/BodyweightFitness wiki", "https://www.reddit.com/r/bodyweightfitness/wiki/index/", "A well-loved routine you can do at home. (FMHY ⭐)", "body", ["free", "community"]],
+  ["Feeel", "https://gitlab.com/enjoyingfoss/feeel", "Open-source home workout app.", "body", ["app", "free", "open-source"]],
+  ["Yoga With Adriene", "https://yogawithadriene.com/", "Hundreds of free, gentle yoga videos. \"Find what feels good.\"", "body", ["pick", "free"]],
+  ["NHS Couch to 5K", "https://www.nhs.uk/better-health/get-active/get-running-with-couch-to-5k/", "Free app that takes you from zero to running 5K in 9 weeks.", "body", ["app", "free"]],
+  ["AllTrails", "https://www.alltrails.com/", "Find walks and trails near you. Green time is good time.", "body", ["app"]],
+  ["The Nutrition Source", "https://nutritionsource.hsph.harvard.edu/", "Harvard's evidence-based nutrition info. (FMHY)", "body", ["web", "free"]],
+  ["Open Food Facts", "https://world.openfoodfacts.org/", "Open food database — scan products to see what's in them. (FMHY ⭐)", "body", ["free", "open-source"]],
+  ["Beat", "https://www.beateatingdisorders.org.uk/", "UK eating disorder charity with helplines, chat and support groups.", "body", ["call", "chat"]],
+  ["ANAD", "https://anad.org/", "US: free eating disorder support groups, helpline and peer mentors.", "body", ["free", "community"]],
+
+  // ---------- cozy ----------
+  ["Relaxation & Ambient (FMHY)", "https://fmhy.net/audio#ambient-relaxation", "FMHY's big list of ambient, nature and relaxing sound sites.", "cozy", ["pick", "free"]],
+  ["A Soft Murmur", "https://asoftmurmur.com/", "Mix rain, thunder, fire, waves and café chatter into your own calm soundscape.", "cozy", ["pick", "web", "free"]],
+  ["myNoise", "https://mynoise.net/", "Beautiful, tweakable soundscapes and noise generators.", "cozy", ["web", "free"]],
+  ["Rainy Mood", "https://rainymood.com/", "Rain. Just rain. Forever.", "cozy", ["web", "free"]],
+  ["Purrli", "https://purrli.com/", "A virtual cat purring next to you. Adjustable mood.", "cozy", ["pick", "web", "free"]],
+  ["WindowSwap", "https://www.window-swap.com/", "Look out of a stranger's window somewhere in the world for a while.", "cozy", ["web", "free"]],
+  ["The Quiet Place Project", "https://thequietplaceproject.xyz/", "A small quiet corner of the internet. Write down your thoughts and let them go.", "cozy", ["pick", "web", "free"]],
+  ["Radio Garden", "https://radio.garden/", "Spin a globe and listen to live radio from anywhere on Earth.", "cozy", ["web", "free"]],
+  ["Explore.org live cams", "https://explore.org/livecams", "Live cameras of bears, puppies, birds, reefs and northern lights.", "cozy", ["web", "free"]],
+  ["Lofi Girl", "https://www.youtube.com/@LofiGirl", "Beats to relax / study to, with the famous studying girl and her cat.", "cozy", ["free"]],
+
+  // ---------- community ----------
+  ["7 Cups", "https://www.7cups.com/", "Free anonymous chat with trained volunteer listeners, plus community rooms.", "community", ["chat", "free", "community"]],
+  ["r/KindVoice", "https://www.reddit.com/r/KindVoice/", "Reddit community where people offer to just listen.", "community", ["community", "free"]],
+  ["r/MMFB", "https://www.reddit.com/r/MMFB/", "\"Make Me Feel Better\" — exactly what it sounds like.", "community", ["community", "free"]],
+  ["HeadsUpGuys", "https://headsupguys.org/", "Mental health support designed for men, built around depression.", "community", ["web", "free"]],
+  ["Side by Side (Mind)", "https://sidebyside.mind.org.uk/", "Mind's online peer community — share, listen, feel less alone.", "community", ["community", "free"]],
+  ["The Mix", "https://www.themix.org.uk/", "UK: free support for under-25s about anything — chat, forums and articles.", "community", ["chat", "community"]],
+  ["Kooth", "https://www.kooth.com/", "UK: free, anonymous online support and counselling for young people.", "community", ["chat", "free"]],
+  ["Warmline directory", "https://warmline.org/", "US: non-crisis peer support lines for when you just need to talk.", "community", ["call", "free"]],
+
+  // ---------- identity ----------
+  ["Gender Dysphoria Bible", "https://genderdysphoria.fyi/", "Warm, thorough guide to understanding gender dysphoria. (FMHY ⭐)", "identity", ["pick", "web", "free"]],
+  ["Trans Healthcare Resources", "https://transharmreduction.org/healthcare-resources", "Big collection of trans health and HRT information. (FMHY 🌐)", "identity", ["web", "free"]],
+  ["TFS Tools", "https://transfemscience.org/misc/", "Transfeminine Science: research-based articles and tools. (FMHY 🌐)", "identity", ["web", "free"]],
+  ["FTM Resource Guide", "https://www.ftmguide.org/", "Resources and guidance for trans men and transmasculine people. (FMHY)", "identity", ["web", "free"]],
+  ["Trans Voice Party", "https://transvoice.party/", "Free voice training resources and community. (FMHY)", "identity", ["free", "community"]],
+  ["Trans Rights Map", "https://transrightsmap.tgeu.org/", "Legal rights and policy tracker across Europe & Central Asia. (FMHY)", "identity", ["web"]],
+  ["TrevorSpace", "https://www.trevorspace.org/", "Safe, moderated online community for LGBTQ+ young people (13–24).", "identity", ["community", "free"]],
+  ["Switchboard LGBT+", "https://switchboard.lgbt/", "UK: LGBTQ+ helpline, chat and email — call 0800 0119 100.", "identity", ["call", "chat"]],
+  ["Scarleteen", "https://www.scarleteen.com/", "Inclusive, kind sex and relationships education for young people. (FMHY)", "identity", ["web", "free"]],
+  ["How to ADHD", "https://howtoadhd.com/", "Jessica McCabe's friendly videos and tools for ADHD brains.", "identity", ["pick", "free"]],
+  ["ADDitude", "https://www.additudemag.com/", "Articles, webinars and practical help for ADHD.", "identity", ["web"]],
+  ["CHADD", "https://chadd.org/", "US non-profit for ADHD info, support groups and advocacy.", "identity", ["web"]],
+  ["Autistic Self Advocacy Network", "https://autisticadvocacy.org/", "Run by and for autistic people. \"Nothing about us without us.\"", "identity", ["web"]],
+  ["Embrace Autism", "https://embrace-autism.com/", "Research-informed articles and free self-assessment tests, run by autistic clinicians.", "identity", ["web", "free"]],
+
+  // ---------- recovery ----------
+  ["r/NoSurf", "https://www.reddit.com/r/nosurf/wiki/index", "Community for cutting back on mindless internet use. (FMHY ⭐)", "recovery", ["pick", "community", "free"]],
+  ["one sec", "https://one-sec.app/", "Adds a breath before opening distracting apps — studies show it cuts usage a lot.", "recovery", ["app"]],
+  ["DetoxDroid", "https://github.com/flxapps/DetoxDroid", "Open-source Android app that makes your phone less addictive (greyscale, app pausing). (FMHY)", "recovery", ["app", "free", "open-source"]],
+  ["Farhan", "https://github.com/tahaak67/Farhan", "Open-source app to help control phone addiction. (FMHY)", "recovery", ["app", "free", "open-source"]],
+  ["I Am Sober", "https://iamsober.com/en/site/home", "Sobriety tracker with daily pledges and a kind community. (FMHY)", "recovery", ["app", "community"]],
+  ["Sobriety", "https://github.com/KiARC/Sobriety", "Simple, private, open-source sobriety tracker. (FMHY)", "recovery", ["app", "free", "open-source"]],
+  ["Petals", "https://github.com/LeoColman/Petals", "Track and reduce cannabis use. (FMHY)", "recovery", ["app", "free", "open-source"]],
+  ["SMART Recovery", "https://www.smartrecovery.org/", "Science-based, self-empowering recovery meetings — online and in person.", "recovery", ["pick", "community", "free"]],
+  ["Alcoholics Anonymous", "https://www.aa.org/", "Find AA meetings near you or online.", "recovery", ["community", "free"]],
+  ["Narcotics Anonymous", "https://na.org/", "Find NA meetings worldwide.", "recovery", ["community", "free"]],
+  ["SAMHSA National Helpline", "https://www.samhsa.gov/find-help/helplines/national-helpline", "US: free, confidential treatment referral 24/7 — 1-800-662-4357.", "recovery", ["call", "free"]],
+  ["Alcohol Change UK", "https://alcoholchange.org.uk/", "Tools, the Try Dry app and support for changing your drinking.", "recovery", ["app", "free"]],
+  ["Partnership to End Addiction", "https://drugfree.org/", "Support for families with a loved one struggling with substances. (FMHY)", "recovery", ["web", "free"]],
+  ["TripSit", "https://tripsit.me/", "Harm-reduction info and a live chat if you or a friend need help right now. (FMHY)", "recovery", ["chat", "free"]],
+  ["Drugs.com", "https://www.drugs.com/", "Look up medications, side effects and interactions. (FMHY)", "recovery", ["web", "free"]],
+  ["Porn Addiction Recovery Resources", "https://xliwt.github.io/Recovery-resources/", "Index of recovery resources. (FMHY 🌐)", "recovery", ["free"]],
+  ["GamCare", "https://www.gamcare.org.uk/", "UK: free support for anyone affected by gambling. Call 0808 8020 133.", "recovery", ["call", "chat"]],
+
+  // ---------- grief ----------
+  ["What's Your Grief", "https://whatsyourgrief.com/", "Warm, practical articles and courses about living with loss.", "grief", ["pick", "web", "free"]],
+  ["Cruse Bereavement Support", "https://www.cruse.org.uk/", "UK: free bereavement helpline (0808 808 1677), chat and local support.", "grief", ["call", "chat"]],
+  ["The Dougy Center", "https://www.dougy.org/", "Support and resources for grieving children, teens and families.", "grief", ["web", "free"]],
+  ["Refuge in Grief", "https://refugeingrief.com/", "Megan Devine's honest writing on grief that can't be fixed — only carried.", "grief", ["web"]],
+  ["Modern Loss", "https://modernloss.com/", "Candid conversations about grief, for people who don't do \"silver linings\".", "grief", ["web", "free"]],
+
+  // ---------- practical ----------
+  ["211", "https://www.211.org/", "US & Canada: dial 211 for local help with food, housing, bills and more.", "practical", ["pick", "call", "free"]],
+  ["findhelp.org", "https://www.findhelp.org/", "Search free or reduced-cost services near you by zip code.", "practical", ["web", "free"]],
+  ["Citizens Advice", "https://www.citizensadvice.org.uk/", "UK: free advice on money, benefits, work, housing and legal issues.", "practical", ["web", "free"]],
+  ["StepChange", "https://www.stepchange.org/", "UK: free, expert debt advice from a charity.", "practical", ["free"]],
+  ["NFCC", "https://www.nfcc.org/", "US: non-profit credit counselling and debt help.", "practical", ["web"]],
+  ["Money and Mental Health", "https://www.moneyandmentalhealth.org/", "Practical help on the link between money worries and mental health.", "practical", ["web", "free"]],
+  ["Feeding America food bank finder", "https://www.feedingamerica.org/find-your-local-foodbank", "US: find your nearest food bank.", "practical", ["free"]],
+  ["Refuge", "https://refuge.org.uk/", "UK: domestic abuse helpline 0808 2000 247, free 24/7.", "practical", ["call"]],
+  ["Postpartum Support International", "https://postpartum.net/", "Support for perinatal anxiety & depression for parents of any gender. Helpline 1-800-944-4773.", "practical", ["call", "text", "community"]],
+
+  // ---------- learn ----------
+  ["Mind", "https://www.mind.org.uk/", "UK charity with brilliant plain-language guides to every mental health topic.", "learn", ["pick", "web", "free"]],
+  ["NAMI", "https://www.nami.org/", "US National Alliance on Mental Illness — education, support groups and advocacy.", "learn", ["web", "free"]],
+  ["NIMH Health Topics", "https://www.nimh.nih.gov/health", "US National Institute of Mental Health's research-based info.", "learn", ["web", "free"]],
+  ["Beyond Blue", "https://www.beyondblue.org.au/", "Australia: information, forums and 24/7 support (1300 22 4636).", "learn", ["call", "chat", "community"]],
+  ["headspace (Australia)", "https://headspace.org.au/", "Australia's youth mental health foundation, for 12–25s.", "learn", ["web", "chat"]],
+  ["ReachOut", "https://au.reachout.com/", "Practical, relatable mental health info for young people.", "learn", ["web", "free"]],
+  ["YoungMinds", "https://www.youngminds.org.uk/", "UK: support for young people and their parents.", "learn", ["web", "free"]],
+  ["JED Foundation", "https://jedfoundation.org/", "Mental health resources for teens and young adults.", "learn", ["web", "free"]],
+  ["WHO — Mental health", "https://www.who.int/health-topics/mental-health", "The World Health Organization's mental health hub and self-help guides.", "learn", ["web", "free"]],
+  ["FMHY — Health", "https://fmhy.net/misc#health", "The FMHY health section this library grew from — physical, sexual, trans health and more.", "learn", ["pick", "free"]]
+];
