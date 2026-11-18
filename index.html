@@ -3,849 +3,413 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Aceso — a cozy guide for hard days</title>
-<meta name="description" content="Aceso is a warm, free, one-page guide to mental health: gentle explanations, calming tools, crisis lines and hundreds of resources for when things feel hard.">
-<meta name="theme-color" content="#fbf3e4" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#1f1b2d" media="(prefers-color-scheme: dark)">
-<meta property="og:title" content="Aceso — a cozy guide for hard days">
-<meta property="og:description" content="Gentle explanations, calming tools, crisis lines and resources for your mental health.">
-<meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🌱%3C/text%3E%3C/svg%3E">
+<title>Aceso: a guide for when things are hard</title>
+<meta name="description" content="A long, plain-spoken guide to looking after your mental health: anxiety, depression, burnout, sleep, grief, suicidal thoughts, getting help, and what to do on the bad days.">
+<meta name="theme-color" content="#f7f2ea" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1c1a18" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Aceso: a guide for when things are hard">
+<meta property="og:description" content="A long, plain-spoken guide to looking after your mental health.">
+<meta property="og:type" content="article">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234d6b57' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M12 21V11'/%3E%3Cpath d='M12 13c-4 0-6-3-6-7 4 0 6 3 6 7z'/%3E%3Cpath d='M12 11c0-4 2-7 6-7 0 4-2 7-6 7z'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Caveat:wght@500;700&family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..900,0..100,0..1&display=swap" rel="stylesheet">
-<script>
-  (function () { try { var t = localStorage.getItem("aceso:theme"); if (t) document.documentElement.dataset.theme = JSON.parse(t); } catch (e) {} })();
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Fraunces:opsz,wght,SOFT@9..144,500..700,0..100&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+<script>(function(){try{var t=localStorage.getItem("aceso:theme");if(t)document.documentElement.dataset.theme=JSON.parse(t);}catch(e){}})();</script>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-<div class="leaves" aria-hidden="true"></div>
 
-<!-- ================= TOP BAR ================= -->
-<header class="topbar">
-  <div class="wrap topbar-inner">
-    <a class="brand" href="#top" aria-label="Aceso home">
-      <svg viewBox="0 0 120 120" aria-hidden="true"><g class="sway" style="transform-origin:60px 36px"><path d="M60 36 C60 26 60 22 60 16" stroke="#3b2a22" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M60 22 C48 8 34 14 34 22 C44 28 54 28 60 22Z" fill="#7fb08b" stroke="#3b2a22" stroke-width="4"/><path d="M60 20 C70 4 88 8 88 16 C78 24 66 26 60 20Z" fill="#9cc5a1" stroke="#3b2a22" stroke-width="4"/></g><path d="M60 34 C88 34 102 58 100 82 C98 102 82 110 60 110 C38 110 22 102 20 82 C18 58 32 34 60 34Z" fill="#a8d8a0" stroke="#3b2a22" stroke-width="5"/><ellipse cx="46" cy="68" rx="5" ry="6.5" fill="#3b2a22"/><ellipse cx="74" cy="68" rx="5" ry="6.5" fill="#3b2a22"/><path d="M52 80 q8 8 16 0" stroke="#3b2a22" stroke-width="4" fill="none" stroke-linecap="round"/><ellipse cx="36" cy="80" rx="7" ry="4.5" fill="#f08e9a" opacity=".6"/><ellipse cx="84" cy="80" rx="7" ry="4.5" fill="#f08e9a" opacity=".6"/></svg>
-      <span>Aceso</span>
-    </a>
-    <a class="btn help-now-btn small" href="#help-now" aria-label="Help now: crisis lines">🆘 <span>Help now</span></a>
-    <button class="btn exit-btn small hide-sm" data-quick-exit title="Leaves this site instantly (or press Esc 3 times)">✕ Quick exit</button>
-    <button class="icon-btn show-sm" data-quick-exit aria-label="Quick exit: leave this site now" title="Quick exit">✕</button>
-    <button class="icon-btn hide-sm" id="calmToggle" aria-pressed="false" aria-label="Pause all animations">⏸</button>
-    <button class="icon-btn" id="themeToggle" aria-label="Switch theme">🌙</button>
-    <button class="icon-btn" id="menuBtn" aria-label="Open contents" aria-expanded="false" aria-controls="drawer">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M4 7c5-1 11 1 16 0M4 12c5 1 11-1 16 0M4 17c5-1 11 1 16 0"/></svg>
-    </button>
-  </div>
-  <div class="progress" aria-hidden="true">
-    <div class="progress-trail"></div>
-    <svg class="snail" viewBox="0 0 34 24"><path d="M3 21 C10 21 26 21 31 19 C33 18 33 15 31 15 L28 15 L28 9" stroke="#3b2a22" stroke-width="2" fill="#f9d98c"/><circle cx="16" cy="13" r="8" fill="#e07a5f" stroke="#3b2a22" stroke-width="2"/><path d="M16 13 m-4 0 a4 4 0 1 1 4 4" stroke="#3b2a22" stroke-width="1.5" fill="none"/><path d="M28 9 L26 3 M30 9 L32 3" stroke="#3b2a22" stroke-width="1.5"/><circle cx="26" cy="3" r="1.4" fill="#3b2a22"/><circle cx="32" cy="3" r="1.4" fill="#3b2a22"/></svg>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="wordmark" href="./"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 21V11"/><path d="M12 13c-4 0-6-3-6-7 4 0 6 3 6 7z"/><path d="M12 11c0-4 2-7 6-7 0 4-2 7-6 7z"/></svg>Aceso</a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="./" aria-current="page">Guide</a>
+      <a href="resources.html">Resources</a>
+      <a class="crisis-link" href="#crisis-lines">Crisis lines</a>
+    </nav>
+    <button class="icon-btn" id="themeToggle" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><span class="theme-label">Dark</span></button>
+    <button class="icon-btn exit-btn" type="button" data-quick-exit title="Leave this site immediately. You can also press Esc three times.">Quick exit</button>
   </div>
 </header>
 
-<!-- ================= DRAWER ================= -->
-<nav class="drawer" id="drawer" aria-label="Contents" aria-hidden="true">
-  <div class="drawer-head"><h2>The trail 🗺️</h2><button class="icon-btn" id="drawerClose" aria-label="Close contents">✕</button></div>
-  <p class="hand" style="font-size:1.3rem;margin-top:-.4rem">Wander anywhere. There's no right order.</p>
-  <ol id="drawerList"></ol>
-</nav>
-<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<div class="page with-toc">
+  <aside class="toc toc-side" aria-label="Contents"><h2>Contents</h2><ol data-toc></ol></aside>
 
-<main id="main">
+  <main class="article" id="main">
+    <header class="article-head">
+      <h1>A guide for when things are hard</h1>
+      <p class="standfirst">Everything I'd want someone to tell me about looking after my mind, written down in one place. Read the parts you need and skip the rest.</p>
+      <p class="byline">Last updated November 2026 · about a 45 minute read in full</p>
+    </header>
 
-<!-- ================= HERO ================= -->
-<section class="hero" id="top">
-  <div class="wrap">
-    <p class="hero-kicker">hello, you. pull up a chair.</p>
-    <h1 aria-label="Aceso"><span class="letter">A</span><span class="letter">c</span><span class="letter">e</span><span class="letter">s</span><span class="letter">o</span>
-      <svg class="underline" viewBox="0 0 400 24" preserveAspectRatio="none" aria-hidden="true"><path d="M5 14 C60 4 110 22 170 12 S280 4 330 14 S385 18 395 10" stroke="var(--terracotta)" stroke-width="6" fill="none" stroke-linecap="round"/></svg>
-    </h1>
-    <p class="hero-sub">A cozy little guide for hard days. Gentle explanations, calming tools, and a whole library of help — all on one page, all free, no sign-ups.</p>
-    <div class="hero-ctas">
-      <a class="btn" href="#checkin">☁️ How's your inner weather?</a>
-      <a class="btn sage" href="#toolbox">🧰 Calm me down</a>
-      <a class="btn sky" href="#map">📖 Read the guide</a>
-    </div>
-  </div>
-
-  <svg class="scene" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMax slice" role="img" aria-label="A little cottage on green hills with smoke curling from the chimney, a winding path, and a small round sprout creature waving hello.">
-    <defs>
-      <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="sky-fade"/><stop offset=".28" class="sky-top"/><stop offset="1" class="sky-bottom"/></linearGradient>
-      <filter id="glow"><feGaussianBlur stdDeviation="4"/></filter>
-    </defs>
-    <rect width="1200" height="500" fill="url(#skyGrad)"/>
-
-    <!-- stars (night) -->
-    <g class="night-only" fill="#fff6d8">
-      <circle class="star" cx="120" cy="60" r="2.5"/><circle class="star" cx="260" cy="110" r="2" style="animation-delay:-1s"/>
-      <circle class="star" cx="420" cy="50" r="3" style="animation-delay:-2s"/><circle class="star" cx="560" cy="130" r="2" style="animation-delay:-.5s"/>
-      <circle class="star" cx="690" cy="70" r="2.5" style="animation-delay:-1.5s"/><circle class="star" cx="800" cy="160" r="2" style="animation-delay:-2.5s"/>
-      <circle class="star" cx="1100" cy="60" r="3" style="animation-delay:-.8s"/><circle class="star" cx="1150" cy="180" r="2" style="animation-delay:-1.8s"/>
-      <circle class="star" cx="340" cy="190" r="1.8" style="animation-delay:-2.2s"/><circle class="star" cx="60" cy="170" r="2" style="animation-delay:-.3s"/>
-      <path class="star" d="M620 40 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z" style="animation-delay:-1.2s"/>
-      <path class="star" d="M180 230 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3z" style="animation-delay:-2.7s"/>
-    </g>
-
-    <!-- sun (day) -->
-    <g class="day-only" transform="translate(960 120)">
-      <g class="sun-rays" stroke="#3b2a22" stroke-width="4" stroke-linecap="round">
-        <path d="M0 -78 v-18 M0 78 v18 M-78 0 h-18 M78 0 h18 M55 55 l13 13 M-55 -55 l-13 -13 M55 -55 l13 -13 M-55 55 l-13 13"/>
-      </g>
-      <circle r="56" fill="#f9c74f" stroke="#3b2a22" stroke-width="4"/>
-      <path d="M-20 -6 q5 -6 10 0 M10 -6 q5 -6 10 0" stroke="#3b2a22" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-      <path d="M-12 12 q12 12 24 0" stroke="#3b2a22" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-      <ellipse cx="-30" cy="10" rx="8" ry="5" fill="#f08e74" opacity=".6"/><ellipse cx="30" cy="10" rx="8" ry="5" fill="#f08e74" opacity=".6"/>
-    </g>
-    <!-- moon (night) -->
-    <g class="night-only" transform="translate(960 115)">
-      <circle r="70" fill="#fff6d8" opacity=".15" filter="url(#glow)"/>
-      <path d="M20 -52 A55 55 0 1 0 40 40 A44 44 0 1 1 20 -52Z" fill="#fff1c4" stroke="#120f1c" stroke-width="4"/>
-      <path d="M-22 -4 q5 5 10 0" stroke="#3b2a22" stroke-width="3" fill="none" stroke-linecap="round"/>
-      <path d="M-26 14 q8 6 16 0" stroke="#3b2a22" stroke-width="3" fill="none" stroke-linecap="round"/>
-      <text x="44" y="-40" font-family="Caveat" font-size="26" fill="#fff1c4">z</text><text x="60" y="-62" font-family="Caveat" font-size="20" fill="#fff1c4">z</text>
-    </g>
-
-    <!-- clouds -->
-    <g class="cloud" style="animation-duration:95s;animation-delay:-30s">
-      <path d="M0 80 a28 28 0 0 1 34 -28 a36 36 0 0 1 68 -4 a26 26 0 0 1 32 32z" fill="var(--card)" stroke="var(--line)" stroke-width="3.5" opacity=".95"/>
-    </g>
-    <g class="cloud" style="animation-duration:130s;animation-delay:-90s">
-      <path d="M0 150 a22 22 0 0 1 28 -22 a30 30 0 0 1 56 -2 a20 20 0 0 1 24 24z" fill="var(--card)" stroke="var(--line)" stroke-width="3.5" opacity=".9"/>
-    </g>
-    <g class="cloud" style="animation-duration:110s;animation-delay:-65s">
-      <path d="M0 60 a18 18 0 0 1 22 -18 a24 24 0 0 1 46 0 a16 16 0 0 1 18 18z" fill="var(--card)" stroke="var(--line)" stroke-width="3" opacity=".85"/>
-    </g>
-
-    <!-- back hills -->
-    <path d="M0 300 C200 225 380 265 600 240 C820 215 1000 205 1200 265 L1200 500 L0 500Z" fill="var(--hill-3)" stroke="var(--line)" stroke-width="3.5"/>
-    <!-- far tree -->
-    <g class="sway" style="animation-duration:6s"><path d="M1060 250 v-30" stroke="var(--line)" stroke-width="5"/><ellipse cx="1060" cy="205" rx="26" ry="32" fill="var(--hill-2)" stroke="var(--line)" stroke-width="3.5"/></g>
-    <g class="sway" style="animation-duration:7s"><path d="M680 245 v-24" stroke="var(--line)" stroke-width="4"/><ellipse cx="680" cy="208" rx="18" ry="24" fill="var(--hill-2)" stroke="var(--line)" stroke-width="3"/></g>
-
-    <!-- mid hill -->
-    <path d="M0 350 C160 300 360 296 520 328 C700 364 900 296 1200 330 L1200 500 L0 500Z" fill="var(--hill-2)" stroke="var(--line)" stroke-width="3.5"/>
-
-    <!-- cottage -->
-    <g>
-      <g class="smoke" fill="var(--card)" stroke="var(--line)" stroke-width="2.5" opacity=".9">
-        <circle cx="280" cy="192" r="10"/><circle cx="280" cy="192" r="10"/><circle cx="280" cy="192" r="10"/>
-      </g>
-      <rect x="270" y="196" width="22" height="46" fill="#c4674f" stroke="var(--line)" stroke-width="3.5"/>
-      <rect x="176" y="248" width="128" height="80" rx="4" fill="#f6e0c0" stroke="var(--line)" stroke-width="3.5"/>
-      <path d="M160 256 L240 190 L320 256 Z" fill="#e07a5f" stroke="var(--line)" stroke-width="3.5" stroke-linejoin="round"/>
-      <path d="M176 248 L240 196 L304 248" fill="none" stroke="#c4674f" stroke-width="3" stroke-dasharray="4 8"/>
-      <g class="window-glow">
-        <rect x="190" y="266" width="28" height="26" rx="3" fill="var(--window)" stroke="var(--line)" stroke-width="3"/>
-        <path d="M204 266 v26 M190 279 h28" stroke="var(--line)" stroke-width="2.5"/>
-        <rect x="262" y="266" width="28" height="26" rx="3" fill="var(--window)" stroke="var(--line)" stroke-width="3"/>
-        <path d="M276 266 v26 M262 279 h28" stroke="var(--line)" stroke-width="2.5"/>
-        <circle cx="240" cy="226" r="10" fill="var(--window)" stroke="var(--line)" stroke-width="3"/>
-      </g>
-      <path d="M226 328 v-30 a14 14 0 0 1 28 0 v30z" fill="#9c6b98" stroke="var(--line)" stroke-width="3.5"/>
-      <circle cx="248" cy="314" r="2.5" fill="var(--line)"/>
-      <path d="M186 296 q6 -8 12 0 q6 -8 12 0 q6 -8 12 0" fill="#e07a5f" stroke="var(--line)" stroke-width="2"/>
-      <path d="M258 296 q6 -8 12 0 q6 -8 12 0 q6 -8 12 0" fill="#f2b84b" stroke="var(--line)" stroke-width="2"/>
-    </g>
-
-    <!-- big tree -->
-    <g class="sway" style="animation-duration:5.5s">
-      <path d="M410 340 C412 310 408 290 412 270" stroke="var(--line)" stroke-width="9" stroke-linecap="round"/>
-      <path d="M410 340 C412 310 408 290 412 270" stroke="#8a5a3c" stroke-width="4" stroke-linecap="round"/>
-      <path d="M362 246 C350 210 380 180 410 186 C432 160 478 176 470 212 C496 228 480 268 450 266 C434 286 386 284 376 266 C352 266 346 252 362 246Z" fill="var(--hill-1)" stroke="var(--line)" stroke-width="3.5"/>
-      <circle cx="390" cy="230" r="5" fill="#e07a5f" stroke="var(--line)" stroke-width="2"/><circle cx="440" cy="210" r="5" fill="#e07a5f" stroke="var(--line)" stroke-width="2"/><circle cx="452" cy="248" r="5" fill="#e07a5f" stroke="var(--line)" stroke-width="2"/>
-    </g>
-
-    <!-- front hill -->
-    <path d="M0 420 C200 382 420 398 600 420 C800 444 1000 378 1200 398 L1200 500 L0 500Z" fill="var(--hill-1)" stroke="var(--line)" stroke-width="3.5"/>
-
-    <!-- winding path -->
-    <path d="M230 328 C228 358 300 376 382 396 C470 418 560 438 556 500 L650 500 C652 428 520 400 420 380 C330 362 262 350 254 328Z" fill="var(--paper-2)" stroke="var(--line)" stroke-width="3"/>
-    <path d="M244 340 C280 365 360 382 420 395 C500 414 600 440 604 490" fill="none" stroke="var(--line)" stroke-width="2" stroke-dasharray="3 14" stroke-linecap="round" opacity=".5"/>
-
-    <!-- signpost -->
-    <g transform="translate(690 360) rotate(3)">
-      <path d="M0 0 v70" stroke="var(--line)" stroke-width="7" stroke-linecap="round"/><path d="M0 0 v70" stroke="#a87250" stroke-width="3"/>
-      <path d="M-50 -6 h96 l14 14 -14 14 h-96z" fill="#e8c398" stroke="var(--line)" stroke-width="3.5" stroke-linejoin="round"/>
-      <text x="-4" y="14" text-anchor="middle" font-family="Caveat, cursive" font-size="22" font-weight="700" fill="#3b2a22">the guide ↓</text>
-    </g>
-
-    <!-- sprout -->
-    <g id="heroSprout" transform="translate(860 300)"></g>
-
-    <!-- flowers -->
-    <g stroke="var(--line)" stroke-width="2">
-      <g class="sway" style="animation-duration:3.5s"><path d="M120 470 v-30" stroke-width="3"/><circle cx="120" cy="436" r="8" fill="#f4a3b8"/><circle cx="120" cy="436" r="3" fill="#f9d98c"/></g>
-      <g class="sway" style="animation-duration:4.2s;animation-delay:-1s"><path d="M150 476 v-22" stroke-width="3"/><circle cx="150" cy="450" r="7" fill="#f2b84b"/></g>
-      <g class="sway" style="animation-duration:3.8s;animation-delay:-2s"><path d="M1040 460 v-28" stroke-width="3"/><circle cx="1040" cy="428" r="8" fill="#a8d5e2"/><circle cx="1040" cy="428" r="3" fill="#f9d98c"/></g>
-      <g class="sway" style="animation-duration:4.5s"><path d="M1075 468 v-20" stroke-width="3"/><circle cx="1075" cy="444" r="7" fill="#e07a5f"/></g>
-      <g class="sway" style="animation-duration:4s;animation-delay:-.5s"><path d="M780 470 v-24" stroke-width="3"/><circle cx="780" cy="442" r="7" fill="#d5b8d2"/></g>
-    </g>
-
-    <!-- fireflies (night) -->
-    <g class="night-only" fill="#ffe680">
-      <circle class="firefly" cx="460" cy="300" r="3.5" filter="url(#glow)"/><circle class="firefly" cx="460" cy="300" r="2"/>
-      <circle class="firefly" cx="1000" cy="360" r="3.5" style="animation-delay:-2s" filter="url(#glow)"/><circle class="firefly" cx="1000" cy="360" r="2" style="animation-delay:-2s"/>
-      <circle class="firefly" cx="140" cy="390" r="3.5" style="animation-delay:-4s" filter="url(#glow)"/><circle class="firefly" cx="140" cy="390" r="2" style="animation-delay:-4s"/>
-      <circle class="firefly" cx="740" cy="300" r="2" style="animation-delay:-3s"/>
-    </g>
-  </svg>
-</section>
-
-<!-- ================= LETTER ================= -->
-<section class="section" aria-label="A note before you start">
-  <div class="narrow">
-    <div class="letter-note">
-      <span class="tape" aria-hidden="true"></span>
-      <p><strong class="hand" style="font-size:2rem;color:var(--terracotta)">Dear you,</strong></p>
-      <p>If you've found your way here, maybe things feel heavy right now. Maybe you're anxious, or tired, or sad, or numb, or you can't quite name it. Maybe you're here for someone you love. Whatever brought you: <strong>welcome. I'm really glad you came.</strong></p>
-      <p>Aceso is named after the ancient Greek goddess of the <em>healing process</em> — not the cure, not the finish line, but the slow, wobbly, very human business of getting better. That's what this place is for.</p>
-      <p>You don't have to read it all. You don't have to read it in order. Take what helps, leave the rest. Come back whenever. The kettle's always on. 🫖</p>
-      <p class="sig">— Aceso &amp; Sprout 🌱</p>
-    </div>
-  </div>
-</section>
-
-<!-- ================= HELP NOW ================= -->
-<section class="section help-now" id="help-now" data-stop="Help, right now" data-emoji="🆘">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">you matter. full stop.</span>
-      <h2>Need help right now?</h2>
-      <p>If you're thinking about ending your life, if you might hurt yourself, or if you just can't cope this minute — please talk to someone. These lines are free, confidential, and full of people who <em>want</em> to hear from you. You don't need to be "bad enough".</p>
-    </div>
-    <p class="emergency-banner card">🚨 In immediate danger? Call your emergency number: <strong>911</strong> (US/Canada) · <strong>999</strong> (UK) · <strong>112</strong> (EU, Ireland &amp; India) · <strong>000</strong> (Australia) · <strong>111</strong> (NZ)</p>
-
-    <div class="region-tabs" role="group" aria-label="Choose your region">
-      <button class="btn ghost small" data-region="all">🌍 All</button>
-      <button class="btn ghost small" data-region="us">🇺🇸 US</button>
-      <button class="btn ghost small" data-region="uk">🇬🇧 UK</button>
-      <button class="btn ghost small" data-region="ie">🇮🇪 Ireland</button>
-      <button class="btn ghost small" data-region="ca">🇨🇦 Canada</button>
-      <button class="btn ghost small" data-region="au">🇦🇺 Australia</button>
-      <button class="btn ghost small" data-region="nz">🇳🇿 NZ</button>
-      <button class="btn ghost small" data-region="in">🇮🇳 India</button>
-      <button class="btn ghost small" data-region="intl">🗺️ Elsewhere</button>
+    <div class="crisis-box" role="note">
+      <h2>If you might not be safe tonight</h2>
+      <p>Please stop reading and contact someone now. Call your local emergency number (911, 999, 112, 000 or 111, depending on where you are) or one of the <a href="#crisis-lines">free crisis lines listed below</a>. In the US you can call or text 988. In the UK and Ireland you can call Samaritans on 116 123. They're free, and you don't need to be in any particular state to call.</p>
     </div>
 
-    <div class="help-grid">
-      <div class="card hotline" data-region="us"><span class="flag">🇺🇸</span><h3>988 Suicide &amp; Crisis Lifeline</h3><a class="num" href="tel:988">Call or text 988</a><p>24/7. Also chat at <a href="https://988lifeline.org/" target="_blank" rel="noopener">988lifeline.org</a>. Veterans press 1.</p></div>
-      <div class="card hotline" data-region="us"><span class="flag">🇺🇸</span><h3>Crisis Text Line</h3><a class="num" href="sms:741741?&body=HOME">Text HOME to 741741</a><p>24/7 texting with a trained crisis counsellor.</p></div>
-      <div class="card hotline" data-region="us"><span class="flag">🏳️‍🌈</span><h3>The Trevor Project</h3><a class="num" href="tel:18664887386">1-866-488-7386</a><p>For LGBTQ+ young people. Text START to 678-678.</p></div>
-      <div class="card hotline" data-region="us ca"><span class="flag">🏳️‍⚧️</span><h3>Trans Lifeline</h3><a class="num" href="tel:18775658860">US (877) 565-8860</a><p>Canada (877) 330-6366. Peer support by and for trans people.</p></div>
-      <div class="card hotline" data-region="us"><span class="flag">🏠</span><h3>Domestic Violence Hotline</h3><a class="num" href="tel:18007997233">1-800-799-7233</a><p>Or text START to 88788. Use Quick Exit (top) if you need to leave fast.</p></div>
-      <div class="card hotline" data-region="us"><span class="flag">🌿</span><h3>SAMHSA Helpline</h3><a class="num" href="tel:18006624357">1-800-662-4357</a><p>Free, 24/7 treatment referral for mental health &amp; substance use.</p></div>
+    <details class="toc toc-inline"><summary>Contents</summary><ol data-toc></ol></details>
 
-      <div class="card hotline" data-region="uk ie"><span class="flag">🇬🇧🇮🇪</span><h3>Samaritans</h3><a class="num" href="tel:116123">Call 116 123</a><p>Free, any time, from any phone. You don't have to be suicidal to call.</p></div>
-      <div class="card hotline" data-region="uk"><span class="flag">🇬🇧</span><h3>Shout</h3><a class="num" href="sms:85258?&body=SHOUT">Text SHOUT to 85258</a><p>Free 24/7 text support.</p></div>
-      <div class="card hotline" data-region="uk"><span class="flag">🇬🇧</span><h3>NHS 111 — option 2</h3><a class="num" href="tel:111">Call 111, press 2</a><p>England: urgent mental health support, 24/7.</p></div>
-      <div class="card hotline" data-region="uk"><span class="flag">🧒</span><h3>Childline</h3><a class="num" href="tel:08001111">0800 1111</a><p>For anyone under 19. Free, and won't show on your phone bill.</p></div>
-      <div class="card hotline" data-region="uk"><span class="flag">🏳️‍🌈</span><h3>Switchboard LGBT+</h3><a class="num" href="tel:08000119100">0800 0119 100</a><p>Listening service for LGBTQ+ people.</p></div>
+    <p>I made Aceso because the advice that helps people through a bad stretch is scattered all over the internet, and most of it is either too clinical to read when you're struggling or too vague to use. This page tries to sit between those. It's long because there's a lot to cover. Each section stands on its own, so jump to whatever is closest to what you're dealing with.</p>
+    <p>A few things up front. I'm not your doctor, and nothing here can diagnose you or replace proper care. What I can do is explain what tends to be going on, pass along the things that have good evidence behind them, and point you to people who can help properly. The <a href="resources.html">resources page</a> has around 150 links, including apps, workbooks, helplines and communities, sorted by topic.</p>
+    <p>Nothing you type on this site leaves your browser. There are no accounts, no analytics and no cookies. If you need to leave in a hurry, the Quick exit button in the corner (or pressing <kbd>Esc</kbd> three times) takes you to a weather search and replaces this page in your history.</p>
 
-      <div class="card hotline" data-region="ie"><span class="flag">🇮🇪</span><h3>Pieta</h3><a class="num" href="tel:1800247247">1800 247 247</a><p>Or text HELP to 51444. Suicide &amp; self-harm crisis support, 24/7.</p></div>
-      <div class="card hotline" data-region="ie"><span class="flag">🇮🇪</span><h3>Text About It</h3><a class="num" href="sms:50808?&body=HELLO">Text HELLO to 50808</a><p>Free, anonymous, 24/7 text support.</p></div>
+    <!-- ============ CRISIS LINES ============ -->
+    <section id="crisis-lines" data-section>
+      <h2>If you're not safe right now</h2>
+      <p>If you're thinking about ending your life, if you might hurt yourself, or if you just can't get through the next hour, talk to someone. These services are free and confidential, and the people who answer chose to do that work. Texting is an option on many of them if speaking feels like too much.</p>
+      <div class="region-select no-print"><label for="region">Show lines for</label>
+        <select id="region">
+          <option value="all">All countries</option>
+          <option value="us">United States</option>
+          <option value="uk">United Kingdom</option>
+          <option value="ie">Ireland</option>
+          <option value="ca">Canada</option>
+          <option value="au">Australia</option>
+          <option value="nz">New Zealand</option>
+          <option value="in">India</option>
+          <option value="intl">Somewhere else</option>
+        </select>
+      </div>
+      <table class="lines">
+        <thead><tr><th>Where</th><th>Service</th><th>How to reach them</th></tr></thead>
+        <tbody>
+          <tr data-region="all us uk ie ca au nz in intl"><td>Anywhere</td><td>Emergency services, if you're in immediate danger</td><td>911 (US, Canada), 999 (UK), 112 (EU, Ireland, India), 000 (Australia), 111 (NZ)</td></tr>
+          <tr data-region="us"><td>US</td><td><a href="https://988lifeline.org/" target="_blank" rel="noopener">988 Suicide &amp; Crisis Lifeline</a>, 24/7. Veterans press 1.</td><td>Call or text <a href="tel:988">988</a></td></tr>
+          <tr data-region="us"><td>US</td><td><a href="https://www.crisistextline.org/" target="_blank" rel="noopener">Crisis Text Line</a>, 24/7</td><td>Text HOME to <a href="sms:741741">741741</a></td></tr>
+          <tr data-region="us"><td>US</td><td><a href="https://www.thetrevorproject.org/get-help/" target="_blank" rel="noopener">The Trevor Project</a>, for LGBTQ+ young people</td><td><a href="tel:18664887386">1-866-488-7386</a>, or text START to 678-678</td></tr>
+          <tr data-region="us ca"><td>US, Canada</td><td><a href="https://translifeline.org/" target="_blank" rel="noopener">Trans Lifeline</a>, peer support run by trans people</td><td>US <a href="tel:18775658860">877-565-8860</a>, Canada <a href="tel:18773306366">877-330-6366</a></td></tr>
+          <tr data-region="us"><td>US</td><td><a href="https://www.thehotline.org/" target="_blank" rel="noopener">National Domestic Violence Hotline</a></td><td><a href="tel:18007997233">1-800-799-7233</a>, or text START to 88788</td></tr>
+          <tr data-region="us"><td>US</td><td><a href="https://www.samhsa.gov/find-help/helplines/national-helpline" target="_blank" rel="noopener">SAMHSA National Helpline</a>, treatment referrals for mental health and substance use</td><td><a href="tel:18006624357">1-800-662-4357</a></td></tr>
+          <tr data-region="uk ie"><td>UK, Ireland</td><td><a href="https://www.samaritans.org/" target="_blank" rel="noopener">Samaritans</a>, 24/7</td><td><a href="tel:116123">116 123</a></td></tr>
+          <tr data-region="uk"><td>UK</td><td><a href="https://giveusashout.org/" target="_blank" rel="noopener">Shout</a>, 24/7 text support</td><td>Text SHOUT to <a href="sms:85258">85258</a></td></tr>
+          <tr data-region="uk"><td>England</td><td>NHS 111, urgent mental health help</td><td>Call <a href="tel:111">111</a> and choose option 2</td></tr>
+          <tr data-region="uk"><td>UK</td><td><a href="https://www.childline.org.uk/" target="_blank" rel="noopener">Childline</a>, for anyone under 19</td><td><a href="tel:08001111">0800 1111</a></td></tr>
+          <tr data-region="uk"><td>UK</td><td><a href="https://switchboard.lgbt/" target="_blank" rel="noopener">Switchboard LGBT+</a></td><td><a href="tel:08000119100">0800 0119 100</a></td></tr>
+          <tr data-region="ie"><td>Ireland</td><td>Pieta, suicide and self-harm crisis support, 24/7</td><td><a href="tel:1800247247">1800 247 247</a>, or text HELP to 51444</td></tr>
+          <tr data-region="ie"><td>Ireland</td><td>Text About It, 24/7</td><td>Text HELLO to <a href="sms:50808">50808</a></td></tr>
+          <tr data-region="ca"><td>Canada</td><td><a href="https://988.ca/" target="_blank" rel="noopener">9-8-8 Suicide Crisis Helpline</a>, English and French</td><td>Call or text <a href="tel:988">988</a></td></tr>
+          <tr data-region="ca"><td>Canada</td><td><a href="https://kidshelpphone.ca/" target="_blank" rel="noopener">Kids Help Phone</a></td><td><a href="tel:18006686868">1-800-668-6868</a>, or text CONNECT to 686868</td></tr>
+          <tr data-region="ca"><td>Canada</td><td>Hope for Wellness, for Indigenous peoples</td><td><a href="tel:18552423310">1-855-242-3310</a></td></tr>
+          <tr data-region="au"><td>Australia</td><td><a href="https://www.lifeline.org.au/" target="_blank" rel="noopener">Lifeline</a>, 24/7</td><td><a href="tel:131114">13 11 14</a>, or text 0477 13 11 14</td></tr>
+          <tr data-region="au"><td>Australia</td><td><a href="https://www.beyondblue.org.au/" target="_blank" rel="noopener">Beyond Blue</a></td><td><a href="tel:1300224636">1300 22 4636</a></td></tr>
+          <tr data-region="au"><td>Australia</td><td>Kids Helpline, ages 5 to 25</td><td><a href="tel:1800551800">1800 55 1800</a></td></tr>
+          <tr data-region="au"><td>Australia</td><td>13YARN, run by and for Aboriginal and Torres Strait Islander people</td><td><a href="tel:139276">13 92 76</a></td></tr>
+          <tr data-region="nz"><td>New Zealand</td><td><a href="https://1737.org.nz/" target="_blank" rel="noopener">Need to Talk?</a>, trained counsellors 24/7</td><td>Call or text <a href="tel:1737">1737</a></td></tr>
+          <tr data-region="nz"><td>New Zealand</td><td>Youthline</td><td><a href="tel:0800376633">0800 376 633</a>, or text 234</td></tr>
+          <tr data-region="in"><td>India</td><td>Tele-MANAS, the government's free mental health line, in many languages</td><td><a href="tel:14416">14416</a> or <a href="tel:18008914416">1-800-891-4416</a></td></tr>
+          <tr data-region="intl"><td>Elsewhere</td><td><a href="https://findahelpline.com/" target="_blank" rel="noopener">Find A Helpline</a> lists verified free lines in more than 130 countries</td><td>Search by country and topic</td></tr>
+          <tr data-region="intl"><td>Elsewhere</td><td><a href="https://www.befrienders.org/" target="_blank" rel="noopener">Befrienders Worldwide</a> and the <a href="https://www.iasp.info/crisis-centres-helplines/" target="_blank" rel="noopener">IASP directory</a></td><td>Search by country</td></tr>
+        </tbody>
+      </table>
+      <p>Phone numbers change now and then. If one doesn't connect, try Find A Helpline or your emergency number. If calling feels frightening, I've written about <a href="#suicide">what happens when you call</a> further down.</p>
+    </section>
 
-      <div class="card hotline" data-region="ca"><span class="flag">🇨🇦</span><h3>9-8-8 Canada</h3><a class="num" href="tel:988">Call or text 988</a><p>24/7, English and French.</p></div>
-      <div class="card hotline" data-region="ca"><span class="flag">🇨🇦</span><h3>Kids Help Phone</h3><a class="num" href="tel:18006686868">1-800-668-6868</a><p>Or text CONNECT to 686868. For young people, 24/7.</p></div>
-      <div class="card hotline" data-region="ca"><span class="flag">🪶</span><h3>Hope for Wellness</h3><a class="num" href="tel:18552423310">1-855-242-3310</a><p>For Indigenous peoples across Canada. 24/7, with Cree, Ojibway &amp; Inuktitut on request.</p></div>
+    <!-- ============ START ============ -->
+    <section id="start" data-section>
+      <h2>Where to start</h2>
+      <p>Everyone has mental health in the same way everyone has physical health. It goes up and down. Some weeks you're fine, some weeks you've got the equivalent of a bad cold, and some stretches of life need real treatment. About one in five adults has a diagnosable mental health condition in any given year, so if you're struggling, you're in very ordinary company.</p>
+      <p>The model I find most useful is the stress bucket. Picture everything stressful in your life pouring into a bucket: work, money, health, relationships, bad sleep, the news, old things you never dealt with. People are handed different sized buckets. Genetics and early life play a part in that, and none of it is your fault. When the bucket overflows, you struggle, often over something small that looks like it came out of nowhere. It didn't. The bucket was already full.</p>
+      <p>Buckets have taps, though. Rest, other people, exercise, therapy, saying no, doing something you enjoy: these let some of the water out. Most of this guide is about two things, putting less in and letting more out.</p>
+      <h3>Too wired, or too flat</h3>
+      <p>Psychologists talk about a "window of tolerance", the state where you can cope with what's in front of you. Above it you're keyed up: anxious, panicky, irritable, unable to sit still. Below it you shut down and feel numb, foggy and far away. Stress and trauma make the window narrower. If you're above it, things that slow your body down help most, such as long out-breaths, cold water on your face, a slow walk or dim light. If you're below it, gentle stimulation works better: moving around, music, a strong taste like a mint or something sour, cold air, or talking to someone.</p>
+      <h3>Name what you're feeling</h3>
+      <p>Putting a feeling into words tends to take some of the heat out of it. Researchers call this affect labelling. Precise words work better than vague ones, so "disappointed and a bit embarrassed" beats "bad". If you struggle to find the words, the free <a href="https://howwefeel.org/" target="_blank" rel="noopener">How We Feel</a> app gives you a long list to choose from.</p>
+    </section>
 
-      <div class="card hotline" data-region="au"><span class="flag">🇦🇺</span><h3>Lifeline</h3><a class="num" href="tel:131114">13 11 14</a><p>Or text 0477 13 11 14. 24/7 crisis support.</p></div>
-      <div class="card hotline" data-region="au"><span class="flag">🇦🇺</span><h3>Beyond Blue</h3><a class="num" href="tel:1300224636">1300 22 4636</a><p>24/7 support for anxiety and depression.</p></div>
-      <div class="card hotline" data-region="au"><span class="flag">🧒</span><h3>Kids Helpline</h3><a class="num" href="tel:1800551800">1800 55 1800</a><p>For ages 5–25, 24/7.</p></div>
-      <div class="card hotline" data-region="au"><span class="flag">🪃</span><h3>13YARN</h3><a class="num" href="tel:139276">13 92 76</a><p>Crisis support by and for Aboriginal &amp; Torres Strait Islander people.</p></div>
+    <!-- ============ ANXIETY ============ -->
+    <section id="anxiety" data-section>
+      <h2>Anxiety and panic</h2>
+      <p>Anxiety is your body's alarm system. It's meant to keep you alive, and when it fires it floods you with adrenaline so you can run or fight. That's useful when there's a real threat. The trouble is that the alarm can become oversensitive, going off over an email or a phone call, or ringing for weeks with no obvious cause.</p>
+      <p>It can show up as a racing heart, tight chest, shallow breathing, a churning stomach, or thoughts that loop on "what if". Some people feel detached from themselves or as though the world isn't quite real. That last one is called derealisation, and although it's unsettling, it's harmless and passes. Caffeine, poor sleep, hunger, alcohol the day before, and stress you haven't dealt with all make the alarm more sensitive.</p>
+      <h3>During a panic attack</h3>
+      <p>The single most useful thing to know is that a panic attack can't hurt you. It feels like you might faint, have a heart attack, or lose your mind, and none of those happen. Adrenaline peaks and falls, usually within ten or twenty minutes. Fighting the panic tends to feed it, so try to let it run its course while you do the following:</p>
+      <ol>
+        <li>Tell yourself what it is: "This is a panic attack. It's horrible and it will pass."</li>
+        <li>Breathe out for longer than you breathe in. In for four, out for six. The exercise below will pace you.</li>
+        <li>Put your feet flat on the floor and press your palms together. Name a few things you can see.</li>
+        <li>If you can, splash cold water on your face or hold something cold. It slows your heart rate.</li>
+      </ol>
 
-      <div class="card hotline" data-region="nz"><span class="flag">🇳🇿</span><h3>1737 Need to Talk?</h3><a class="num" href="tel:1737">Call or text 1737</a><p>Free, 24/7, with a trained counsellor.</p></div>
-      <div class="card hotline" data-region="nz"><span class="flag">🇳🇿</span><h3>Youthline</h3><a class="num" href="tel:0800376633">0800 376 633</a><p>Or text 234. Support for young people.</p></div>
-
-      <div class="card hotline" data-region="in"><span class="flag">🇮🇳</span><h3>Tele-MANAS</h3><a class="num" href="tel:14416">14416</a><p>Or 1-800-891-4416. Free, 24/7, many languages.</p></div>
-
-      <div class="card hotline" data-region="intl"><span class="flag">🌍</span><h3>Find A Helpline</h3><a class="num" href="https://findahelpline.com/" target="_blank" rel="noopener">findahelpline.com</a><p>Verified free helplines in 130+ countries.</p></div>
-      <div class="card hotline" data-region="intl"><span class="flag">🌏</span><h3>Befrienders Worldwide</h3><a class="num" href="https://www.befrienders.org/" target="_blank" rel="noopener">befrienders.org</a><p>Emotional support centres around the world.</p></div>
-      <div class="card hotline" data-region="intl"><span class="flag">🌎</span><h3>IASP directory</h3><a class="num" href="https://www.iasp.info/crisis-centres-helplines/" target="_blank" rel="noopener">iasp.info</a><p>International list of crisis centres.</p></div>
-    </div>
-    <p style="text-align:center;margin-top:1.8rem;font-size:.95rem">Numbers checked as of late 2026 — services change, so if a number fails, try <a href="https://findahelpline.com/" target="_blank" rel="noopener">Find A Helpline</a> or your emergency number. Scared to call? <a href="#ch-dark">Here's what actually happens when you do.</a></p>
-  </div>
-</section>
-
-<!-- ================= CHECK-IN ================= -->
-<section class="section" id="checkin" data-stop="Inner weather check-in" data-emoji="☁️">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">no wrong answers</span>
-      <h2>What's the weather like inside?</h2>
-      <p>Sometimes it's easier to describe a feeling as weather. Tap whichever feels closest, and Sprout will suggest a few gentle places to start.</p>
-    </div>
-    <div class="weather-grid">
-      <button class="weather-btn" data-weather="stormy" aria-pressed="false"><span class="w-ico">⛈️</span>Stormy<small>anxious, panicky</small></button>
-      <button class="weather-btn" data-weather="rainy" aria-pressed="false"><span class="w-ico">🌧️</span>Rainy<small>sad, heavy</small></button>
-      <button class="weather-btn" data-weather="foggy" aria-pressed="false"><span class="w-ico">🌫️</span>Foggy<small>numb, flat</small></button>
-      <button class="weather-btn" data-weather="windy" aria-pressed="false"><span class="w-ico">🌬️</span>Windy<small>overwhelmed</small></button>
-      <button class="weather-btn" data-weather="hot" aria-pressed="false"><span class="w-ico">🌋</span>Scorching<small>angry, irritable</small></button>
-      <button class="weather-btn" data-weather="tired" aria-pressed="false"><span class="w-ico">🌥️</span>Drizzly<small>exhausted</small></button>
-      <button class="weather-btn" data-weather="lonely" aria-pressed="false"><span class="w-ico">❄️</span>Cold<small>lonely</small></button>
-      <button class="weather-btn" data-weather="sunny" aria-pressed="false"><span class="w-ico">🌤️</span>Sunny spells<small>doing okay</small></button>
-    </div>
-    <div id="weatherResult" aria-live="polite"></div>
-  </div>
-</section>
-
-<svg class="divider" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 20 Q 37.5 0 75 20 T 150 20 T 225 20 T 300 20 T 375 20 T 450 20 T 525 20 T 600 20 T 675 20 T 750 20 T 825 20 T 900 20 T 975 20 T 1050 20 T 1125 20 T 1200 20" stroke="currentColor" stroke-width="3" fill="none" stroke-dasharray="1 10" stroke-linecap="round"/></svg>
-
-<!-- ================= TOOLBOX ================= -->
-<section class="section" id="toolbox" data-stop="The calm-down toolbox" data-emoji="🧰">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">little things that help, right now</span>
-      <h2>The calm-down toolbox</h2>
-      <p>Small, practical tools you can use in the next five minutes. They won't fix everything — they're not meant to. They're meant to get you through the next bit.</p>
-    </div>
-
-    <div class="tool-grid">
-      <div class="card tool" id="breathe">
-        <span class="tool-tag">breathe</span>
-        <h3>The breathing bubble</h3>
-        <p>Breathe in as the bubble grows, out as it shrinks. Long out-breaths switch on your body's "rest" system. Try for at least 6 breaths.</p>
-        <div class="breathe-controls" role="group" aria-label="Breathing pattern">
-          <button class="btn small ghost" data-pattern="calm" aria-pressed="true">Calm 4–6</button>
-          <button class="btn small ghost" data-pattern="box" aria-pressed="false">Box</button>
-          <button class="btn small ghost" data-pattern="478" aria-pressed="false">4–7–8</button>
-          <button class="btn small ghost" data-pattern="sigh" aria-pressed="false">Double sigh</button>
+      <div class="tool ui" id="breathe">
+        <h3>A breathing exercise</h3>
+        <p>Breathe in while the circle grows and out while it shrinks. Six or more rounds is a good start. The 4 and 6 pattern suits most people; box breathing and 4-7-8 are there if you already know them.</p>
+        <div class="btn-row" role="group" aria-label="Breathing pattern">
+          <button class="btn" type="button" data-pattern="calm" aria-pressed="true">In 4, out 6</button>
+          <button class="btn" type="button" data-pattern="box" aria-pressed="false">Box (4, 4, 4, 4)</button>
+          <button class="btn" type="button" data-pattern="478" aria-pressed="false">4-7-8</button>
         </div>
         <div class="breathe-stage">
-          <div class="breathe-blob" id="breatheBlob"></div>
+          <div class="breathe-circle" id="breatheCircle"></div>
           <span class="breathe-count" id="breatheCount" aria-hidden="true"></span>
-          <div class="breathe-label" id="breatheLabel" aria-live="polite">Press start when ready</div>
+          <div class="breathe-label" id="breatheLabel" aria-live="polite">Press start when you're ready</div>
         </div>
-        <div class="breathe-controls"><button class="btn sky" id="breatheStart">▶ Start</button></div>
+        <div class="btn-row"><button class="btn primary" type="button" id="breatheStart">Start</button></div>
       </div>
 
-      <div class="card tool" id="ground">
-        <span class="tool-tag" style="background:var(--honey)">ground</span>
+      <h3>For everyday worry</h3>
+      <p>Avoiding the things that frighten you brings relief in the moment and makes the fear bigger over time. The best-evidenced treatment for most anxiety is gradual exposure: facing the feared thing in small, manageable steps. If phone calls terrify you, you might start by listening to a voicemail, then call a recorded information line, then ring a shop to ask its opening hours. Stay with each step until the anxiety drops a little before moving on.</p>
+      <p>Worry time is another approach that works better than it sounds. Give yourself a fifteen minute slot each day to worry on purpose. When a worry turns up at another time, write it down and leave it for later. When the slot comes, many of the items will have shrunk. For the rest, ask whether there's anything you can do about it. If there is, plan one small step. If there isn't, practise noticing the thought and letting it pass.</p>
+      <p>It can also help to follow a worry all the way to the end. "I'll mess up the presentation." Then what? "People will think I'm bad at my job." Then what? The worst case usually turns out to be unpleasant and survivable, and seeing that takes some of the pressure off.</p>
+      <div class="note"><p>Talk to a doctor if anxiety is stopping you doing things you need or want to do, if you're having regular panic attacks, or if you're avoiding more and more of your life. Generalised anxiety, panic disorder, social anxiety, OCD and health anxiety all respond well to CBT, and sometimes medication. The free CBT workbooks from the <a href="https://www.cci.health.wa.gov.au/Resources/Looking-After-Yourself" target="_blank" rel="noopener">Centre for Clinical Interventions</a> are the best self-help material I know of. More on the <a href="resources.html#selfhelp">resources page</a>.</p></div>
+    </section>
+
+    <!-- ============ DEPRESSION ============ -->
+    <section id="depression" data-section>
+      <h2>Depression and low mood</h2>
+      <p>Depression often feels less like sadness than like heaviness. Everything takes more effort, things you loved go grey, and you feel tired no matter how much you sleep. It can bring guilt, a sense of being a burden, trouble thinking clearly, changes in appetite, and thoughts about death.</p>
+      <p>Depression also lies to you. It says this is how things will always be, that nobody would care, that you're the problem. Those thoughts feel like insight. They're symptoms, and they lift as the depression does.</p>
+      <p>Everyone has low days, particularly after a loss or during winter. If you've felt low for most of the day, nearly every day, for two weeks or longer, and it's affecting your life, it's worth seeing a doctor. You won't be wasting their time. A free screening tool like the one from <a href="https://screening.mhanational.org/screening-tools/" target="_blank" rel="noopener">Mental Health America</a> can help you put it into words before the appointment.</p>
+      <h3>What helps</h3>
+      <p>With depression, waiting until you feel like doing something doesn't work, because the feeling doesn't come. Action has to come first and the motivation follows later, if at all. This is the idea behind behavioural activation, one of the most effective treatments for depression. Each day, plan one small thing that gives you a sense of achievement (washing a mug counts) and one small thing that might give you a flicker of pleasure, like sitting in the sun for five minutes. Do them whether you want to or not, and notice afterwards whether anything shifted, even slightly.</p>
+      <p>On the worst days, lower the bar to the floor. Eat something, drink some water, take any medication you're on, get a bit of daylight, and get to bedtime. When you're depressed, that's a full day's work. If a shower is too much, brush your teeth and change your shirt. If washing up is too much, use paper plates for a week. KC Davis's book <em>How to Keep House While Drowning</em> is very good on this.</p>
+      <p>Morning daylight and a short daily walk both have decent evidence behind them for mood. You don't need a gym or a running habit; ten minutes outside is enough to start.</p>
+      <p>If your mood drops every autumn and lifts in spring, you may have seasonal affective disorder. A 10,000 lux light box used for twenty to thirty minutes each morning helps many people, and a doctor can advise on it. Depression and anxiety after having a baby are common too, affecting up to one in seven new parents, and <a href="https://postpartum.net/" target="_blank" rel="noopener">Postpartum Support International</a> runs a helpline and free groups.</p>
+      <div class="note warn"><p>If you're having thoughts of suicide, can't manage basic care, or it's been going on for weeks, please reach out now. Depression is very treatable with therapy, medication or both, and a GP or family doctor is a good first step. The section on <a href="#suicide">suicidal thoughts</a> is further down.</p></div>
+    </section>
+
+    <!-- ============ BURNOUT ============ -->
+    <section id="burnout" data-section>
+      <h2>Stress and burnout</h2>
+      <p>Stress is having too much to deal with. Burnout is what happens after months of it, when there's nothing left. The usual signs are exhaustion, a cynical or detached feeling about work or caring, and a sense that nothing you do makes a difference. You might be getting ill more often, snapping at people, dreading things you used to handle easily, or needing more and more wine or scrolling to switch off. It happens to students, parents and carers as often as it happens to people with jobs.</p>
+      <p>A long weekend won't fix months of overload. Recovery needs real rest and a change to whatever is draining you.</p>
+      <h3>Dealing with stress in your body</h3>
+      <p>In their book <em>Burnout</em>, Emily and Amelia Nagoski make a useful distinction. Dealing with the cause of stress (the deadline, the difficult person) is separate from dealing with the stress itself, which lives in your body. Even if the cause can't be fixed yet, your body needs a signal that the danger has passed. Physical activity is the most effective signal. Slow breathing, a proper laugh, a long hug, a good cry and making something with your hands all help as well.</p>
+      <h3>Taking things off the pile</h3>
+      <p>Write down everything you're responsible for at the moment. Next to each item, decide whether you must do it, could hand it to someone, could drop it, or could do it badly. Then pick one item to hand off or drop this week. Doing something adequately instead of perfectly is a legitimate choice.</p>
+      <p>Saying no gets easier with a few stock phrases ready: "I don't have capacity for that right now." "Can I get back to you tomorrow?" "I can do this part but not that one." "That doesn't work for me" is a complete sentence and needs no explanation after it.</p>
+      <p>It also helps to think about which kind of rest you're short of. Sleep is one kind. There's also rest from thinking, from noise and screens, from people, and from having to keep up appearances. Most burnt-out people are missing more than one.</p>
+      <div class="note"><p>Burnout overlaps with depression, and with ADHD and autism, where years of masking wear people down. If proper rest doesn't help after a few weeks, see a doctor.</p></div>
+    </section>
+
+    <!-- ============ SLEEP ============ -->
+    <section id="sleep" data-section>
+      <h2>Sleep</h2>
+      <p>Poor sleep makes everything harder to cope with, and struggling makes it harder to sleep. Improving sleep is one of the most effective things you can do for your mental health, and it's more fixable than it feels at 3am.</p>
+      <p>If you only change one thing, get up at the same time every day, weekends included. A fixed wake time anchors your body clock, and the sleepiness at night follows from it. Get daylight in your eyes within an hour of waking, ideally outdoors. Keep caffeine to the morning, and give yourself an hour of dim light and low stimulation before bed. A cool, dark, quiet room helps. If your head fills with worries at night, write them down before you get into bed so your brain doesn't have to hold them.</p>
+      <p>If you've been lying awake for around twenty minutes, get up. Sit somewhere dim, read something dull, and go back when your eyelids are heavy. It feels backwards. The point is to stop your brain learning that bed is where you lie awake and get frustrated. For a racing mind, try a "cognitive shuffle": pick a word, and for each letter imagine as many things as you can that start with it. It's boring enough to let you drift off. Rain sounds from <a href="https://rainymood.com/" target="_blank" rel="noopener">Rainy Mood</a> or a sleep story can do the same job.</p>
+      <p>Short naps before mid-afternoon are fine. Long or late ones will cost you the night. Alcohol helps you fall asleep but makes the sleep shallow and broken, so you wake up more tired. Melatonin mostly helps with body-clock problems like jet lag and shift work rather than general insomnia, and sleeping pills are a short-term option to discuss with a doctor, never to mix with alcohol.</p>
+      <p>CBT for insomnia (CBT-i) works better than medication over the long run. The US Department of Veterans Affairs makes a free app called <a href="https://mobile.va.gov/app/cbt-i-coach" target="_blank" rel="noopener">CBT-i Coach</a> that walks you through it, and anyone can use it.</p>
+      <div class="note"><p>See a doctor if you've had insomnia for more than three months, if you snore loudly and wake up gasping (a possible sign of sleep apnoea), or if you're sleepy all day despite a full night in bed. There are more sleep guides on the <a href="resources.html#sleep">resources page</a>.</p></div>
+    </section>
+
+    <!-- ============ BASICS ============ -->
+    <section id="basics" data-section>
+      <h2>Food, movement and daylight</h2>
+      <p>Going for a run won't cure depression, and anyone who tells you otherwise is oversimplifying. Your brain is still part of your body, though, and looking after the body is a slow, steady way of looking after your mood.</p>
+      <h3>Eating</h3>
+      <p>The main thing is regularity. Skipping meals drops your blood sugar, and low blood sugar feels a lot like anxiety, irritability or despair. Aim to eat something every three to five hours, with some protein and fibre where you can manage it. If cooking is beyond you right now, a plate of cheese, crackers, fruit and nuts is a meal. So is toast with peanut butter, instant noodles with a handful of frozen vegetables and an egg, or a microwave rice pouch with a tin of beans. Keep a few of these in the cupboard for bad days.</p>
+      <p>If food has become complicated for you, whether that's restricting, bingeing, purging, over-exercising, or thoughts about your body taking up much of your day, please talk to someone. Eating disorders affect people of every size, age and gender. <a href="https://www.beateatingdisorders.org.uk/" target="_blank" rel="noopener">Beat</a> in the UK and <a href="https://anad.org/" target="_blank" rel="noopener">ANAD</a> in the US both offer free support.</p>
+      <h3>Moving</h3>
+      <p>For mild to moderate depression, some studies find exercise works about as well as therapy or medication. The best kind is whatever you'll keep doing: walking, dancing in the kitchen, stretching, swimming, gardening, a beginner yoga video. Start smaller than seems worthwhile. Put your shoes on and walk to the end of the road. If you want to carry on, carry on, and if not, you still went. <a href="https://darebee.com/" target="_blank" rel="noopener">DAREBEE</a>, <a href="https://yogawithadriene.com/" target="_blank" rel="noopener">Yoga With Adriene</a> and the NHS <a href="https://www.nhs.uk/better-health/get-active/get-running-with-couch-to-5k/" target="_blank" rel="noopener">Couch to 5K</a> plan are all free.</p>
+      <h3>Getting outside</h3>
+      <p>Around two hours a week in nature is linked with better wellbeing, and parks and tree-lined streets count. Daylight also keeps your body clock steady, which helps both sleep and mood.</p>
+      <div class="note"><p>Thyroid problems, low iron, low vitamin D, low B12, hormonal changes and many chronic illnesses can all cause low mood, anxiety or exhaustion. Ask your doctor for a basic blood test to rule them out.</p></div>
+    </section>
+
+    <!-- ============ LONELINESS ============ -->
+    <section id="loneliness" data-section>
+      <h2>Loneliness</h2>
+      <p>You can be lonely in a crowd, in a relationship, or with hundreds of people in your phone. Loneliness has less to do with how many people are around you than with whether you feel known by any of them. It's very common, and it isn't a sign that something is wrong with you. Like hunger, it's a signal about a need.</p>
+      <p>One cruel thing about loneliness is that it makes people more guarded and quicker to read rejection into neutral situations. That makes connecting harder just when you need it. Knowing this can help you push past the voice that says nobody wants to hear from you. Studies consistently find that people underestimate how much others appreciate being contacted.</p>
+      <h3>Small steps</h3>
+      <p>Low-stakes contact is easier to start with: a meme with "this made me think of you", asking how something went, a voice note, a photo. You don't need a reason to message someone.</p>
+      <p>Most friendships form through seeing the same people again and again, so join something that repeats. A class, a volunteering shift, a running club, a choir, a board game night or a Discord server about something you care about will all do. Go a few times before deciding whether it's for you.</p>
+      <p>If talking is too much at the moment, being near people still helps. Work from a library or café, go to a quiet museum, sit in a park. Pets, volunteering with animals, faith communities and online groups are all real sources of belonging. If you want someone to talk to now, <a href="https://www.7cups.com/" target="_blank" rel="noopener">7 Cups</a> has free volunteer listeners, and the <a href="resources.html#community">resources page</a> lists more.</p>
+      <div class="note warn"><p>If someone in your life controls you, puts you down, cuts you off from other people, frightens you or hurts you, that isn't your fault, and help exists. In the US, contact the <a href="https://www.thehotline.org/" target="_blank" rel="noopener">National Domestic Violence Hotline</a>. In the UK, <a href="https://refuge.org.uk/" target="_blank" rel="noopener">Refuge</a> runs a free 24-hour line on 0808 2000 247. Elsewhere, try <a href="https://findahelpline.com/" target="_blank" rel="noopener">Find A Helpline</a>. The Quick exit button at the top leaves this site immediately.</p></div>
+    </section>
+
+    <!-- ============ GRIEF ============ -->
+    <section id="grief" data-section>
+      <h2>Grief</h2>
+      <p>Grief doesn't follow neat stages, it doesn't keep to a timetable, and it isn't only about death. People grieve pets, relationships, their health, jobs, homes, and futures they'd planned. Numbness, anger, guilt, relief and laughter at the wrong moment are all normal parts of it.</p>
+      <p>One picture of grief I've found helpful is a ball in a box with a pain button on one wall. At first the ball is huge and presses the button constantly. Over time the box grows around it, so the ball hits the button less often. When it does, though, a song or a smell or an anniversary can make it hurt as much as it did on day one. That's normal, and it doesn't mean you've gone backwards.</p>
+      <p>Some things that help: saying the person's name and telling stories about them, planning ahead for birthdays and holidays, keeping up the basics of food and sleep, writing them a letter, and finding other people who understand. Grief groups exist for this, online and in person. <a href="https://whatsyourgrief.com/" target="_blank" rel="noopener">What's Your Grief</a> is a good place to start reading.</p>
+      <p>Some losses go unrecognised by the people around you: a miscarriage, a pet, an ex, an online friend, someone you had a complicated relationship with, or someone who is still alive but changed by illness. That grief is real too, and it deserves the same care.</p>
+      <div class="note"><p>If many months on the grief is still so intense that you can't function, or you feel you can't go on without them, talk to someone. Prolonged grief is recognised and treatable, and grief counselling helps. In the UK, <a href="https://www.cruse.org.uk/" target="_blank" rel="noopener">Cruse</a> runs a free helpline.</p></div>
+    </section>
+
+    <!-- ============ SELF-TALK ============ -->
+    <section id="self-talk" data-section>
+      <h2>How you talk to yourself</h2>
+      <p>Most of us have an inner voice that talks to us in a way we'd never accept from anyone else. It's often trying, badly, to protect us, by getting in first with the criticism or keeping us from trying things that might go wrong. What it says isn't reliable, though, and it gets louder and less accurate when you're tired, stressed or low.</p>
+      <h3>Common thinking traps</h3>
+      <p>CBT calls these cognitive distortions. Everyone falls into them. Learning to spot them is most of the work.</p>
+      <dl class="traps">
+        <div><dt>Mind reading</dt><dd>"They think I'm annoying." You don't know what they think. <em>What else could explain how they acted?</em></dd></div>
+        <div><dt>Catastrophising</dt><dd>"If this goes wrong, everything is ruined." <em>What's most likely to happen? If the worst did happen, how would I get through it?</em></dd></div>
+        <div><dt>All or nothing</dt><dd>"If it isn't perfect, I've failed." <em>Most things sit somewhere in between. Doing part of it still counts.</em></dd></div>
+        <div><dt>Labelling</dt><dd>"I'm such an idiot." <em>I made a mistake. That's something I did, and it doesn't define me.</em></dd></div>
+        <div><dt>"Should" statements</dt><dd>"I should be over this by now." <em>According to whom? I'd like to feel better, and I'm working on it.</em></dd></div>
+        <div><dt>Mental filter</dt><dd>"The whole day was awful." <em>One part was awful. Was anything else okay, even something small?</em></dd></div>
+        <div><dt>Personalising</dt><dd>"It's my fault they're upset." <em>Their feelings have plenty of causes, and most of them have nothing to do with me.</em></dd></div>
+        <div><dt>Emotional reasoning</dt><dd>"I feel like a failure, so I must be one." <em>The feeling is real. It still isn't evidence.</em></dd></div>
+      </dl>
+      <h3>Self-compassion</h3>
+      <p>People sometimes worry that being kind to themselves will make them lazy or let them off the hook. The research says the opposite: people who treat themselves with compassion bounce back from setbacks faster and are more likely to try again. Kristin Neff, who has done much of that research, suggests a short exercise for hard moments. Put a hand on your chest and say to yourself, "This is really hard right now. Other people feel this too. May I be kind to myself." It feels awkward the first few times.</p>
+      <p>Another way in is to write down exactly what your inner critic is saying, then imagine a close friend saying it about themselves. Write down what you'd say back to them, and read it to yourself.</p>
+      <p>When a particular thought keeps stinging, a thought record helps. Write down the situation, the thought, the feeling and how strong it is out of 100, then the evidence for and against the thought, then a more balanced version. Rate the feeling again at the end. <a href="https://www.getselfhelp.co.uk/" target="_blank" rel="noopener">Get Self Help</a> has free worksheets.</p>
+    </section>
+
+    <!-- ============ EMOTIONS ============ -->
+    <section id="emotions" data-section>
+      <h2>Anger and overwhelming emotions</h2>
+      <p>Some feelings arrive like a wave: rage, shame, panic, despair. When they're at full strength, the thinking part of your brain more or less goes offline, so trying to reason your way out rarely works. What helps is having a plan for getting through the next few minutes without making things worse.</p>
+      <p>Anger itself is fine. It usually means a line has been crossed or a need isn't being met. The aim is to stop it making your decisions for you.</p>
+      <h3>Change your body first</h3>
+      <p>Dialectical behaviour therapy (DBT) has a set of skills for emotions that are too high to think through. The first is temperature: cold water on your face for thirty seconds while holding your breath, or an ice pack over your eyes and cheeks, slows your heart rate quickly. The second is intense exercise for five to ten minutes, such as running up the stairs or doing star jumps, to burn off the adrenaline. Then slow your breathing so the out-breath is longer than the in-breath, and try tensing each muscle group as you breathe in and letting go as you breathe out.</p>
+      <p>Another DBT skill is simply to stop. Freeze before you act, take a step back, notice what's going on inside you and around you, and then ask what the wisest version of you would do next. Don't send the message, make the call or leave the room in anger until the wave has passed. Write the message if you need to, just don't send it.</p>
+      <p>When things have calmed down, it's worth asking what was underneath. Anger often guards something softer, such as hurt, fear, embarrassment or feeling powerless. Knowing what you needed makes it easier to ask for it next time. <a href="https://dbtselfhelp.com/" target="_blank" rel="noopener">DBT Self Help</a> covers these skills in depth.</p>
+      <div class="note"><p>Get help if anger is damaging your relationships, if you're breaking things or frightening people, or if you feel out of control. Anger is one of the most common reasons people start therapy, and it responds well to it.</p></div>
+    </section>
+
+    <!-- ============ TRAUMA ============ -->
+    <section id="trauma" data-section>
+      <h2>Trauma</h2>
+      <p>Trauma is about what an event did to you as much as the event itself, and in particular about how your body learned to keep protecting you after the danger had gone.</p>
+      <p>When we're threatened, we respond automatically. We fight, run, freeze, or fawn, meaning we try to keep the dangerous person happy. Nobody chooses which of these happens, so if you froze or went along with something, that was your nervous system doing its job, and you have nothing to be ashamed of. After trauma, those responses can stay switched on. You might have flashbacks or nightmares, startle easily, scan rooms for danger, avoid reminders, feel numb or unreal, or react to small things with a force that surprises you. These are your body's attempts to protect you, and they can be treated.</p>
+      <h3>Coming back to the present</h3>
+      <p>When you're pulled into the past, slowly look around the room and let your eyes land on things: colours, light, where the door is. It tells your brain you're here and now. Humming, pressure from a weighted blanket or a firm hug, and pushing your hands against a wall can all help. So can the 5-4-3-2-1 exercise below.</p>
+
+      <div class="tool ui" id="ground">
         <h3>5-4-3-2-1 grounding</h3>
-        <p>For when your mind is racing or you feel far away. Use your senses to come back to the room. Tap a dot for each thing you notice.</p>
-        <div class="ground-step" id="groundStep" aria-live="polite"></div>
-        <div class="breathe-controls"><button class="btn small ghost" id="groundSkip">Skip →</button><button class="btn small ghost" id="groundReset">↺ Restart</button></div>
+        <p>Use your senses to come back to the room. Tap a circle for each thing you notice. It moves on when you've found them all.</p>
+        <div class="ground-box" id="groundBox" aria-live="polite"></div>
+        <div class="btn-row"><button class="btn" type="button" id="groundNext">Skip this step</button><button class="btn" type="button" id="groundReset">Start again</button></div>
       </div>
 
-      <div class="card tool" id="jar">
-        <span class="tool-tag" style="background:var(--plum-2)">kindness</span>
-        <h3>The kind notes jar</h3>
-        <p>Your brain may be saying unkind things right now. Here are some kinder ones. Tap the jar.</p>
-        <div class="jar-wrap">
-          <button class="jar" id="jarBtn" aria-label="Take a kind note from the jar">
-            <svg viewBox="0 0 170 200" aria-hidden="true">
-              <rect x="40" y="10" width="90" height="26" rx="6" fill="#c4674f" stroke="#3b2a22" stroke-width="4"/>
-              <path d="M45 36 h80 c0 10 20 20 20 50 v80 c0 18 -12 26 -30 26 h-60 c-18 0 -30 -8 -30 -26 v-80 c0 -30 20 -40 20 -50z" fill="var(--sky-2)" stroke="#3b2a22" stroke-width="4" opacity=".95"/>
-              <g stroke="#3b2a22" stroke-width="2.5">
-                <rect x="50" y="120" width="30" height="22" rx="3" fill="#f9d98c" transform="rotate(-12 65 131)"/>
-                <rect x="85" y="130" width="30" height="22" rx="3" fill="#f4a3b8" transform="rotate(10 100 141)"/>
-                <rect x="60" y="150" width="30" height="22" rx="3" fill="#b8d8c4" transform="rotate(4 75 161)"/>
-                <rect x="95" y="158" width="28" height="20" rx="3" fill="#d5b8d2" transform="rotate(-8 109 168)"/>
-                <rect x="70" y="100" width="28" height="20" rx="3" fill="#f0a58f" transform="rotate(18 84 110)"/>
-              </g>
-              <path d="M110 70 c4 -10 18 -6 14 4 c-2 6 -14 12 -14 12 c0 0 -12 -6 -14 -12 c-4 -10 10 -14 14 -4z" fill="#e07a5f" stroke="#3b2a22" stroke-width="2.5" transform="translate(-30 0)"/>
-              <path d="M58 60 c-2 10 -2 30 0 40" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".6" fill="none"/>
-            </svg>
-          </button>
-          <div class="jar-note" id="jarNote" aria-live="polite">tap the jar ↑</div>
+      <p>You don't need to work through trauma alone, and you shouldn't have to dig into it without support. Trauma-focused CBT and EMDR both have strong evidence for PTSD, and a good trauma therapist will go at a pace that feels safe to you.</p>
+      <div class="note warn"><p>If you're in danger now or someone is hurting you, use the <a href="#crisis-lines">crisis lines</a>. For sexual assault in the US, <a href="https://www.rainn.org/" target="_blank" rel="noopener">RAINN</a> runs a 24-hour hotline on 800-656-4673.</p></div>
+    </section>
+
+    <!-- ============ SUICIDE ============ -->
+    <section id="suicide" data-section>
+      <h2>Suicidal thoughts and self-harm</h2>
+      <p>If you're thinking about suicide or hurting yourself, you're in a great deal of pain, and that doesn't make you weak or broken. Many people have had these thoughts and gone on to feel better, often in ways they couldn't have imagined at the time. The most intense urges usually pass. What matters most is getting through the next few hours safely.</p>
+      <h3>If you're thinking about suicide right now</h3>
+      <ol>
+        <li>Put distance between yourself and anything you could use to hurt yourself. Give it to someone, lock it away, or go to a different room. This saves lives, because the worst moments pass.</li>
+        <li>Try not to be alone. Go where other people are, or call someone and ask them to stay on the line.</li>
+        <li>Contact a <a href="#crisis-lines">crisis line</a>. Text if talking is too hard.</li>
+        <li>Avoid alcohol and drugs for now. They make impulses harder to resist.</li>
+        <li>Agree with yourself to wait. Not forever, just tonight or the next hour. You don't have to decide anything now.</li>
+      </ol>
+      <p>A lot of people don't call because they don't want to be a bother. Crisis lines exist for exactly this, and the people who staff them would much rather hear from you early than late. The people in your life would almost certainly rather know, too.</p>
+      <h3>What happens when you call a crisis line</h3>
+      <p>A trained person answers and listens. They'll probably ask how you're feeling and whether you're safe right now. They ask directly because it helps, and they won't judge you or tell you off. Most calls end with talking things through and perhaps making a plan together. In most places emergency services only get involved if someone is in immediate danger and can't keep themselves safe, and even then the counsellor will usually try to work it out with you first. You can stay anonymous on most lines, and you can hang up whenever you like.</p>
+      <h3>Self-harm</h3>
+      <p>Self-harm is usually a way of coping with feelings that seem unbearable. It makes sense to reach for something that brings relief, and you deserve ways of coping that don't hurt you. If you feel the urge, try delaying it with a fifteen minute timer, then another. Strong but safe sensations can take the edge off: holding ice, a cold shower, eating something very sour or spicy, or drawing on your skin with a red pen. Some people need a release instead, like screaming into a pillow, ripping up paper or sprinting. Others need comfort, such as a blanket, a pet or a familiar programme. The free <a href="https://calmharm.co.uk/" target="_blank" rel="noopener">Calm Harm</a> app is built around these techniques.</p>
+      <div class="note warn"><p>If you've hurt yourself and the wound is deep or won't stop bleeding, or if you've taken anything (even if you feel fine, because some substances cause delayed harm), get medical help now. Emergency staff are there to treat you, not judge you.</p></div>
+      <p>The single most useful thing you can do while you're feeling a bit steadier is to make a safety plan. There's one you can fill in <a href="#plan-section">at the end of this page</a>, and the free <a href="https://www.stayalive.app/" target="_blank" rel="noopener">Stay Alive</a> app can hold one on your phone.</p>
+    </section>
+
+    <!-- ============ SCREENS ============ -->
+    <section id="screens" data-section>
+      <h2>Phones and the internet</h2>
+      <p>The internet can be a lifeline. It's where a lot of people find their community, and it has plenty of good things in it. It's also built by talented teams whose job is to keep you scrolling. Screen time as a number matters less than whether you come away feeling better or worse, and that's the thing to pay attention to.</p>
+      <p>Willpower doesn't do well against apps designed by people paid to beat it, so change your surroundings instead. Turning your phone to greyscale makes it far less appealing. Move the apps that pull you in off the home screen, or log out after each use. Turn off every notification that isn't from a real person. Charge your phone outside the bedroom and buy a cheap alarm clock. Apps like <a href="https://one-sec.app/" target="_blank" rel="noopener">one sec</a> or <a href="https://github.com/flxapps/DetoxDroid" target="_blank" rel="noopener">DetoxDroid</a> add a pause before an app opens, which is often enough to break the habit.</p>
+      <p>Mute or unfollow accounts that leave you feeling worse about yourself, including friends. Muting is invisible. Follow people who make you laugh or teach you something instead.</p>
+      <p>With the news, pick one or two set times a day and one trusted source, and keep it out of the first hour after you wake and the last hour before bed. You can care about the world and still protect your head.</p>
+    </section>
+
+    <!-- ============ SUBSTANCES ============ -->
+    <section id="substances" data-section>
+      <h2>Drinking, drugs and habits</h2>
+      <p>Most people who drink too much, use drugs, gamble or get stuck in compulsive habits are trying to feel better, or to feel less. That makes sense. Over time, though, it usually costs more than it gives. Addiction is a health problem, and you don't have to hit rock bottom before you're allowed to change anything. Cutting down counts, and slips are a normal part of recovery.</p>
+      <p>Some honest questions to ask yourself: am I using this to cope with feelings or to get through the day? Have I tried to cut down and found it hard? Is it affecting my health, money, work or relationships? Do I hide how much I use? If some of these ring true, treat it as information and nothing more damning than that.</p>
+      <p>A good first step is tracking it honestly for a week without judging yourself, then looking at when, where, with whom and in what mood you use. Once you can see the triggers, you can plan something else for those moments. A sober month is a useful experiment. <a href="https://www.smartrecovery.org/" target="_blank" rel="noopener">SMART Recovery</a> runs free meetings based on practical, science-based tools, and AA and NA meet almost everywhere.</p>
+      <div class="note warn"><p>Stopping alcohol or benzodiazepines suddenly after heavy, regular use can be dangerous and can cause seizures. Talk to a doctor about stopping safely. If you use drugs, never use alone, test what you can, and learn the signs of overdose. <a href="https://tripsit.me/" target="_blank" rel="noopener">TripSit</a> has a live chat if you or a friend need help now.</p></div>
+      <p>More recovery tools, including trackers and support for gambling and pornography, are on the <a href="resources.html#recovery">resources page</a>.</p>
+    </section>
+
+    <!-- ============ IDENTITY ============ -->
+    <section id="identity" data-section>
+      <h2>Identity and fitting in</h2>
+      <p>A lot of mental pain comes from a world that hasn't made room for who you are. If you're LGBTQ+, neurodivergent, disabled, a person of colour, an immigrant, or different in some other way, part of what you're carrying may be the strain of that. Researchers call it minority stress. Nothing is wrong with who you are.</p>
+      <h3>LGBTQ+</h3>
+      <p>LGBTQ+ people have higher rates of anxiety and depression because of stigma, rejection and stress, and their identity itself plays no part in that. For young people, having even one accepting adult significantly lowers the risk. If you're questioning, you don't need to have it worked out, and whether and when you come out is up to you. <a href="https://www.thetrevorproject.org/" target="_blank" rel="noopener">The Trevor Project</a> and its community <a href="https://www.trevorspace.org/" target="_blank" rel="noopener">TrevorSpace</a> are for young people. <a href="https://genderdysphoria.fyi/" target="_blank" rel="noopener">The Gender Dysphoria Bible</a> is a thorough, kind explanation of dysphoria, and the <a href="resources.html#identity">resources page</a> has a section of trans health resources gathered by FMHY.</p>
+      <h3>ADHD, autism and other neurodivergence</h3>
+      <p>Plenty of adults, especially women and people of colour, find out they're autistic or have ADHD much later in life, often after years of feeling "too much", lazy, or like everyone else got an instruction manual they didn't. Hiding your traits to fit in, known as masking, is exhausting and is linked to burnout and depression.</p>
+      <p>Some things that help: doing tasks alongside someone else in person or on a video call (body doubling), getting things out of your head and onto timers, lists and alarms, and looking after your senses with headphones, soft clothes and dim light. It also helps to find places where you can stop masking. <a href="https://howtoadhd.com/" target="_blank" rel="noopener">How to ADHD</a>, <a href="https://embrace-autism.com/" target="_blank" rel="noopener">Embrace Autism</a> and the <a href="https://autisticadvocacy.org/" target="_blank" rel="noopener">Autistic Self Advocacy Network</a> are good places to learn more.</p>
+      <h3>Race, culture and belonging</h3>
+      <p>Racism and discrimination take a measurable toll on mental health. Many people want a therapist who shares or understands their background, and directories like <a href="https://www.inclusivetherapists.com/" target="_blank" rel="noopener">Inclusive Therapists</a> and <a href="https://therapyforblackgirls.com/" target="_blank" rel="noopener">Therapy for Black Girls</a> make that easier to find.</p>
+    </section>
+
+    <!-- ============ MONEY ============ -->
+    <section id="money" data-section>
+      <h2>Money, work and practical problems</h2>
+      <p>Sometimes the problem isn't in your head at all. It's the rent, the job, the debt or the exam. Breathing exercises won't fix an eviction notice, but practical help exists, and getting it counts as looking after your mental health.</p>
+      <h3>When money is frightening</h3>
+      <p>Money worries and poor mental health feed each other, and it's not a personal failing to be caught in that loop. Pick a calm moment, make a drink, and open the post. Just open it and sort it into piles. Write down roughly what comes in and what goes out. Housing, energy, council tax or local rates, and food come first. Contact the people you owe early, because many have hardship arrangements, especially if you mention your mental health. Avoid payday loans and anyone promising a quick fix.</p>
+      <p>Free, non-judgemental advice is available. In the US, dial <a href="https://www.211.org/" target="_blank" rel="noopener">211</a> for local help, or try a non-profit credit counsellor through the <a href="https://www.nfcc.org/" target="_blank" rel="noopener">NFCC</a>. In the UK, <a href="https://www.citizensadvice.org.uk/" target="_blank" rel="noopener">Citizens Advice</a> and <a href="https://www.stepchange.org/" target="_blank" rel="noopener">StepChange</a> are free.</p>
+      <h3>Work and study</h3>
+      <p>In many countries, mental health conditions are covered by disability law, which may entitle you to reasonable adjustments at work. Check whether your employer or college offers free counselling or an Employee Assistance Programme; a surprising number of people have one and don't know. Taking time off with a doctor's note for your mental health is as legitimate as taking it for anything else. Students should talk to a tutor or the disability service early, since extensions exist for exactly this.</p>
+      <p>If you're caring for someone, look for local carers' organisations and respite services. Carers burn out without anyone noticing, and your needs count too.</p>
+    </section>
+
+    <!-- ============ GETTING HELP ============ -->
+    <section id="getting-help" data-section>
+      <h2>Getting professional help</h2>
+      <p>Asking for help is often the hardest part. In most places a GP or family doctor is a sensible first step. If you don't know what to say, you can borrow this:</p>
+      <blockquote>"I've been struggling with my mental health. For about [how long] I've been feeling [low, anxious, numb, not sleeping]. It's affecting my [work, sleep, relationships, eating]. I'd like to talk about what support is available."</blockquote>
+      <p>Write it down and read it out, or hand them the piece of paper. Doctors hear this every day. If one is dismissive, you're allowed to ask to see someone else.</p>
+      <h3>Kinds of therapy</h3>
+      <p>Cognitive behavioural therapy (CBT) is structured and practical, looking at how thoughts, feelings and behaviour affect each other. It has strong evidence for anxiety, depression, OCD and insomnia. Dialectical behaviour therapy (DBT) teaches skills for intense emotions, relationships and distress, and is often used for self-harm and borderline personality disorder. EMDR helps the brain process traumatic memories so they feel less raw. Acceptance and commitment therapy (ACT) works on making room for difficult feelings while moving towards what matters to you. Psychodynamic and person-centred counselling are more open-ended and look at your history and patterns at your own pace. Group therapy and peer support groups are often free or cheap, and hearing "me too" from other people helps in its own way.</p>
+      <p>The relationship with the therapist matters more than the type of therapy. It's normal to try one or two before finding someone who fits.</p>
+      <h3>Finding it</h3>
+      <p>In England you can refer yourself to <a href="https://www.nhs.uk/mental-health/talking-therapies-medicine-treatments/talking-therapies-and-counselling/nhs-talking-therapies/" target="_blank" rel="noopener">NHS Talking Therapies</a> for free without seeing a GP; in Scotland, Wales and Northern Ireland, start with your GP. In the US, check your insurer's directory, search <a href="https://www.psychologytoday.com/us/therapists" target="_blank" rel="noopener">Psychology Today</a>, look at <a href="https://openpathcollective.org/" target="_blank" rel="noopener">Open Path Collective</a> for sliding-scale fees, or use <a href="https://findtreatment.gov/" target="_blank" rel="noopener">FindTreatment.gov</a>. University training clinics offer cheaper sessions with supervised trainees. In Australia, ask your GP about a Mental Health Treatment Plan, which gives you Medicare-subsidised sessions. In Canada, look at provincial programmes, community clinics and workplace assistance programmes. Anywhere, online CBT courses like <a href="https://moodgym.com.au/" target="_blank" rel="noopener">MoodGYM</a> and <a href="https://thiswayup.org.au/" target="_blank" rel="noopener">This Way Up</a> are a reasonable place to start while you wait.</p>
+      <h3>Medication</h3>
+      <p>Antidepressants and other psychiatric medications change some people's lives. Taking them doesn't mean you've failed or taken the easy way out. A few things worth knowing: many take two to six weeks to work fully, and side effects often show up first and ease off later. The first one you try may not suit you, which is common and doesn't mean nothing will. Never stop suddenly without talking to your doctor, because tapering matters. Tell them about other medication, supplements such as St John's Wort, and anything else you take. For many people, medication and therapy together work better than either alone.</p>
+    </section>
+
+    <!-- ============ SOMEONE ELSE ============ -->
+    <section id="someone-else" data-section>
+      <h2>When someone you love is struggling</h2>
+      <p>When someone you care about is having a hard time, it's easy to freeze for fear of saying the wrong thing. You don't need perfect words. Turning up and staying around matters far more.</p>
+      <p>Listen more than you try to fix. "That sounds really hard" goes a long way. Ask whether they want you to listen or to help solve something. Offer practical help, like dropping off food, helping book an appointment or sitting with them while they make a call. Suggest a walk or a meal together. Keep checking in, even if the replies are short or don't come.</p>
+      <p>Try not to say "think positive" or "other people have it worse", and hold back on suggestions like yoga unless they ask. Don't make it about you, and don't get angry that they didn't tell you sooner. And don't disappear because you don't know what to say, which is more common than any of the rest.</p>
+      <h3>If you're worried about suicide</h3>
+      <p>Ask them directly: "Are you thinking about suicide?" Use the word. Asking does not put the idea in anyone's head, and it shows you can handle the answer. Listen without arguing or panicking. Help them put distance between themselves and anything they could use to hurt themselves. Help them reach support, whether that's a crisis line you call together, their doctor, or emergency services if they're in immediate danger. Then follow up over the next few days. Don't promise to keep it secret if their life is at risk.</p>
+      <p>Look after yourself as well. Supporting someone is draining, and you're their friend or family member, not their therapist. <a href="https://www.nami.org/" target="_blank" rel="noopener">NAMI</a> runs free programmes for families, and Movember's <a href="https://conversations.movember.com/en/conversations/" target="_blank" rel="noopener">Conversations</a> tool lets you practise a difficult conversation beforehand.</p>
+    </section>
+
+    <!-- ============ PLAN ============ -->
+    <section id="plan-section" data-section>
+      <h2>A plan for bad days</h2>
+      <p>A safety plan is a short written list of what helps you when things get bad. Clinicians use them because they work: when you're struggling, it's hard to think of what to do, so you write it down beforehand. Fill this in on a day when you feel reasonably steady. It saves as you type, and it only saves to this browser on this device. Nothing is sent anywhere.</p>
+      <form class="tool ui plan" id="planForm" onsubmit="return false">
+        <div><label for="p1">My warning signs</label><span class="help">Thoughts, moods or behaviours that tell me I'm starting to slip.</span><textarea id="p1" name="signs" placeholder="For example: not answering messages, sleeping all day, thinking 'what's the point'"></textarea></div>
+        <div><label for="p2">Things I can do on my own</label><span class="help">Things that calm or distract me, even a little.</span><textarea id="p2" name="coping" placeholder="For example: a hot shower, a walk, the breathing exercise, a familiar programme"></textarea></div>
+        <div><label for="p3">People and places that help</label><span class="help">Where I can go and who I can be around without having to explain.</span><textarea id="p3" name="places" placeholder="For example: the library, my sister's house, the park"></textarea></div>
+        <div><label for="p4">People I can ask for help</label><span class="help">Names and phone numbers.</span><textarea id="p4" name="people"></textarea></div>
+        <div><label for="p5">Professionals and crisis lines</label><span class="help">My doctor, therapist, and the crisis numbers for where I live.</span><textarea id="p5" name="pros"></textarea></div>
+        <div><label for="p6">Making things safer</label><span class="help">Things I can remove, or put out of reach, when I'm in a bad place.</span><textarea id="p6" name="safe" placeholder="For example: ask a housemate to keep hold of my medication"></textarea></div>
+        <div><label for="p7">My reasons for living</label><span class="help">People, animals, plans, small things I look forward to.</span><textarea id="p7" name="reasons"></textarea></div>
+        <p class="saved" id="planSaved" aria-live="polite"></p>
+        <div class="btn-row no-print">
+          <button type="button" class="btn primary" id="planPrint">Print</button>
+          <button type="button" class="btn" id="planDownload">Download as a text file</button>
+          <button type="button" class="btn" id="planClear">Clear</button>
         </div>
-      </div>
+      </form>
+      <p>Once it's done, take a photo of it or keep a printed copy somewhere easy to find, and consider sharing it with someone you trust.</p>
+    </section>
 
-      <div class="card tool" id="garden">
-        <span class="tool-tag" style="background:var(--terracotta-2)">tiny wins</span>
-        <h3>The tiny wins garden</h3>
-        <p>On hard days, small things are big things. Tick off anything you managed today and watch your garden grow. (It resets each day, and stays on your device.)</p>
-        <div class="flowerbed" id="flowerbed" aria-hidden="true"></div>
-        <p class="garden-msg" id="gardenMsg" aria-live="polite"></p>
-        <div class="garden" id="wins" style="margin-top:1rem"></div>
-      </div>
+    <hr>
+    <p>If you've read this far, thank you. I hope some of it was useful. Getting better is slow and uneven, and there will be days that feel like going backwards. Those days are part of it too.</p>
+    <p>If something on this page is wrong or out of date, or there's a resource you think belongs on the <a href="resources.html">resources page</a>, please let me know.</p>
+    <p class="back-top"><a href="#main">Back to the top</a></p>
+  </main>
+</div>
 
-      <div class="card tool wide" id="selfcare">
-        <span class="tool-tag" style="background:var(--sky)">check the basics</span>
-        <h3>"Why do I feel awful?" — the basics check</h3>
-        <p>Sometimes feeling terrible is partly your body asking for something simple. Go through these one at a time. It sounds silly. It works surprisingly often. (Inspired by the brilliant <a href="https://youfeellikeshit.com/" target="_blank" rel="noopener">You Feel Like Shit</a> guide.)</p>
-        <div id="flow" aria-live="polite"></div>
-      </div>
-    </div>
-
-    <div class="cols" style="margin-top:2rem">
-      <div class="try blue"><strong>🧊 The cold-water trick</strong>Splash cold water on your face, or hold something cold on your wrists or the back of your neck, for 30 seconds. It triggers the "dive reflex" and can slow your heart rate fast — great for panic or overwhelming emotion.</div>
-      <div class="try honey"><strong>🎶 One-song rule</strong>Can't face something? Put on one song and do it only until the song ends. Washing up, a reply, a shower, a walk to the end of the road. You're allowed to stop after.</div>
-      <div class="try plum"><strong>🧸 Butterfly hug</strong>Cross your arms over your chest, hands on opposite shoulders, and slowly tap left-right-left-right while you breathe. It's soothing in a way that's hard to explain until you try it.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= MAP / CONTENTS ================= -->
-<section class="section" id="map" style="background:var(--paper-2);border-block:3px solid var(--line)" data-stop="The guide: trail map" data-emoji="🗺️">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">wander wherever you need</span>
-      <h2>The guide</h2>
-      <p>Eighteen little chapters on the things that weigh on people. Each one has a short version (for when you can't take much in), some deeper reading, things to try, and where to find more help.</p>
-    </div>
-    <ol class="trail">
-      <li><a href="#ch-start"><span class="stop-ico" style="background:var(--sage)">🌱</span><span>Start here<small>what mental health actually is</small></span></a></li>
-      <li><a href="#ch-anxiety"><span class="stop-ico" style="background:var(--sky)">🌪️</span><span>Anxiety &amp; panic<small>when your alarm won't switch off</small></span></a></li>
-      <li><a href="#ch-low"><span class="stop-ico" style="background:var(--plum-2)">🌧️</span><span>Low mood &amp; depression<small>the heavy grey days</small></span></a></li>
-      <li><a href="#ch-stress"><span class="stop-ico" style="background:var(--terracotta-2)">🔥</span><span>Stress &amp; burnout<small>running on empty</small></span></a></li>
-      <li><a href="#ch-sleep"><span class="stop-ico" style="background:var(--plum)">🌙</span><span>Sleep<small>getting your rest back</small></span></a></li>
-      <li><a href="#ch-body"><span class="stop-ico" style="background:var(--honey)">🥕</span><span>Body basics<small>food, water, movement, light</small></span></a></li>
-      <li><a href="#ch-lonely"><span class="stop-ico" style="background:var(--blush)">🫶</span><span>Loneliness &amp; connection<small>finding your people</small></span></a></li>
-      <li><a href="#ch-grief"><span class="stop-ico" style="background:var(--sky-2)">🕊️</span><span>Grief &amp; loss<small>carrying what can't be fixed</small></span></a></li>
-      <li><a href="#ch-critic"><span class="stop-ico" style="background:var(--sage-2)">🪞</span><span>The inner critic<small>and learning self-compassion</small></span></a></li>
-      <li><a href="#ch-anger"><span class="stop-ico" style="background:var(--terracotta)">🌋</span><span>Anger &amp; big feelings<small>riding the wave</small></span></a></li>
-      <li><a href="#ch-trauma"><span class="stop-ico" style="background:var(--honey-2)">🐚</span><span>Trauma &amp; your nervous system<small>why your body remembers</small></span></a></li>
-      <li><a href="#ch-dark"><span class="stop-ico" style="background:var(--plum-2)">🕯️</span><span>When it gets really dark<small>suicidal thoughts &amp; self-harm</small></span></a></li>
-      <li><a href="#ch-screens"><span class="stop-ico" style="background:var(--sky)">📱</span><span>Screens &amp; scrolling<small>digital wellbeing</small></span></a></li>
-      <li><a href="#ch-habits"><span class="stop-ico" style="background:var(--sage)">🌿</span><span>Substances &amp; habits<small>recovery without shame</small></span></a></li>
-      <li><a href="#ch-identity"><span class="stop-ico" style="background:var(--sky-2)">🌈</span><span>Being yourself<small>LGBTQ+, neurodivergence, belonging</small></span></a></li>
-      <li><a href="#ch-life"><span class="stop-ico" style="background:var(--honey)">🏠</span><span>Money, work &amp; life stuff<small>when life itself is the problem</small></span></a></li>
-      <li><a href="#ch-help"><span class="stop-ico" style="background:var(--plum)">🛋️</span><span>Getting help<small>therapy, doctors &amp; medication</small></span></a></li>
-      <li><a href="#ch-others"><span class="stop-ico" style="background:var(--blush)">🤝</span><span>Helping someone else<small>what to say, what not to</small></span></a></li>
-      <li><a href="#myths"><span class="stop-ico" style="background:var(--honey-2)">💭</span><span>Myths, busted<small>flip the cards</small></span></a></li>
-      <li><a href="#safety-plan"><span class="stop-ico" style="background:var(--sage)">🧭</span><span>Your toolkit &amp; safety plan<small>build your own map</small></span></a></li>
-      <li><a href="#library"><span class="stop-ico" style="background:var(--terracotta-2)">📚</span><span>The library<small><span id="resCount">150+</span> free resources</small></span></a></li>
-    </ol>
-  </div>
-</section>
-
-<!-- ================= CHAPTERS ================= -->
-<div class="narrow">
-
-<!-- 1 START -->
-<article class="chapter" id="ch-start" data-stop="Start here" data-emoji="🌱">
-  <header class="chapter-head"><span class="sticker" style="--c:var(--sage)" aria-hidden="true">🌱</span><div><span class="chapter-num">chapter one</span><h2>Start here: what mental health actually is</h2></div></header>
-  <p class="lede">Everyone has mental health, the same way everyone has physical health. Some days it's great, some days you've got a cold, and some seasons you need real care. None of it is a character flaw.</p>
-  <div class="tldr"><strong class="label">the short version</strong><ul><li>Struggling is human, common and treatable — about 1 in 5 people deal with a mental health condition in any given year.</li><li>Your brain is an organ. It responds to sleep, food, stress, people, hormones and history.</li><li>Feeling better is usually a bunch of small things, not one big fix.</li></ul></div>
-
-  <h3>The stress bucket 🪣</h3>
-  <p>Picture a bucket. Everything stressful pours in: work, money, health, relationships, bad sleep, the news, old hurts. Everyone's bucket is a different size — some of us were handed smaller ones by genetics or tough childhoods. When the bucket overflows, that's when people struggle.</p>
-  <p>The good news: buckets have taps. Coping things — rest, people, movement, therapy, fun, saying no — let some water out. Play with it:</p>
-  <figure class="bucket-fig card">
-    <svg viewBox="0 0 300 220" aria-hidden="true">
-      <defs><clipPath id="bucketClip"><path d="M70 40 L230 40 L210 200 L90 200Z"/></clipPath></defs>
-      <path d="M100 18 C150 -8 200 4 210 40" stroke="var(--line)" stroke-width="4" fill="none"/>
-      <g clip-path="url(#bucketClip)"><rect id="bucketWater" x="60" y="40" width="180" height="160" fill="var(--sky)" class="bucket-water"/></g>
-      <path d="M70 40 L230 40 L210 200 L90 200Z" fill="none" stroke="var(--line)" stroke-width="4" stroke-linejoin="round"/>
-      <ellipse cx="150" cy="40" rx="80" ry="8" fill="none" stroke="var(--line)" stroke-width="3"/>
-      <path d="M212 170 h30 v10 h-8" stroke="var(--line)" stroke-width="4" fill="var(--terracotta)"/>
-      <text x="252" y="168" font-family="Caveat" font-size="20" fill="var(--ink)">tap</text>
-      <text x="20" y="30" font-family="Caveat" font-size="20" fill="var(--ink)">stress ↓</text>
-    </svg>
-    <div class="range"><label for="bucketRange"><strong>How much stress?</strong></label><input type="range" id="bucketRange" min="0" max="120" value="65"></div>
-    <div class="range" style="margin-top:.5rem"><label class="win" style="background:transparent"><input type="checkbox" id="bucketTap"> Open the tap (use coping skills)</label></div>
-    <figcaption id="bucketMsg" aria-live="polite"></figcaption>
-  </figure>
-
-  <h3>Your window of tolerance 🪟</h3>
-  <p>Psychologists talk about a "window" where you can handle what life throws at you. Above the window you're <strong>hyper-aroused</strong>: anxious, panicky, angry, can't sit still. Below it you're <strong>hypo-aroused</strong>: numb, flat, shut down, foggy. Stress and trauma can make the window narrower. Lots of the tools in this guide are about two things: noticing when you've left your window, and gently getting back in.</p>
-  <div class="cols">
-    <div class="try"><strong>⬆️ Too wired?</strong>Slow down: long out-breaths, cold water, grounding, a slow walk, low lights, a weighted blanket.</div>
-    <div class="try blue"><strong>⬇️ Too flat?</strong>Wake up gently: movement, strong tastes (mints, sour sweets), music, cold air, talking to someone.</div>
-  </div>
-
-  <h3>Feelings are messengers, not monsters</h3>
-  <p>Anxiety says "something might be dangerous". Sadness says "something mattered and it's gone". Anger says "a line got crossed". Loneliness says "you need your people". The feelings aren't the problem — it's when they get stuck on full volume, or show up when there's no real threat, that life gets hard. You don't have to get rid of feelings; you learn to listen to them and turn the volume down.</p>
-  <details class="more"><summary>Naming feelings actually helps (here's why)</summary><div><p>Research on "affect labelling" shows that simply putting a feeling into words — "I'm feeling anxious and a bit ashamed" — can reduce how intense it feels. The more specific the better: "irritated" or "disappointed" beats "bad". Apps like <a href="https://howwefeel.org/" target="_blank" rel="noopener">How We Feel</a> give you a big menu of feeling-words to choose from.</p></div></details>
-
-  <div class="chips"><span>more help:</span><a class="chip lib" href="#library" data-lib="learn">📚 Learn more</a><a class="chip lib" href="#library" data-lib="mood">📓 Mood trackers</a><a class="chip" href="https://rentry.co/mentalhealthy" target="_blank" rel="noopener">/mental health/ tips ↗</a></div>
-</article>
-
-<!-- 2 ANXIETY -->
-<article class="chapter" id="ch-anxiety" data-stop="Anxiety & panic" data-emoji="🌪️">
-  <header class="chapter-head"><span class="sticker" style="--c:var(--sky)" aria-hidden="true">🌪️</span><div><span class="chapter-num">chapter two</span><h2>Anxiety, worry &amp; panic</h2></div></header>
-  <span class="chapter-art" data-sprout="wow" aria-hidden="true"></span>
-  <p class="lede">Anxiety is your body's smoke alarm. It's meant to keep you safe — but sometimes it goes off for burnt toast, or keeps ringing long after the danger's passed.</p>
-  <div class="tldr"><strong class="label">the short version</strong><ul><li>Anxiety is uncomfortable but not dangerous. A panic attack cannot hurt you, and it always passes (usually within 10–20 minutes).</li><li>Avoiding scary things brings quick relief but makes anxiety bigger over time.</li><li>Slow breathing, grounding and gently facing fears are the best-proven tools. CBT works really well for anxiety.</li></ul></div>
-
-  <div class="cols">
-    <div><h4>What it can feel like</h4><ul class="feel-list"><li>Racing heart, tight chest, shaky or short breath</li><li>Stomach churning, needing the loo</li><li>"What if…" thoughts on repeat</li><li>Feeling on edge, jumpy, restless</li><li>Trouble sleeping or concentrating</li><li>Feeling unreal or detached (it's called derealisation, and it's harmless)</li></ul></div>
-    <div><h4>Why it happens</h4><p>When your brain senses a threat, it releases adrenaline to help you fight or run. Your heart pumps faster, breathing speeds up, muscles tense. Brilliant for escaping a bear. Less useful for a work email. Genetics, stress, caffeine, poor sleep, past experiences and big life changes can all turn the alarm's sensitivity up.</p></div>
-  </div>
-
-  <h3>During a panic attack</h3>
-  <div class="try blue"><strong>The "it's just a wave" script</strong>
-    <ol><li><strong>Name it.</strong> "This is a panic attack. It feels awful, but it is not dangerous. It will pass."</li><li><strong>Don't fight it.</strong> Fighting adds fuel. Imagine floating on top of the wave instead of swimming against it.</li><li><strong>Breathe out longer than in.</strong> In for 4, out for 6. Or the <a href="#breathe">breathing bubble</a>.</li><li><strong>Ground.</strong> Feet on floor. Press your palms together. Name 5 things you can see.</li><li><strong>Cold.</strong> Cold water on your face, or an ice cube in your hand.</li><li><strong>Wait.</strong> Adrenaline physically can't keep surging forever. It peaks and falls.</li></ol>
-  </div>
-
-  <h3>For everyday worry</h3>
-  <div class="try"><strong>⏰ Worry time</strong>Pick a 15-minute "worry appointment" each day. When a worry pops up outside it, jot it down and tell it, "Not now — 6pm." At 6pm, look at the list. Many worries will have shrunk. For the rest, ask: <em>can I do something about this?</em> If yes, plan one small step. If no, practise letting it float by.</div>
-  <div class="try honey"><strong>🪜 The fear ladder</strong>Write the scary thing at the top of a ladder, and break it into smaller rungs. Scared of phone calls? Rung 1: listen to a voicemail. Rung 2: call a recorded info line. Rung 3: call a shop to ask the opening hours… Climb one rung at a time, staying until the anxiety drops a bit. This is called <em>exposure</em>, and it's one of the most effective treatments there is.</div>
-  <div class="try plum"><strong>🎈 "And then what?"</strong>Follow a worry to the end. "I'll mess up the presentation." And then what? "People will think I'm bad at my job." And then what? Often, the worst case turns out to be survivable — uncomfortable, but survivable — and that takes the air out of it.</div>
-  <details class="more"><summary>Caffeine, phones &amp; other sneaky anxiety boosters</summary><div><ul><li><strong>Caffeine</strong> mimics anxiety in your body. Try cutting back gradually (sudden stops can cause headaches).</li><li><strong>Low blood sugar</strong> causes shakiness and dread — eat regularly.</li><li><strong>Doom-scrolling</strong> keeps your alarm primed. See <a href="#ch-screens">Screens &amp; scrolling</a>.</li><li><strong>Alcohol</strong> calms you for an evening, then causes rebound anxiety ("hangxiety") the next day.</li><li><strong>Not enough sleep</strong> makes the amygdala (your alarm centre) much more reactive.</li></ul></div></details>
-  <div class="gentle-flag"><strong>Get more help if…</strong> anxiety is stopping you from doing things you need or want to do, you're having frequent panic attacks, or you're avoiding more and more. Generalised anxiety, panic disorder, social anxiety, OCD and health anxiety are all very treatable with therapy (especially CBT) and sometimes medication. See <a href="#ch-help">Getting help</a>.</div>
-  <div class="chips"><span>more help:</span><a class="chip lib" href="#library" data-lib="calm">🫧 Breathing &amp; meditation</a><a class="chip lib" href="#library" data-lib="selfhelp">🧰 CBT workbooks</a><a class="chip" href="https://www.cci.health.wa.gov.au/Resources/Looking-After-Yourself" target="_blank" rel="noopener">CCI anxiety workbooks ↗</a></div>
-</article>
-
-<!-- 3 LOW -->
-<article class="chapter" id="ch-low" data-stop="Low mood & depression" data-emoji="🌧️">
-  <header class="chapter-head"><span class="sticker" style="--c:var(--plum-2)" aria-hidden="true">🌧️</span><div><span class="chapter-num">chapter three</span><h2>Low mood &amp; depression</h2></div></header>
-  <span class="chapter-art" data-sprout="sad" aria-hidden="true"></span>
-  <p class="lede">Depression isn't just sadness. It's often more like heaviness — like moving through wet sand, everything taking ten times more effort, and the colour drained out of things you used to love.</p>
-  <div class="tldr"><strong class="label">the short version</strong><ul><li>Depression lies. It tells you things are hopeless, that you're a burden, that it'll always be this way. Those are symptoms, not facts.</li><li>Waiting until you <em>feel</em> like doing things doesn't work with depression. Action comes first; motivation follows.</li><li>It's one of the most treatable conditions there is. Most people get better.</li></ul></div>
-  <div class="cols">
-    <div><h4>What it can feel like</h4><ul class="feel-list"><li>Low, empty or numb most of the day</li><li>Losing interest in things you used to enjoy</li><li>Exhaustion, even after sleep</li><li>Sleeping or eating much more or less</li><li>Feeling worthless, guilty, or like a burden</li><li>Foggy brain, slow thinking</li><li>Thoughts about death or not wanting to be here</li></ul></div>
-    <div><h4>Low mood vs. depression</h4><p>Everyone has low days, especially after a loss, a disappointment, or during winter. If you've felt low <strong>most of the day, nearly every day, for two weeks or more</strong>, and it's affecting your life, it's worth talking to a doctor. That's not dramatic — that's exactly what they're there for.</p><p>A free screening like <a href="https://screening.mhanational.org/screening-tools/" target="_blank" rel="noopener">MHA's</a> can help you put it into words.</p></div>
-  </div>
-  <h3>Things that genuinely help</h3>
-  <div class="try"><strong>🐢 Behavioural activation (tiny version)</strong>Depression shrinks your life, and a shrunken life feeds depression. Break the loop by scheduling <em>small</em> things: one thing that gives you a sense of achievement (wash one mug) and one thing that gives a flicker of pleasure (sit in the sun for five minutes). Write them down. Do them whether you feel like it or not. Notice afterwards — even a 2% lift counts.</div>
-  <div class="try blue"><strong>🪫 The "low battery" day plan</strong>On the worst days, the goal is not productivity. It's: <em>eat something, drink something, take your meds, get some light, and get through to bedtime.</em> That's a full day's work when you're depressed. Everything else is a bonus.</div>
-  <div class="try honey"><strong>🧺 Hygiene shortcuts</strong>Can't face a shower? Wet wipes, dry shampoo, brushing teeth, a clean t-shirt. Can't do dishes? Paper plates for a week is fine. Lowering the bar isn't failing — it's strategy. The excellent book <em>How to Keep House While Drowning</em> by KC Davis is all about this.</div>
-  <div class="try plum"><strong>☀️ Light &amp; movement</strong>Morning daylight (even cloudy) helps your body clock and mood. A 10-minute walk is a real, evidence-backed mood booster. No gym, no running, no lycra required.</div>
-  <details class="more"><summary>Seasonal depression (the winter blues, and beyond)</summary><div><p>Some people get depressed in autumn and winter when days get shorter. Light therapy lamps (10,000 lux, used for 20–30 minutes in the morning), getting outside at midday, and keeping a routine can help a lot. If it's severe, talk to a doctor — SAD is very real and treatable.</p></div></details>
-  <details class="more"><summary>After having a baby</summary><div><p>Postnatal (postpartum) depression and anxiety affect up to 1 in 7 new parents — of any gender — and are not your fault or a sign you're a bad parent. <a href="https://postpartum.net/" target="_blank" rel="noopener">Postpartum Support International</a> has a helpline and free support groups.</p></div></details>
-  <div class="gentle-flag"><strong>Please reach out if…</strong> you're having thoughts of suicide, can't take care of basic needs, or it's been weeks. Depression is treatable with therapy, medication, or both, and a GP / family doctor is a good first step. If thoughts of death are there, read <a href="#ch-dark">When it gets really dark</a>.</div>
-  <div class="chips"><span>more help:</span><a class="chip lib" href="#library" data-lib="selfhelp">🧰 Self-help</a><a class="chip lib" href="#library" data-lib="community">🫶 Peer support</a><a class="chip" href="https://headsupguys.org/" target="_blank" rel="noopener">HeadsUpGuys (for men) ↗</a></div>
-</article>
-
-<!-- 4 STRESS -->
-<article class="chapter" id="ch-stress" data-stop="Stress & burnout" data-emoji="🔥">
-  <header class="chapter-head"><span class="sticker" style="--c:var(--terracotta-2)" aria-hidden="true">🔥</span><div><span class="chapter-num">chapter four</span><h2>Stress &amp; burnout</h2></div></header>
-  <p class="lede">Stress is when you have too much. Burnout is when you have nothing left. If you've been running on adrenaline and caffeine for months and suddenly can't care about anything — that might be burnout.</p>
-  <div class="tldr"><strong class="label">the short version</strong><ul><li>Burnout = exhaustion + cynicism/detachment + feeling ineffective. It's a response to <em>chronic</em> stress, not a personal weakness.</li><li>Recovering needs real rest and real changes to what's draining you — a weekend off won't fix months of overload.</li><li>Boundaries are a health intervention.</li></ul></div>
-  <h3>Signs you might be burning out</h3>
-  <ul class="feel-list"><li>Dreading things you used to handle easily</li><li>Getting ill more often, headaches, stomach issues</li><li>Feeling numb or cynical about work, school or caregiving</li><li>Procrastinating more, and feeling like nothing you do matters</li><li>Snapping at people you love</li><li>Needing more and more to "switch off" — wine, scrolling, sleep</li></ul>
-  <h3>What helps</h3>
-  <div class="try"><strong>🔋 Complete the stress cycle</strong>From Emily &amp; Amelia Nagoski's <em>Burnout</em>: dealing with the <em>cause</em> of stress is different from dealing with the stress <em>itself</em> in your body. Your body needs a signal that it's safe now. Things that complete the cycle: physical activity (the best), deep slow breathing, a proper belly laugh, a 20-second hug, a good cry, creative expression, affection.</div>
-  <div class="try honey"><strong>✂️ The cut list</strong>Write down everything on your plate. Mark each: <em>must do</em>, <em>could delegate</em>, <em>could drop</em>, <em>could do badly</em>. Pick one thing to delegate or drop this week. "Good enough" is a valid standard.</div>
-  <div class="try blue"><strong>🙅 A few ways to say no</strong><ul style="margin:.4rem 0 0"><li>"I'd love to, but I don't have capacity right now."</li><li>"Can I get back to you tomorrow?" (buys time)</li><li>"I can do X, but not Y."</li><li>"That doesn't work for me." (full sentence, no explanation needed)</li></ul></div>
-  <div class="try plum"><strong>🌙 Real rest has types</strong>Sleep is just one. There's also mental rest (breaks from thinking), sensory rest (quiet, dim, no screens), social rest (time alone, or with easy people), creative rest (nature, art), and emotional rest (being able to be honest). Which one are you missing most?</div>
-  <div class="gentle-flag"><strong>Worth knowing:</strong> burnout can overlap with depression, and with conditions like ADHD or autism where people burn out from masking. If rest doesn't help after a while, talk to a doctor. Students and carers burn out too — it's not just a "work" thing.</div>
-  <div class="chips"><span>more help:</span><a class="chip lib" href="#library" data-lib="cozy">🕯️ Calm corners</a><a class="chip lib" href="#library" data-lib="practical">🏠 Life help</a></div>
-</article>
-
-<!-- 5 SLEEP -->
-<article class="chapter" id="ch-sleep" data-stop="Sleep" data-emoji="🌙">
-  <header class="chapter-head"><span class="sticker" style="--c:var(--plum)" aria-hidden="true">🌙</span><div><span class="chapter-num">chapter five</span><h2>Sleep</h2></div></header>
-  <span class="chapter-art" data-sprout="sleepy" aria-hidden="true"></span>
-  <p class="lede">Sleep and mental health are best friends who also fight a lot: bad sleep makes everything feel worse, and feeling bad makes it hard to sleep. Gently fixing sleep is one of the most powerful things you can do.</p>
-  <div class="tldr"><strong class="label">the short version</strong><ul><li>Wake up at the same time every day — even weekends. It's the single most useful sleep habit.</li><li>If you can't sleep after ~20 minutes, get up and do something boring in dim light. Go back when sleepy.</li><li>CBT for insomnia (CBT-i) works better long-term than sleeping pills — and there's a free app for it.</li></ul></div>
-  <h3>The cozy sleep routine</h3>
-  <div class="cols">
-    <div class="try"><strong>☀️ Morning</strong><ul style="margin:0"><li>Same wake time every day</li><li>Get daylight in your eyes within an hour (outside is best)</li><li>Caffeine only before midday-ish</li><li>Move your body at some point</li></ul></div>
-    <div class="try plum"><strong>🌙 Evening</strong><ul style="margin:0"><li>Dim the lights an hour before bed</li><li>Phone out of reach (or at least on night mode)</li><li>Something soothing: a bath, a book, a podcast, stretches</li><li>Cool, dark, quiet room</li><li>"Brain dump" worries onto paper</li></ul></div>
-  </div>
-  <div class="try blue"><strong>🛏️ Bed is for sleep</strong>If you lie awake for ages, your brain learns "bed = awake and frustrated". Keep bed for sleep (and intimacy). Can't sleep? Get up, sit somewhere dim, read something dull, return when your eyelids are heavy. It feels backwards, but it retrains your brain.</div>
-  <div class="try honey"><strong>🐑 For a racing mind</strong>Try the "cognitive shuffle": pick a random word like BREAD. For each letter, imagine lots of things starting with it — B: bear, banana, boat, balloon… It gives your brain something to do that's too boring to worry about. Or listen to a sleep story, rain sounds (<a href="https://rainymood.com/" target="_blank" rel="noopener">Rainy Mood</a>) or a cat purring (<a href="https://purrli.com/" target="_blank" rel="noopener">Purrli</a>).</div>
-  <details class="more"><summary>What about naps, alcohol and sleeping pills?</summary><div><ul><li><strong>Naps:</strong> short ones (under 30 minutes, before mid-afternoon) are fine. Long late ones can wreck the night.</li><li><strong>Alcohol</strong> helps you fall asleep but makes sleep shallow and broken. You wake up more tired.</li><li><strong>Sleeping pills</strong> can help short-term, but talk to a doctor. Don't mix them with alcohol.</li><li><strong>Melatonin</strong> is mostly useful for body-clock issues (jet lag, shift work), not general insomnia. Ask a pharmacist.</li></ul></div></details>
-  <div class="gentle-flag"><strong>See a doctor if…</strong> you snore loudly and wake up gasping (possible sleep apnoea), you've had insomnia for more than 3 months, or you're sleepy all day despite enough sleep.</div>
-  <div class="chips"><span>more help:</span><a class="chip lib" href="#library" data-lib="sleep">🌙 Sleep resources</a><a class="chip" href="https://rentry.co/sleepguide" target="_blank" rel="noopener">Sleeping guide ↗</a><a class="chip" href="https://mobile.va.gov/app/cbt-i-coach" target="_blank" rel="noopener">CBT-i Coach ↗</a></div>
-</article>
-
-<!-- 6 BODY -->
-<article class="chapter" id="ch-body" data-stop="Body basics" data-emoji="🥕">
-  <header class="chapter-head"><span class="sticker" style="--c:var(--honey)" aria-hidden="true">🥕</span><div><span class="chapter-num">chapter six</span><h2>Body basics: food, water, movement, light</h2></div></header>
-  <p class="lede">Your mind lives in your body. That doesn't mean "just go for a run" fixes depression — but it does mean caring for the body is a quiet, steady way of caring for the mind.</p>
-  <div class="tldr"><strong class="label">the short version</strong><ul><li>Eat regularly. Skipped meals → blood sugar dips → anxiety, irritability, low mood.</li><li>Any movement counts. Walking is wildly underrated.</li><li>Time outside, especially around trees and water, measurably lowers stress.</li></ul></div>
-  <h3>Food, without the diet culture</h3>
-  <p>You don't need a perfect diet. Gentle aims: eat <strong>something every 3–5 hours</strong>, include some <strong>protein</strong> and <strong>fibre</strong> when you can, and drink water. If cooking feels impossible, "beige food" or snack plates (cheese, crackers, fruit, nuts) are completely valid. Fed is best.</p>
-  <div class="try honey"><strong>🍳 Low-energy meals</strong>Toast with peanut butter or eggs. Instant noodles with a handful of frozen veg and an egg. Yoghurt with cereal. A microwave rice pouch with a tin of tuna or beans. Wraps with whatever's in the fridge. Keep a few "emergency meals" in the cupboard for bad days.</div>
-  <h3>Movement, the kind way</h3>
-  <p>Exercise has a strong evidence base for helping depression and anxiety — in some studies, as much as therapy or medication for mild-to-moderate depression. But the best movement is the one you'll actually do. Walking, dancing in the kitchen, stretching, gardening, swimming, yoga on YouTube, chasing a dog.</p>
-  <div class="try"><strong>🚶 Start ridiculously small</strong>Put your shoes on and walk to the end of the street. That's it. If you want to keep going, great. If not, you did it. Free guides: <a href="https://darebee.com/" target="_blank" rel="noopener">DAREBEE</a>, <a href="https://yogawithadriene.com/" target="_blank" rel="noopener">Yoga With Adriene</a>, <a href="https://www.nhs.uk/better-health/get-active/get-running-with-couch-to-5k/" target="_blank" rel="noopener">Couch to 5K</a>.</div>
-  <div class="try blue"><strong>🌳 Green &amp; blue time</strong>Around two hours a week in nature is linked with better wellbeing. Parks count. Tree-lined streets count. Sitting by a river counts. Can't get out? Plants, nature sounds and even nature videos help a little.</div>
-  <details class="more"><summary>If food and your body feel complicated</summary><div><p>If you're restricting, bingeing, purging, over-exercising, or food and body thoughts take up a lot of your day, you deserve support — not judgement. Eating disorders affect people of every size, gender and age. Reach out to <a href="https://www.beateatingdisorders.org.uk/" target="_blank" rel="noopener">Beat</a> (UK), <a href="https://anad.org/" target="_blank" rel="noopener">ANAD</a> (US), or your doctor.</p></div></details>
-  <div class="gentle-flag"><strong>Also worth checking:</strong> thyroid problems, low iron, low vitamin D, B12 deficiency, hormonal changes and chronic illness can all cause low mood, anxiety and fatigue. A basic blood test from your doctor can rule these out.</div>
-  <div class="chips"><span>more help:</span><a class="chip lib" href="#library" data-lib="body">🥕 Body &amp; movement</a><a class="chip" href="https://thefitness.wiki/" target="_blank" rel="noopener">The Fitness Wiki ↗</a></div>
-</article>
-
-<!-- 7 LONELY -->
-<article class="chapter" id="ch-lonely" data-stop="Loneliness & connection" data-emoji="🫶">
-  <header class="chapter-head"><span class="sticker" style="--c:var(--blush)" aria-hidden="true">🫶</span><div><span class="chapter-num">chapter seven</span><h2>Loneliness &amp; connection</h2></div></header>
-  <p class="lede">You can be lonely in a crowd, lonely in a relationship, lonely with hundreds of online friends. Loneliness isn't about how many people are around — it's about feeling unseen.</p>
-  <div class="tldr"><strong class="label">the short version</strong><ul><li>Loneliness is incredibly common and nothing to be ashamed of. Most people feel it sometimes.</li><li>Loneliness makes us more wary of others, which can make it harder to connect. Knowing that helps you push through.</li><li>Small, regular, low-pressure contact builds connection better than big gestures.</li></ul></div>
-  <h3>Small steps toward people</h3>
-  <div class="try"><strong>📬 Low-stakes reach-outs</strong>"This made me think of you" + a meme. "How did that thing go?" A voice note. A photo of your lunch. You don't need a reason to message someone, and most people are happy to hear from you — research shows we consistently <em>underestimate</em> how much others appreciate it.</div>
-  <div class="try honey"><strong>🔁 Repeat exposure</strong>Friendships mostly grow from seeing the same people again and again. Join something regular: a class, a volunteering shift, a running club, a board-game night, a choir, a library group, a Discord server about something you love. Show up a few times before judging it.</div>
-  <div class="try blue"><strong>☕ "Parallel" company</strong>If talking feels like too much, just be near people. Work from a café or library. Go to a quiet museum. Watch a stream with chat. Body-doubling counts as company.</div>
-  <div class="try plum"><strong>🐾 Other kinds of connection</strong>Pets, plants, nature, volunteering with animals, online communities, writing letters, connecting with your culture or faith community. Humans need belonging, and it comes in many forms.</div>
-  <details class="more"><summary>When relationships themselves hurt</summary><div><p>If someone in your life controls you, puts you down, isolates you from others, scares you, or hurts you — that's not your fault, and help exists. In the US, <a href="https://www.thehotline.org/" target="_blank" rel="noopener">thehotline.org</a> (1-800-799-7233). In the UK, <a href="https://refuge.org.uk/" target="_blank" rel="noopener">Refuge</a> (0808 2000 247). Elsewhere, <a href="https://findahelpline.com/" target="_blank" rel="noopener">Find A Helpline</a>. The Quick Exit button at the top of this page leaves instantly.</p></div></details>
-  <div class="chips"><span>more help:</span><a class="chip lib" href="#library" data-lib="community">🫶 Peer support &amp; community</a><a class="chip" href="https://www.7cups.com/" target="_blank" rel="noopener">7 Cups listeners ↗</a></div>
-</article>
-
-<!-- 8 GRIEF -->
-<article class="chapter" id="ch-grief" data-stop="Grief & loss" data-emoji="🕊️">
-  <header class="chapter-head"><span class="sticker" style="--c:var(--sky-2)" aria-hidden="true">🕊️</span><div><span class="chapter-num">chapter eight</span><h2>Grief &amp; loss</h2></div></header>
-  <p class="lede">Grief is love with nowhere to go. It doesn't come in neat stages, it doesn't have a deadline, and it isn't only about death.</p>
-  <div class="tldr"><strong class="label">the short version</strong><ul><li>There's no right way to grieve. Numbness, anger, relief, guilt and even laughter are all normal.</li><li>Grief doesn't get smaller — your life slowly grows around it.</li><li>You can grieve people, pets, relationships, health, jobs, homes, futures you imagined.</li></ul></div>
-  <h3>The ball in the box</h3>
-  <p>Imagine grief as a ball in a box, with a pain button on one side. At first, the ball is huge — it hits the button constantly. Over time, the ball doesn't shrink so much as the box gets bigger, and the ball hits the button less often. But sometimes it still does, out of nowhere — a song, a smell, an anniversary — and it hurts just as much. That's normal. That's love.</p>
-  <div class="try"><strong>🕯️ Things that can help</strong><ul style="margin:0"><li>Say their name. Tell stories. Grief often hurts more when no one mentions the person.</li><li>Expect "grief bursts" — and plan for hard dates like birthdays and holidays.</li><li>Keep a few basics going: food, sleep, a little movement.</li><li>Write them a letter. Keep their voice messages. Make a memory box.</li><li>Find people who get it — a grief group, online or in person.</li></ul></div>
-  <div class="try blue"><strong>🫂 Disenfranchised grief</strong>Some losses aren't recognised by others: a miscarriage, a pet, an ex, a friend from online, a person you had a complicated relationship with, someone who's still alive but changed by illness. Your grief is still real, and it still deserves care.</div>
-  <div class="gentle-flag"><strong>Get support if…</strong> after many months, grief is still so intense you can't function, or you feel you can't go on without them. That's sometimes called prolonged grief, and grief counselling really helps.</div>
-  <div class="chips"><span>more help:</span><a class="chip lib" href="#library" data-lib="grief">🕊️ Grief resources</a><a class="chip" href="https://whatsyourgrief.com/" target="_blank" rel="noopener">What's Your Grief ↗</a></div>
-</article>
-
-<!-- 9 CRITIC -->
-<article class="chapter" id="ch-critic" data-stop="The inner critic" data-emoji="🪞">
-  <header class="chapter-head"><span class="sticker" style="--c:var(--sage-2)" aria-hidden="true">🪞</span><div><span class="chapter-num">chapter nine</span><h2>The inner critic &amp; self-compassion</h2></div></header>
-  <span class="chapter-art" data-sprout="calm" aria-hidden="true"></span>
-  <p class="lede">Most of us have a voice in our head that we'd never let anyone else talk to us like. It's often trying, clumsily, to protect us. But it's not telling the truth.</p>
-  <div class="tldr"><strong class="label">the short version</strong><ul><li>Thoughts aren't facts. Brains make predictable errors — especially when stressed, tired or low.</li><li>Self-compassion isn't letting yourself off the hook. Research shows it makes people <em>more</em> motivated and resilient, not less.</li><li>Try talking to yourself like you'd talk to a friend.</li></ul></div>
-  <h3>Common thinking traps</h3>
-  <p>These are called "cognitive distortions" in CBT. Everyone does them. Tap a card to flip it and see a kinder way to think.</p>
-  <div class="flip-grid">
-    <button class="flip"><span class="flip-inner"><span class="flip-face"><span class="em">🔮</span><span class="big">Mind reading</span>"They think I'm annoying."<span class="hint">tap to flip</span></span><span class="flip-face back"><span class="big">Try instead</span>"I don't actually know what they think. What evidence do I have? Could there be another reason they were quiet?"</span></span></button>
-    <button class="flip"><span class="flip-inner"><span class="flip-face"><span class="em">🌋</span><span class="big">Catastrophising</span>"If this goes wrong, everything is ruined."<span class="hint">tap to flip</span></span><span class="flip-face back"><span class="big">Try instead</span>"What's the most <em>likely</em> outcome? If the worst happened, how would I cope? I've coped before."</span></span></button>
-    <button class="flip"><span class="flip-inner"><span class="flip-face"><span class="em">⚫⚪</span><span class="big">All-or-nothing</span>"If it's not perfect, I failed."<span class="hint">tap to flip</span></span><span class="flip-face back"><span class="big">Try instead</span>"Most things live in the grey. I did some of it, and some is better than none."</span></span></button>
-    <button class="flip"><span class="flip-inner"><span class="flip-face"><span class="em">🏷️</span><span class="big">Labelling</span>"I'm such an idiot."<span class="hint">tap to flip</span></span><span class="flip-face back"><span class="big">Try instead</span>"I made a mistake. A mistake is something I <em>did</em>, not who I <em>am</em>."</span></span></button>
-    <button class="flip"><span class="flip-inner"><span class="flip-face"><span class="em">📏</span><span class="big">"Should" statements</span>"I should be over this by now."<span class="hint">tap to flip</span></span><span class="flip-face back"><span class="big">Try instead</span>"Says who? I'm where I am. It would be nice to feel better, and I'm working on it."</span></span></button>
-    <button class="flip"><span class="flip-inner"><span class="flip-face"><span class="em">🔍</span><span class="big">Mental filter</span>"The whole day was awful."<span class="hint">tap to flip</span></span><span class="flip-face back"><span class="big">Try instead</span>"One part was awful. Were there any okay bits, even tiny ones?"</span></span></button>
-    <button class="flip"><span class="flip-inner"><span class="flip-face"><span class="em">🎯</span><span class="big">Personalising</span>"It's my fault they're upset."<span class="hint">tap to flip</span></span><span class="flip-face back"><span class="big">Try instead</span>"Their feelings have lots of causes. I'm not responsible for everything."</span></span></button>
-    <button class="flip"><span class="flip-inner"><span class="flip-face"><span class="em">🌀</span><span class="big">Emotional reasoning</span>"I feel like a failure, so I must be one."<span class="hint">tap to flip</span></span><span class="flip-face back"><span class="big">Try instead</span>"Feelings are real, but they aren't evidence. I can feel like a failure and still not be one."</span></span></button>
-  </div>
-  <h3>Practising self-compassion</h3>
-  <div class="try"><strong>💛 The self-compassion break</strong>Based on Dr Kristin Neff's work. When you're struggling, put a hand on your heart and say (silently is fine):<ol style="margin:.4rem 0 0"><li><em>"This is really hard right now."</em> (mindfulness)</li><li><em>"Other people feel this too. I'm not alone."</em> (common humanity)</li><li><em>"May I be kind to myself."</em> (kindness)</li></ol></div>
-  <div class="try honey"><strong>📝 The friend test</strong>Write down what your inner critic is saying. Now imagine your best friend said that about themselves. What would you say back? Write <em>that</em> down. Read it to yourself.</div>
-  <div class="try blue"><strong>🧾 Thought record</strong>When a thought really stings: write the <em>situation</em>, the <em>thought</em>, the <em>feeling</em> (and how strong, 0–100), the evidence <em>for</em> and <em>against</em>, and a more balanced thought. Re-rate the feeling. Free worksheets at <a href="https://www.getselfhelp.co.uk/" target="_blank" rel="noopener">Get Self Help</a>.</div>
-  <div class="chips"><span>more help:</span><a class="chip lib" href="#library" data-lib="selfhelp">🧰 CBT &amp; coping skills</a><a class="chip" href="https://self-compassion.org/" target="_blank" rel="noopener">self-compassion.org ↗</a></div>
-</article>
-
-<!-- 10 ANGER -->
-<article class="chapter" id="ch-anger" data-stop="Anger & big feelings" data-emoji="🌋">
-  <header class="chapter-head"><span class="sticker" style="--c:var(--terracotta)" aria-hidden="true">🌋</span><div><span class="chapter-num">chapter ten</span><h2>Anger &amp; big feelings</h2></div></header>
-  <p class="lede">Some feelings arrive like a tidal wave: rage, shame, panic, despair. In that moment, your thinking brain goes offline. The trick isn't to never feel them — it's to have a plan for riding them out.</p>
-  <div class="tldr"><strong class="label">the short version</strong><ul><li>Anger is valid. Hurting yourself or others isn't. You can feel the first without doing the second.</li><li>Emotions peak and pass, usually within minutes, if we don't keep feeding them.</li><li>Change your body first (temperature, movement, breath) — then think.</li></ul></div>
-  <h3>TIPP: a DBT crisis skill</h3>
-  <p>From Dialectical Behaviour Therapy. Designed for when emotions are <em>too</em> high to think straight.</p>
-  <div class="cols">
-    <div class="try blue"><strong>🧊 T — Temperature</strong>Cold water on your face for 30 seconds while holding your breath (or ice packs on your eyes and cheeks). It slows your heart rate quickly.</div>
-    <div class="try"><strong>🏃 I — Intense exercise</strong>Burn off the adrenaline: run up the stairs, star jumps, fast walk — even 5–10 minutes helps.</div>
-    <div class="try honey"><strong>🌬️ P — Paced breathing</strong>Breathe out longer than in. About 5–6 breaths per minute. Use the <a href="#breathe">bubble</a>.</div>
-    <div class="try plum"><strong>💪 P — Paired muscle relaxation</strong>Tense a muscle group as you breathe in, release as you breathe out. Notice the difference.</div>
-  </div>
-  <div class="try"><strong>🛑 STOP</strong>Another DBT skill: <strong>S</strong>top — freeze, don't act. <strong>T</strong>ake a step back — breathe. <strong>O</strong>bserve — what's happening inside and out? <strong>P</strong>roceed mindfully — what would wise-you do?</div>
-  <div class="try honey"><strong>🔎 What's under the anger?</strong>Anger is often a bodyguard for softer feelings: hurt, fear, embarrassment, feeling powerless or unheard. When you've calmed down, ask: <em>what was I really feeling? What did I need?</em></div>
-  <div class="gentle-flag"><strong>Get help if…</strong> anger is damaging your relationships, you're breaking things or scaring people, or you feel out of control. Anger is very workable with therapy — it's one of the most common things people go for.</div>
-  <div class="chips"><span>more help:</span><a class="chip" href="https://dbtselfhelp.com/" target="_blank" rel="noopener">DBT Self Help ↗</a><a class="chip lib" href="#library" data-lib="selfhelp">🧰 Coping skills</a></div>
-</article>
-
-<!-- 11 TRAUMA -->
-<article class="chapter" id="ch-trauma" data-stop="Trauma & your nervous system" data-emoji="🐚">
-  <header class="chapter-head"><span class="sticker" style="--c:var(--honey-2)" aria-hidden="true">🐚</span><div><span class="chapter-num">chapter eleven</span><h2>Trauma &amp; your nervous system</h2></div></header>
-  <p class="lede">Trauma isn't just about what happened. It's about what happened inside you — and how your body learned to keep protecting you long after the danger was gone.</p>
-  <div class="tldr"><strong class="label">the short version</strong><ul><li>Fight, flight, freeze and fawn are automatic survival responses. You didn't "choose" how you reacted.</li><li>Your body can stay on high alert after trauma. That's protection, not brokenness.</li><li>Trauma is very treatable. Trauma-focused CBT and EMDR have strong evidence.</li></ul></div>
-  <h3>The four survival responses</h3>
-  <div class="cols">
-    <div class="try"><strong>👊 Fight</strong>Anger, defensiveness, the urge to push back or control.</div>
-    <div class="try blue"><strong>🏃 Flight</strong>Anxiety, restlessness, overworking, avoiding, wanting to escape.</div>
-    <div class="try plum"><strong>🧊 Freeze</strong>Going blank, numb, stuck, spacey — "playing dead".</div>
-    <div class="try honey"><strong>🙇 Fawn</strong>People-pleasing, appeasing, losing yourself to keep others happy.</div>
-  </div>
-  <h3>Signs your nervous system is still on guard</h3>
-  <ul class="feel-list"><li>Flashbacks, nightmares, or intrusive memories</li><li>Being very jumpy or always scanning for danger</li><li>Avoiding places, people or topics that remind you</li><li>Feeling numb, detached, or like the world isn't real</li><li>Strong reactions that seem "too big" for the moment</li><li>Trouble trusting, feeling safe, or relaxing</li></ul>
-  <div class="try blue"><strong>🌊 Finding safety in your body</strong><ul style="margin:0"><li><strong>Orient:</strong> slowly look around the room. Let your eyes land on things. Notice exits, colours, light. This tells your brain "I'm here, now, and it's safe."</li><li><strong>Hum or sing</strong> — it gently stimulates the vagus nerve.</li><li><strong>Weight &amp; pressure:</strong> a weighted blanket, a firm hug, pushing against a wall.</li><li><strong>Safe place:</strong> imagine, in detail, a place you feel completely safe — real or imaginary.</li></ul></div>
-  <div class="gentle-flag"><strong>Please go gently.</strong> If you've been through trauma, you don't have to dig into it alone. A trauma-informed therapist can help you process things at a pace that feels safe. If you're in danger right now, or someone is hurting you, see <a href="#help-now">Help now</a>. For sexual assault, <a href="https://www.rainn.org/" target="_blank" rel="noopener">RAINN</a> (US) or <a href="https://findahelpline.com/" target="_blank" rel="noopener">Find A Helpline</a> elsewhere.</div>
-  <div class="chips"><span>more help:</span><a class="chip lib" href="#library" data-lib="therapy">🛋️ Find a therapist</a><a class="chip lib" href="#library" data-lib="crisis">🆘 Support lines</a></div>
-</article>
-
-<!-- 12 DARK -->
-<article class="chapter" id="ch-dark" data-stop="When it gets really dark" data-emoji="🕯️">
-  <header class="chapter-head"><span class="sticker" style="--c:var(--plum-2)" aria-hidden="true">🕯️</span><div><span class="chapter-num">chapter twelve</span><h2>When it gets really dark</h2></div></header>
-  <p class="lede">If you're thinking about suicide, or hurting yourself, I want you to know: you're not broken, you're not bad, and you're not alone. You're in a huge amount of pain. And pain can change, even when it feels like it never will.</p>
-  <div class="tldr"><strong class="label">the short version</strong><ul><li>Suicidal thoughts are a sign of overwhelming pain, not of weakness. Many, many people have them and go on to feel better.</li><li>The most intense urges usually pass. Getting through the next few hours safely matters most.</li><li>Telling someone — a friend, a doctor, a crisis line — is one of the bravest and most effective things you can do.</li></ul></div>
-  <div class="try plum"><strong>🕯️ If you're thinking about suicide right now</strong><ol style="margin:0"><li><strong>Put some distance between you and anything you could use to hurt yourself.</strong> Give it to someone, lock it away, or leave the room. This genuinely saves lives — the most intense moments pass.</li><li><strong>Don't be alone, if you can help it.</strong> Go to where other people are, or call someone to stay on the phone with you.</li><li><strong>Contact a crisis line</strong> — <a href="#help-now">numbers are here</a>. Text if talking is too much.</li><li><strong>Avoid alcohol and drugs</strong> right now — they make impulses harder to resist.</li><li><strong>Make a deal with yourself to wait.</strong> Just today. Just tonight. Just the next hour. You don't have to decide anything now.</li></ol></div>
-  <h3>"But I don't want to bother anyone"</h3>
-  <p>Crisis lines exist <em>specifically</em> for this. The people who answer chose to be there. You won't be wasting their time — reaching out early is exactly what they hope people will do. And the people in your life would almost certainly rather know.</p>
-  <details class="more"><summary>What actually happens when you call a crisis line?</summary><div><p>Someone trained will answer, and they'll listen. They'll probably ask how you're feeling and whether you're safe right now — they ask this directly because it helps. They won't judge you or tell you off. Most calls end with talking things through and maybe making a plan together. In most places, emergency services are only involved if someone is in immediate danger and can't stay safe — and usually even then they'll try to work it out with you first. You can hang up any time. You can stay anonymous on most lines.</p></div></details>
-  <h3>About self-harm</h3>
-  <p>Self-harm is often a way of coping with feelings that feel unbearable. It makes sense that you'd reach for something that gives relief — and you deserve ways of coping that don't hurt you. No shame, no lectures.</p>
-  <div class="try"><strong>🌊 Riding out the urge</strong><ul style="margin:0"><li>Delay: set a timer for 15 minutes. Often the urge eases. Then try another 15.</li><li>Intense but safe sensations: hold ice, snap a hair tie loosely, take a cold shower, eat something very sour or spicy.</li><li>Draw on your skin with a red pen or marker instead.</li><li>Release: scream into a pillow, rip up paper, hit a cushion, sprint.</li><li>Soothe: wrap up in a blanket, cuddle a pet, put on a comfort show.</li><li>Try the free <a href="https://calmharm.co.uk/" target="_blank" rel="noopener">Calm Harm</a> app.</li></ul></div>
-  <div class="gentle-flag"><strong>If you've hurt yourself</strong> and the wound is deep, won't stop bleeding, or you've taken anything (even if you feel okay — some substances cause delayed harm), please get medical help now. Emergency staff are there to help you, not to judge you.</div>
-  <h3>Reasons to stay (from people who stayed)</h3>
-  <p>People who've survived suicidal crises often say how glad they are that they're still here — sometimes about things they couldn't have imagined at the time. New people they met. Feeling better on medication they hadn't tried yet. A dog. A morning. Your future isn't written yet. Make a <a href="#safety-plan">safety plan</a> — it's one of the most effective tools there is.</p>
-  <div class="chips"><span>more help:</span><a class="chip" href="#help-now">🆘 Crisis lines</a><a class="chip" href="#safety-plan">🧭 Safety plan</a><a class="chip" href="https://www.stayalive.app/" target="_blank" rel="noopener">Stay Alive app ↗</a></div>
-</article>
-
-<!-- 13 SCREENS -->
-<article class="chapter" id="ch-screens" data-stop="Screens & scrolling" data-emoji="📱">
-  <header class="chapter-head"><span class="sticker" style="--c:var(--sky)" aria-hidden="true">📱</span><div><span class="chapter-num">chapter thirteen</span><h2>Screens, scrolling &amp; digital wellbeing</h2></div></header>
-  <p class="lede">The internet can be a lifeline — your people, your communities, your favourite cozy videos. It can also be a slot machine in your pocket designed by very clever people to keep you pulling the lever.</p>
-  <div class="tldr"><strong class="label">the short version</strong><ul><li>It's not about zero screen time. It's about whether your use leaves you feeling better or worse.</li><li>Willpower alone loses to apps designed by teams of engineers. Change your environment instead.</li><li>Notice how you feel after — that's your best guide.</li></ul></div>
-  <div class="try"><strong>📵 Friction is your friend</strong><ul style="margin:0"><li>Turn on greyscale (it makes your phone dramatically less appealing).</li><li>Move tempting apps off your home screen, or log out after each use.</li><li>Turn off all non-human notifications.</li><li>Charge your phone outside the bedroom. Buy a cheap alarm clock.</li><li>Try <a href="https://one-sec.app/" target="_blank" rel="noopener">one sec</a> or <a href="https://github.com/flxapps/DetoxDroid" target="_blank" rel="noopener">DetoxDroid</a> to add a pause before opening apps.</li></ul></div>
-  <div class="try blue"><strong>🧹 Curate your feed</strong>Mute or unfollow anyone who makes you feel worse about yourself — even friends (mute is invisible). Follow people who make you laugh, learn, or feel calm. You're the gardener of your feed.</div>
-  <div class="try honey"><strong>📰 News without the doom</strong>Pick one or two set times to check the news, from one trusted source. Avoid it in the first hour after waking and the last hour before bed. It's okay to care about the world <em>and</em> protect your mind.</div>
-  <div class="chips"><span>more help:</span><a class="chip lib" href="#library" data-lib="recovery">🌱 Digital detox tools</a><a class="chip" href="https://www.reddit.com/r/nosurf/wiki/index" target="_blank" rel="noopener">r/NoSurf ↗</a></div>
-</article>
-
-<!-- 14 HABITS -->
-<article class="chapter" id="ch-habits" data-stop="Substances & habits" data-emoji="🌿">
-  <header class="chapter-head"><span class="sticker" style="--c:var(--sage)" aria-hidden="true">🌿</span><div><span class="chapter-num">chapter fourteen</span><h2>Substances, habits &amp; recovery</h2></div></header>
-  <p class="lede">Most people who drink too much, use drugs, gamble or get stuck in compulsive habits are trying to feel better, or feel less. That makes total sense. It just tends to cost more than it gives, over time.</p>
-  <div class="tldr"><strong class="label">the short version</strong><ul><li>Addiction is a health issue, not a moral failure.</li><li>You don't have to hit "rock bottom" to change, and you don't have to quit forever to start — cutting down counts.</li><li>Slips are part of recovery, not the end of it.</li></ul></div>
-  <div class="try"><strong>🤔 Gentle questions to ask yourself</strong><ul style="margin:0"><li>Am I using it to cope with feelings, or to get through the day?</li><li>Have I tried to cut down and found it hard?</li><li>Is it affecting my health, relationships, money, work?</li><li>Do I feel guilty or hide how much I use?</li></ul>If some of these ring true, that's not a verdict — it's information. You deserve support.</div>
-  <div class="try honey"><strong>🌱 Ways to start</strong><ul style="margin:0"><li>Track it honestly for a week — no judgement, just data.</li><li>Notice your triggers: times, places, feelings, people.</li><li>Plan alternatives for those moments.</li><li>Try a sober/dry month and see how you feel.</li><li>Find your people: <a href="https://www.smartrecovery.org/" target="_blank" rel="noopener">SMART Recovery</a>, AA/NA, online communities.</li></ul></div>
-  <div class="gentle-flag"><strong>Important safety note:</strong> stopping alcohol or benzodiazepines suddenly after heavy, regular use can be <strong>dangerous</strong> (seizures are possible). Please talk to a doctor about detoxing safely. And if you do use drugs, harm reduction matters: never use alone, test your substances where possible, and know the signs of overdose. <a href="https://tripsit.me/" target="_blank" rel="noopener">TripSit</a> has a live chat.</div>
-  <div class="chips"><span>more help:</span><a class="chip lib" href="#library" data-lib="recovery">🌱 Recovery resources</a><a class="chip" href="https://www.samhsa.gov/find-help/helplines/national-helpline" target="_blank" rel="noopener">SAMHSA helpline ↗</a></div>
-</article>
-
-<!-- 15 IDENTITY -->
-<article class="chapter" id="ch-identity" data-stop="Being yourself" data-emoji="🌈">
-  <header class="chapter-head"><span class="sticker" style="--c:var(--sky-2)" aria-hidden="true">🌈</span><div><span class="chapter-num">chapter fifteen</span><h2>Being yourself: identity &amp; belonging</h2></div></header>
-  <p class="lede">A lot of mental pain comes not from what's inside us, but from a world that hasn't made room for who we are. If you're LGBTQ+, neurodivergent, disabled, a person of colour, an immigrant — or just different — your struggles might partly be the weight of that.</p>
-  <div class="tldr"><strong class="label">the short version</strong><ul><li>There's nothing wrong with who you are. Stress from discrimination and not fitting in is real, and has a name: minority stress.</li><li>Finding people like you is one of the most protective things there is.</li><li>You deserve affirming support — and it exists.</li></ul></div>
-  <h3>🏳️‍🌈 LGBTQ+</h3>
-  <p>LGBTQ+ people have higher rates of anxiety and depression — not because of who they are, but because of stigma, rejection and stress. Having even <strong>one</strong> accepting adult or affirming space significantly lowers risk for young people. If you're questioning, you don't need to have it figured out. If you're not out, that's your call, and your timeline.</p>
-  <div class="try blue"><strong>🌈 Places to start</strong><a href="https://www.thetrevorproject.org/" target="_blank" rel="noopener">The Trevor Project</a> &amp; <a href="https://www.trevorspace.org/" target="_blank" rel="noopener">TrevorSpace</a> (youth), <a href="https://genderdysphoria.fyi/" target="_blank" rel="noopener">The Gender Dysphoria Bible</a>, <a href="https://translifeline.org/" target="_blank" rel="noopener">Trans Lifeline</a>, <a href="https://switchboard.lgbt/" target="_blank" rel="noopener">Switchboard</a> (UK), and the trans health resources from FMHY in the library.</div>
-  <h3>🧠 Neurodivergence (ADHD, autism &amp; more)</h3>
-  <p>Many adults — especially women and people of colour — find out they're autistic or have ADHD later in life, often after years of feeling "too much", "lazy", or like they were missing the instruction manual everyone else got. Masking (hiding your traits to fit in) is exhausting and linked with burnout and depression.</p>
-  <div class="try"><strong>🧩 Brain-friendly tips</strong><ul style="margin:0"><li><strong>Body doubling:</strong> do tasks alongside someone (in person or on video).</li><li><strong>Externalise:</strong> timers, visual lists, alarms — your brain doesn't have to hold everything.</li><li><strong>Sensory care:</strong> noise-cancelling headphones, soft clothes, dim lights, stims are welcome.</li><li><strong>Unmask safely:</strong> find spaces and people you can be fully yourself with.</li><li><strong>Learn more:</strong> <a href="https://howtoadhd.com/" target="_blank" rel="noopener">How to ADHD</a>, <a href="https://embrace-autism.com/" target="_blank" rel="noopener">Embrace Autism</a>, <a href="https://autisticadvocacy.org/" target="_blank" rel="noopener">ASAN</a>.</li></ul></div>
-  <h3>🌍 Culture, race &amp; belonging</h3>
-  <p>Racism, discrimination and feeling like an outsider take a real toll on mental health. You may also want a therapist who shares or understands your background — directories like <a href="https://www.inclusivetherapists.com/" target="_blank" rel="noopener">Inclusive Therapists</a> and <a href="https://therapyforblackgirls.com/" target="_blank" rel="noopener">Therapy for Black Girls</a> can help.</p>
-  <div class="chips"><span>more help:</span><a class="chip lib" href="#library" data-lib="identity">🌈 LGBTQ+ &amp; neurodivergence</a><a class="chip lib" href="#library" data-lib="therapy">🛋️ Affirming therapists</a></div>
-</article>
-
-<!-- 16 LIFE -->
-<article class="chapter" id="ch-life" data-stop="Money, work & life stuff" data-emoji="🏠">
-  <header class="chapter-head"><span class="sticker" style="--c:var(--honey)" aria-hidden="true">🏠</span><div><span class="chapter-num">chapter sixteen</span><h2>Money, work &amp; life stuff</h2></div></header>
-  <p class="lede">Sometimes it's not your brain chemistry. It's the rent. It's the job. It's the exam, the debt, the housing, the carer duties. No amount of breathing exercises fixes an eviction notice — but practical help exists, and getting it is a mental health move.</p>
-  <div class="tldr"><strong class="label">the short version</strong><ul><li>Money worries and mental health feed each other. It's not a personal failing.</li><li>Free, non-judgemental debt and benefits advice is out there. Use it.</li><li>Opening the scary envelope is usually less bad than imagining it.</li></ul></div>
-  <div class="try honey"><strong>💸 When money is scary</strong><ul style="margin:0"><li>Pick a calm time, make a drink, and open the post. Just open it. Sort into piles.</li><li>List what's coming in and going out. Even roughly.</li><li>Prioritise: housing, energy, council tax/rates, food come first.</li><li>Contact creditors early — many have hardship options, especially if you mention mental health.</li><li>Get free advice: <a href="https://www.211.org/" target="_blank" rel="noopener">211</a> &amp; <a href="https://www.nfcc.org/" target="_blank" rel="noopener">NFCC</a> (US), <a href="https://www.citizensadvice.org.uk/" target="_blank" rel="noopener">Citizens Advice</a> &amp; <a href="https://www.stepchange.org/" target="_blank" rel="noopener">StepChange</a> (UK).</li><li>Avoid payday loans and anyone promising quick fixes.</li></ul></div>
-  <div class="try blue"><strong>💼 Work &amp; study</strong><ul style="margin:0"><li>In many countries, mental health conditions are covered by disability law — you may be entitled to reasonable adjustments.</li><li>Check if your work or school has a free counselling service or Employee Assistance Programme (EAP). Many people don't know they have one.</li><li>A doctor's note for time off is okay. Mental health is health.</li><li>Students: talk to your tutor or disability service early. Extensions exist for a reason.</li></ul></div>
-  <div class="try plum"><strong>🤲 Caring for someone else</strong>Carers burn out quietly. Look for carers' organisations, respite care, and carer support groups locally — and remember your needs matter too.</div>
-  <div class="chips"><span>more help:</span><a class="chip lib" href="#library" data-lib="practical">🏠 Money &amp; life help</a><a class="chip" href="https://www.findhelp.org/" target="_blank" rel="noopener">findhelp.org ↗</a></div>
-</article>
-
-<!-- 17 HELP -->
-<article class="chapter" id="ch-help" data-stop="Getting help" data-emoji="🛋️">
-  <header class="chapter-head"><span class="sticker" style="--c:var(--plum)" aria-hidden="true">🛋️</span><div><span class="chapter-num">chapter seventeen</span><h2>Getting help: therapy, doctors &amp; medication</h2></div></header>
-  <span class="chapter-art" data-sprout="happy" aria-hidden="true"></span>
-  <p class="lede">Asking for help can feel like the hardest part. Here's a map of what's out there, how to find it, and what to actually say.</p>
-  <div class="tldr"><strong class="label">the short version</strong><ul><li>A GP / family doctor is a good first step in most places.</li><li>Many countries have free or low-cost therapy you can self-refer to.</li><li>Finding the right therapist can take a couple of tries. The relationship matters more than the type of therapy.</li></ul></div>
-  <h3>What to say to a doctor</h3>
-  <div class="try"><strong>🗣️ A script you can borrow</strong><p style="margin:.3rem 0">"I've been struggling with my mental health. For about <em>[how long]</em> I've been feeling <em>[low / anxious / numb / not sleeping…]</em>. It's affecting my <em>[work / sleep / relationships / eating]</em>. I'd like to talk about what support is available."</p>Write it down and read it out, or hand them the paper. Doctors see this every day. If they're dismissive, you're allowed to ask for another doctor.</div>
-  <h3>Types of therapy (a quick menu)</h3>
-  <div class="flip-grid">
-    <button class="flip"><span class="flip-inner"><span class="flip-face"><span class="em">🧠</span><span class="big">CBT</span>Cognitive Behavioural Therapy<span class="hint">tap to flip</span></span><span class="flip-face back">Works on the links between thoughts, feelings and actions. Structured, practical, short-term. Great evidence for anxiety, depression, OCD, insomnia.</span></span></button>
-    <button class="flip"><span class="flip-inner"><span class="flip-face"><span class="em">🌊</span><span class="big">DBT</span>Dialectical Behaviour Therapy<span class="hint">tap to flip</span></span><span class="flip-face back">Skills for intense emotions, relationships and distress. Often used for BPD, self-harm and emotional dysregulation.</span></span></button>
-    <button class="flip"><span class="flip-inner"><span class="flip-face"><span class="em">👁️</span><span class="big">EMDR</span>Eye Movement Desensitisation &amp; Reprocessing<span class="hint">tap to flip</span></span><span class="flip-face back">Helps the brain process traumatic memories so they feel less raw. Strong evidence for PTSD.</span></span></button>
-    <button class="flip"><span class="flip-inner"><span class="flip-face"><span class="em">🍃</span><span class="big">ACT</span>Acceptance &amp; Commitment Therapy<span class="hint">tap to flip</span></span><span class="flip-face back">Learning to make room for difficult feelings and moving toward what matters to you, rather than fighting your thoughts.</span></span></button>
-    <button class="flip"><span class="flip-inner"><span class="flip-face"><span class="em">🕰️</span><span class="big">Psychodynamic</span>&amp; person-centred counselling<span class="hint">tap to flip</span></span><span class="flip-face back">More open-ended exploration of your past, patterns and feelings, at your own pace, with a warm, accepting therapist.</span></span></button>
-    <button class="flip"><span class="flip-inner"><span class="flip-face"><span class="em">👥</span><span class="big">Group &amp; peer</span>support<span class="hint">tap to flip</span></span><span class="flip-face back">Often free or cheap. Hearing "me too" from others is powerful in its own way.</span></span></button>
-  </div>
-  <h3>Finding it, by place</h3>
-  <ul>
-    <li><strong>🇬🇧 England:</strong> self-refer to <a href="https://www.nhs.uk/mental-health/talking-therapies-medicine-treatments/talking-therapies-and-counselling/nhs-talking-therapies/" target="_blank" rel="noopener">NHS Talking Therapies</a> — free, no GP needed. Scotland, Wales &amp; NI: start with your GP.</li>
-    <li><strong>🇺🇸 US:</strong> check your insurance's directory, <a href="https://www.psychologytoday.com/us/therapists" target="_blank" rel="noopener">Psychology Today</a>, <a href="https://openpathcollective.org/" target="_blank" rel="noopener">Open Path</a> (sliding scale), community mental health centres, <a href="https://findtreatment.gov/" target="_blank" rel="noopener">FindTreatment.gov</a>, and university training clinics (cheaper sessions with supervised trainees).</li>
-    <li><strong>🇦🇺 Australia:</strong> ask your GP for a Mental Health Treatment Plan (Medicare-subsidised sessions), or contact <a href="https://www.medicarementalhealth.gov.au/" target="_blank" rel="noopener">Medicare Mental Health</a>.</li>
-    <li><strong>🇨🇦 Canada:</strong> check provincial programs, workplace EAPs and community clinics.</li>
-    <li><strong>Anywhere:</strong> workplace/school counselling, charities, and online CBT programmes like <a href="https://moodgym.com.au/" target="_blank" rel="noopener">MoodGYM</a> or <a href="https://thiswayup.org.au/" target="_blank" rel="noopener">This Way Up</a>.</li>
-  </ul>
-  <h3>About medication</h3>
-  <p>Medication like antidepressants can be genuinely life-changing for some people, and isn't "the easy way out" or a sign you've failed. A few honest things to know:</p>
-  <ul class="feel-list"><li>Many take 2–6 weeks to work fully. Side effects often show up first and ease off.</li><li>The first one you try might not be the right one. That's normal — it's not that "nothing works for you".</li><li><strong>Never stop suddenly</strong> without talking to your doctor. Tapering matters.</li><li>Tell your doctor about any other meds, supplements (like St John's Wort) or substances.</li><li>Medication + therapy together often works best.</li></ul>
-  <div class="chips"><span>more help:</span><a class="chip lib" href="#library" data-lib="therapy">🛋️ Finding therapy</a><a class="chip" href="https://www.drugs.com/" target="_blank" rel="noopener">Drugs.com med info ↗</a></div>
-</article>
-
-<!-- 18 OTHERS -->
-<article class="chapter" id="ch-others" data-stop="Helping someone else" data-emoji="🤝">
-  <header class="chapter-head"><span class="sticker" style="--c:var(--blush)" aria-hidden="true">🤝</span><div><span class="chapter-num">chapter eighteen</span><h2>Helping someone you care about</h2></div></header>
-  <p class="lede">When someone you love is struggling, it's easy to panic about saying the wrong thing. Here's a secret: you don't need the perfect words. Showing up matters far more.</p>
-  <div class="tldr"><strong class="label">the short version</strong><ul><li>Listen more than you fix. "That sounds really hard" goes a long way.</li><li>Asking directly about suicide does not put the idea in someone's head. It can be a relief.</li><li>Look after yourself too. You can't pour from an empty cup.</li></ul></div>
-  <div class="cols">
-    <div class="try"><strong>✅ Things that help</strong><ul style="margin:0"><li>"I'm here. No pressure to talk, but I'm here."</li><li>"That sounds really hard."</li><li>"Do you want me to listen, or help problem-solve?"</li><li>"Want to go for a walk / get food?"</li><li>Practical help: dropping off meals, helping book an appointment, sitting with them.</li><li>Keep checking in, even if they don't reply much.</li></ul></div>
-    <div class="try plum"><strong>❌ Things to avoid</strong><ul style="margin:0"><li>"Just think positive!" / "Others have it worse."</li><li>"Have you tried yoga?" (unless they ask)</li><li>Making it about you, or getting angry they didn't tell you sooner.</li><li>Promising to keep a secret if their life is at risk.</li><li>Disappearing because you don't know what to say.</li></ul></div>
-  </div>
-  <div class="try blue"><strong>💬 If you're worried about suicide</strong><ol style="margin:0"><li><strong>Ask directly:</strong> "Are you thinking about suicide?" Use the word. It shows you can handle the answer.</li><li><strong>Listen</strong> without judgement. Don't argue or panic.</li><li><strong>Help them stay safe</strong> — help put distance between them and means of harm.</li><li><strong>Connect them</strong> to support: a crisis line (you can call together), a doctor, or emergency services if they're in immediate danger.</li><li><strong>Follow up</strong> in the days after.</li></ol></div>
-  <div class="gentle-flag"><strong>Your wellbeing matters too.</strong> Supporting someone can be draining. Set boundaries, talk to someone yourself, and remember you're a supporter, not their therapist. Groups like <a href="https://www.nami.org/" target="_blank" rel="noopener">NAMI</a> run free family support programmes. Practise the conversation with <a href="https://conversations.movember.com/en/conversations/" target="_blank" rel="noopener">Movember Conversations</a>.</div>
-  <div class="chips"><span>more help:</span><a class="chip" href="#help-now">🆘 Crisis lines</a><a class="chip lib" href="#library" data-lib="learn">📚 Learn more</a></div>
-</article>
-
-</div><!-- /narrow -->
-
-<!-- ================= MYTHS ================= -->
-<section class="section" id="myths" style="background:var(--paper-2);border-block:3px solid var(--line)" data-stop="Myths, busted" data-emoji="💭">
-  <div class="wrap">
-    <div class="section-head"><span class="kicker">things people get wrong</span><h2>Myths, busted</h2><p>Tap a card to flip it.</p></div>
-    <div class="flip-grid">
-      <button class="flip"><span class="flip-inner"><span class="flip-face"><span class="em">💪</span><span class="big">"Mental illness is a sign of weakness."</span><span class="hint">tap to flip</span></span><span class="flip-face back"><span class="big">Nope.</span>It's a health condition, affected by genes, biology, environment and life events. Some of the strongest people you know have struggled.</span></span></button>
-      <button class="flip"><span class="flip-inner"><span class="flip-face"><span class="em">🗣️</span><span class="big">"Talking about suicide puts the idea in people's heads."</span><span class="hint">tap to flip</span></span><span class="flip-face back"><span class="big">Nope.</span>Research shows asking directly doesn't increase risk — and often brings relief and opens the door to help.</span></span></button>
-      <button class="flip"><span class="flip-inner"><span class="flip-face"><span class="em">🏆</span><span class="big">"You need a 'good reason' to be depressed."</span><span class="hint">tap to flip</span></span><span class="flip-face back"><span class="big">Nope.</span>Depression can happen to anyone, even when life looks fine from the outside. You don't need to earn the right to struggle.</span></span></button>
-      <button class="flip"><span class="flip-inner"><span class="flip-face"><span class="em">🔒</span><span class="big">"Once you have a mental illness, you'll never recover."</span><span class="hint">tap to flip</span></span><span class="flip-face back"><span class="big">Nope.</span>Most people recover or learn to manage well. Recovery can look different for everyone, and it's very possible.</span></span></button>
-      <button class="flip"><span class="flip-inner"><span class="flip-face"><span class="em">💊</span><span class="big">"Medication changes your personality."</span><span class="hint">tap to flip</span></span><span class="flip-face back"><span class="big">Not usually.</span>The right medication tends to help people feel <em>more</em> like themselves. If you feel flat or "not you", tell your doctor — it can be adjusted.</span></span></button>
-      <button class="flip"><span class="flip-inner"><span class="flip-face"><span class="em">🛋️</span><span class="big">"Therapy is only for people with serious problems."</span><span class="hint">tap to flip</span></span><span class="flip-face back"><span class="big">Nope.</span>Therapy can help with stress, relationships, decisions, grief, self-esteem — anything. Like a gym for your mind.</span></span></button>
-      <button class="flip"><span class="flip-inner"><span class="flip-face"><span class="em">🙋</span><span class="big">"People who self-harm are just seeking attention."</span><span class="hint">tap to flip</span></span><span class="flip-face back"><span class="big">Nope.</span>Self-harm is usually a private way of coping with overwhelming pain. And if someone is reaching out for attention, they need it.</span></span></button>
-      <button class="flip"><span class="flip-inner"><span class="flip-face"><span class="em">🧔</span><span class="big">"Real men don't cry / need help."</span><span class="hint">tap to flip</span></span><span class="flip-face back"><span class="big">Absolutely not.</span>Men die by suicide at much higher rates, partly because they're less likely to reach out. Crying and asking for help are human, not gendered.</span></span></button>
-    </div>
-  </div>
-</section>
-
-<!-- ================= SAFETY PLAN ================= -->
-<section class="section" id="safety-plan" data-stop="Your toolkit & safety plan" data-emoji="🧭">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">a map for future-you</span>
-      <h2>Your toolkit &amp; safety plan</h2>
-      <p>A safety plan is a personal list of what helps when things get hard. Clinicians use them because they work. Fill it in on a good-ish day, so it's ready when you need it. <strong>Everything stays on your device</strong> — nothing is sent anywhere.</p>
-    </div>
-    <form class="card" id="planForm" onsubmit="return false" style="padding:clamp(1.2rem,4vw,2.2rem)">
-      <div class="plan-grid">
-        <div class="plan-field"><label for="p1">1. My warning signs</label><span class="help">Thoughts, feelings, behaviours that tell me I'm starting to struggle.</span><textarea id="p1" name="signs" placeholder="e.g. not replying to messages, sleeping all day, thinking 'what's the point'"></textarea></div>
-        <div class="plan-field"><label for="p2">2. Things I can do on my own</label><span class="help">Things that calm or distract me, even a little.</span><textarea id="p2" name="coping" placeholder="e.g. breathing bubble, hot shower, walk the dog, a comfort show, music"></textarea></div>
-        <div class="plan-field"><label for="p3">3. People &amp; places that lift me up</label><span class="help">Where I can go and who I can be around, without having to talk about it.</span><textarea id="p3" name="places" placeholder="e.g. the café on the corner, my sister's house, the park, a Discord server"></textarea></div>
-        <div class="plan-field"><label for="p4">4. People I can ask for help</label><span class="help">Names and numbers.</span><textarea id="p4" name="people" placeholder="e.g. Sam – 07..., Mum – 07..."></textarea></div>
-        <div class="plan-field"><label for="p5">5. Professionals &amp; crisis lines</label><span class="help">My doctor, therapist, and local crisis numbers.</span><textarea id="p5" name="pros" placeholder="e.g. GP surgery – ..., 988 / 116 123 / ..."></textarea></div>
-        <div class="plan-field"><label for="p6">6. Making my space safer</label><span class="help">Things I can remove or put distance from when I'm in a bad place.</span><textarea id="p6" name="safe" placeholder="e.g. give my meds to a housemate to look after"></textarea></div>
-        <div class="plan-field" style="grid-column:1/-1"><label for="p7">7. My reasons for living 💛</label><span class="help">People, pets, dreams, small joys, things I'm curious about. Anything at all.</span><textarea id="p7" name="reasons" placeholder="e.g. my cat, seeing the sea again, the next season of that show, my little brother"></textarea></div>
-      </div>
-      <p class="saved-msg" id="planSaved" aria-live="polite"></p>
-      <div class="plan-actions">
-        <button type="button" class="btn sage" id="planPrint">🖨️ Print it</button>
-        <button type="button" class="btn sky" id="planDownload">⬇️ Download as text</button>
-        <button type="button" class="btn ghost" id="planClear">🗑️ Clear</button>
-      </div>
-    </form>
-    <p style="text-align:center;margin-top:1.2rem;color:var(--ink-soft)">Tip: take a photo of your printed plan and keep it on your phone. Share it with someone you trust. The free <a href="https://www.stayalive.app/" target="_blank" rel="noopener">Stay Alive</a> app can hold one too.</p>
-  </div>
-</section>
-
-<!-- ================= LIBRARY ================= -->
-<section class="section" id="library" style="background:var(--paper-2);border-block:3px solid var(--line)" data-stop="The library" data-emoji="📚">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="kicker">a shelf full of help</span>
-      <h2>The library</h2>
-      <p>Hand-picked apps, websites, hotlines, communities and calm corners of the internet — many from the wonderful <a href="https://fmhy.net/misc#mental-health" target="_blank" rel="noopener">FMHY</a> wiki, plus lots of trusted extras. Free unless marked. ★ = cozy pick.</p>
-    </div>
-    <div class="lib-controls">
-      <label class="search"><span aria-hidden="true">🔎</span><span class="sr-only">Search resources</span><input type="search" id="libSearch" placeholder="Search… try 'sleep', 'adhd', 'text', 'free'"></label>
-      <div class="filter-chips" id="libFilters" role="group" aria-label="Filter by category"></div>
-      <span class="lib-count" id="libCount" aria-live="polite"></span>
-    </div>
-    <div class="lib-grid" id="libGrid"></div>
-    <p style="text-align:center;margin-top:1.6rem;font-size:.95rem;color:var(--ink-soft)">Aceso isn't affiliated with any of these, and we can't vouch for every corner of every site. Trust your gut — if something feels off, close it.</p>
-  </div>
-</section>
-
-<!-- ================= CLOSING ================= -->
-<section class="section closing" aria-label="Goodbye for now">
-  <div class="narrow">
-    <span data-sprout="happy" style="display:block;width:160px;margin:0 auto 1rem"></span>
-    <h2>You made it to the end.</h2>
-    <p class="lede" style="font-size:1.2rem;color:var(--ink-soft)">Or you skipped here. Either is fine. Whatever today looks like, I hope you found something here that helped even a tiny bit. Healing is slow and wobbly and non-linear — and you're doing it. 🌱</p>
-    <p class="hand" style="font-size:2rem;color:var(--terracotta)">Come back any time. Sprout will be here.</p>
-    <div class="hero-ctas"><a class="btn" href="#top">↑ Back to the top</a><a class="btn sage" href="#toolbox">🧰 One more calm tool</a></div>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div><h4>🌱 Aceso</h4><p>A free, cozy, open guide to mental health. No ads, no tracking, no accounts. Things you save (theme, garden, safety plan) stay in your own browser.</p></div>
-      <div><h4>Thank you</h4><p>Many resources are gathered from <a href="https://fmhy.net/misc#mental-health" target="_blank" rel="noopener">FMHY</a>. Ideas drawn from CBT, DBT, ACT, self-compassion research and the work of countless clinicians, charities and people with lived experience.</p></div>
-      <div><h4>Shortcuts</h4><p><a href="#help-now">Help now</a> · <a href="#toolbox">Toolbox</a> · <a href="#map">Guide</a> · <a href="#safety-plan">Safety plan</a> · <a href="#library">Library</a><br>Press <kbd>Esc</kbd> three times to quick-exit.</p></div>
-    </div>
-    <p class="disclaimer"><strong>Please note:</strong> Aceso is a friendly guide, not a medical service, and it can't diagnose or treat anything. It's not a substitute for professional help. If you're in danger or thinking about suicide, please contact your local emergency number or a <a href="#help-now">crisis line</a> right away. © <span id="year">2026</span> Aceso — made with care.</p>
+<footer class="site-footer">
+  <div class="inner">
+    <p>Aceso is a personal project. It isn't a medical service, and it can't diagnose or treat anything. If you're in danger or thinking about suicide, contact your local emergency number or one of the <a href="#crisis-lines">crisis lines</a>.</p>
+    <p>Many of the resources were first collected by <a href="https://fmhy.net/misc#mental-health" target="_blank" rel="noopener">FMHY</a>. No tracking, no cookies. Anything you type stays in your browser. Press <kbd>Esc</kbd> three times to leave quickly.</p>
+    <p>© <span id="year">2026</span> Aceso</p>
   </div>
 </footer>
 
-<a href="#top" class="btn to-top small" id="toTop" aria-label="Back to top">↑ top</a>
-
-<script src="js/resources.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

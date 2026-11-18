@@ -1,49 +1,30 @@
-# 🌱 Aceso
+# Aceso
 
-**A cozy little guide for hard days.** A free, single-page mental health guide with a warm, hand-drawn, animated style. Named after the Greek goddess of the *healing process*.
+A long-form guide to looking after your mental health, plus a page of free resources. Plain HTML, CSS and JavaScript with no build step, hosted on GitHub Pages.
 
-## What's inside
+## Pages
 
-- **Help now**: crisis lines for the US, UK, Ireland, Canada, Australia, NZ, India and worldwide, filterable by region
-- **Inner weather check-in**: pick a feeling as weather and get gentle next steps
-- **Calm-down toolbox**: breathing bubble (4 patterns), 5-4-3-2-1 grounding, a kind notes jar, a tiny wins garden, and a "check the basics" self-care walkthrough
-- **The guide**: 18 chapters (anxiety, depression, burnout, sleep, grief, the inner critic, trauma, suicidal thoughts, identity, money, getting help, helping others and more), each with a short version, things to try and resources
-- **Myths, busted**: flip cards
-- **Safety plan builder**: saved only in the visitor's browser, printable and downloadable
-- **The library**: 150+ searchable, filterable resources, many from [FMHY](https://fmhy.net/misc#mental-health)
-- Day/night theme, a pause-animations button, respects reduced-motion, **Quick Exit** button (or press Esc three times)
+- `index.html` is the guide: crisis lines by country, then sections on anxiety, depression, burnout, sleep, grief, self-talk, trauma, suicidal thoughts, getting help and more. It includes a breathing exercise, a 5-4-3-2-1 grounding exercise and a safety plan that saves only in the reader's browser.
+- `resources.html` lists around 150 resources by topic, with search and a free-only filter. Link to a topic directly with a hash, for example `resources.html#sleep`.
 
-There's no tracking, no cookies and no build step. It's plain HTML, CSS and JS.
+Both pages have a light and dark theme and a Quick exit button. Pressing Esc three times also leaves the site.
 
-## Files
+## Editing
 
-```
-index.html          the whole page (hero scene, sections, guide chapters)
-css/style.css       all styling and animation
-js/app.js           interactive tools
-js/resources.js     the resource library (edit this to add/remove links)
-```
+- Guide text lives in `index.html`. The table of contents builds itself from each `<section data-section>` and its `<h2>`.
+- Resources live in `js/resources.js`. Add a line like this to the list:
 
-## Deploy to GitHub Pages
+  ```js
+  ["Name", "https://example.org/", "One or two plain sentences about it.", "sleep", ["free", "app"]],
+  ```
 
-1. Create a new repo on GitHub (e.g. `aceso`) and push this folder to `main`.
-2. In the repo: **Settings → Pages → Build and deployment → Source: Deploy from a branch**, then pick `main` and `/ (root)`.
-3. Your site will appear at `https://<your-username>.github.io/aceso/` within a minute or two.
+  Topic keys and their intros are defined at the top of the same file.
+- Styles are in `css/style.css`. Shared behaviour is in `js/app.js`, and the resources page filter is in `js/library.js`.
 
-## Adding resources
+## Link checking
 
-Add a line to `js/resources.js`:
-
-```js
-["Name", "https://example.org/", "Short friendly description.", "calm", ["free", "app"]],
-```
-
-Categories are listed at the top of that file. The `"pick"` tag marks a ★ cozy pick.
-
-## Keeping links fresh
-
-`.github/workflows/links.yml` checks every link on each push and every Monday. If a link breaks, the Actions tab will flag it.
+`.github/workflows/links.yml` checks every external link on each push to `main` and every Monday. Failures show up in the Actions tab.
 
 ## Disclaimer
 
-Aceso is a friendly guide, not a medical service. If you're in danger, contact your local emergency number or a crisis line.
+Aceso isn't a medical service. If you're in danger, contact your local emergency number or a crisis line.

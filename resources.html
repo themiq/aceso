@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Resources · Aceso</title>
+<meta name="description" content="Around 150 free mental health resources: helplines, apps, CBT workbooks, therapy directories, peer support and more, sorted by topic.">
+<meta name="theme-color" content="#f7f2ea" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1c1a18" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234d6b57' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M12 21V11'/%3E%3Cpath d='M12 13c-4 0-6-3-6-7 4 0 6 3 6 7z'/%3E%3Cpath d='M12 11c0-4 2-7 6-7 0 4-2 7-6 7z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Fraunces:opsz,wght,SOFT@9..144,500..700,0..100&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap" rel="stylesheet">
+<script>(function(){try{var t=localStorage.getItem("aceso:theme");if(t)document.documentElement.dataset.theme=JSON.parse(t);}catch(e){}})();</script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="wordmark" href="./"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 21V11"/><path d="M12 13c-4 0-6-3-6-7 4 0 6 3 6 7z"/><path d="M12 11c0-4 2-7 6-7 0 4-2 7-6 7z"/></svg>Aceso</a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="./">Guide</a>
+      <a href="resources.html" aria-current="page">Resources</a>
+      <a class="crisis-link" href="./#crisis-lines">Crisis lines</a>
+    </nav>
+    <button class="icon-btn" id="themeToggle" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><span class="theme-label">Dark</span></button>
+    <button class="icon-btn exit-btn" type="button" data-quick-exit title="Leave this site immediately. You can also press Esc three times.">Quick exit</button>
+  </div>
+</header>
+
+<div class="page">
+  <main class="article" id="main">
+    <header class="article-head">
+      <h1>Resources</h1>
+      <p class="standfirst">Apps, workbooks, helplines, directories and communities I'd point a friend towards, sorted by topic.</p>
+      <p class="byline">Last updated November 2026</p>
+    </header>
+
+    <p>Most of these are free. A lot of them were first gathered by the volunteers at <a href="https://fmhy.net/misc#mental-health" target="_blank" rel="noopener">FMHY</a>, and I've added others I trust. I'm not connected to any of them. If a site asks you for money or personal details and something feels off, close it.</p>
+    <p>If you're looking for advice rather than links, the <a href="./">guide</a> covers anxiety, depression, sleep, grief, getting therapy and more.</p>
+
+    <div class="crisis-box" role="note">
+      <h2>In crisis?</h2>
+      <p>Call your local emergency number, or see the <a href="./#crisis-lines">full list of crisis lines by country</a>. In the US, call or text 988. In the UK and Ireland, call Samaritans on 116 123.</p>
+    </div>
+
+    <div class="lib-controls ui">
+      <label class="sr-only" for="libSearch">Search resources</label>
+      <input type="search" id="libSearch" placeholder="Search, for example 'sleep', 'ADHD' or 'text'" autocomplete="off">
+      <div class="lib-row">
+        <label for="libCat">Topic</label>
+        <select id="libCat"><option value="all">All topics</option></select>
+        <label><input type="checkbox" id="libFree"> Free only</label>
+        <span id="libCount" aria-live="polite"></span>
+      </div>
+    </div>
+
+    <div id="libList"></div>
+
+    <p class="back-top" style="margin-top:2.5rem"><a href="#main">Back to the top</a></p>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="inner">
+    <p>Aceso is a personal project. It isn't a medical service, and it can't diagnose or treat anything. If you're in danger or thinking about suicide, contact your local emergency number or one of the <a href="./#crisis-lines">crisis lines</a>.</p>
+    <p>Found a broken link, or know something that belongs here? Please let me know. Press <kbd>Esc</kbd> three times to leave quickly.</p>
+    <p>© <span id="year">2026</span> Aceso</p>
+  </div>
+</footer>
+
+<script src="js/resources.js"></script>
+<script src="js/app.js"></script>
+<script src="js/library.js"></script>
+</body>
+</html>
