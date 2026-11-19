@@ -76,6 +76,24 @@
     onScroll();
   }
 
+  /* ---------- citations ----------
+     In the text:  <sup class="cite"><a href="#ref-some-key"></a></sup>
+     In Sources:   <li id="ref-some-key">Author (year). Title...</li>
+     Numbers are worked out here, in order of first appearance, so nothing needs renumbering by hand. */
+  var refList = $("ol.refs");
+  if (refList) {
+    var order = [];
+    $$("sup.cite a").forEach(function (a) {
+      var id = (a.getAttribute("href") || "").slice(1);
+      if (!document.getElementById(id)) return;
+      if (order.indexOf(id) === -1) order.push(id);
+      var n = order.indexOf(id) + 1;
+      a.textContent = n;
+      a.setAttribute("aria-label", "Source " + n);
+    });
+    order.forEach(function (id) { refList.appendChild(document.getElementById(id)); });
+  }
+
   /* ---------- crisis lines by region ---------- */
   var regionSel = $("#region");
   if (regionSel) {

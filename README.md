@@ -5,15 +5,18 @@ A long-form guide to looking after your mental health, plus a page of free resou
 ## Pages
 
 - `index.html` is the guide: crisis lines by country, then sections on anxiety, depression, burnout, sleep, grief, self-talk, trauma, suicidal thoughts, getting help and more. It includes a breathing exercise, a 5-4-3-2-1 grounding exercise and a safety plan that saves only in the reader's browser.
-- `why.html` is an essay on why the site exists: the name, philosophy as medicine, burnout, attention and being good enough.
+- `why.html` is a short personal statement on mental health.
 - `resources.html` lists around 150 resources by topic, with search and a free-only filter. Link to a topic directly with a hash, for example `resources.html#sleep`.
 
 Both pages have a light and dark theme and a Quick exit button. Pressing Esc three times also leaves the site.
 
 ## Editing
 
+See [EDITING.md](EDITING.md) for a step-by-step guide. In short:
+
+
 - Guide text lives in `index.html`. The table of contents builds itself from each `<section data-section>` and its `<h2>`.
-- Citations in the guide are superscript numbers linking to the Sources list at the bottom of `index.html`. If you add one, add the matching entry to the list and keep the numbers in order of first appearance.
+- Citations number themselves in order of first appearance. See `EDITING.md`.
 - Resources live in `js/resources.js`. Add a line like this to the list:
 
   ```js
