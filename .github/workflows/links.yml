@@ -15,5 +15,5 @@ jobs:
       - name: Check every link in the site
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --no-progress --max-concurrency 8 --accept 200,201,204,206,301,302,303,307,308,403,429 --exclude-path .github index.html resources.html why.html js/resources.js
+          args: --no-progress --max-concurrency 8 --accept 200,201,202,204,206,301,302,303,307,308,403,429 --max-retries 3 --timeout 30 --exclude-path .github index.html resources.html why.html js/resources.js
           fail: true
